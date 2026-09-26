@@ -1,5 +1,21 @@
 {
   "header": {
     "title": "School"
+  },
+  "mainmenu": {
+    "projects": "Projects",
+    "journey": "Journey",
+    "certificates": "Certificates",
+    "favorites": "Favorites",
+    "designSystem": "Design System"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "locale": {
+    "en": "English",
+    "pt": "Portuguese"
   }
 }

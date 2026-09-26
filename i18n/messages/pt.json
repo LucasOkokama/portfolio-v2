@@ -1,5 +1,21 @@
 {
   "header": {
     "title": "Escola"
+  },
+  "mainmenu": {
+    "projects": "Projetos",
+    "journey": "Experiências",
+    "certificates": "Certificados",
+    "favorites": "Favoritos",
+    "designSystem": "Design System"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "locale": {
+    "en": "Inglês",
+    "pt": "Português"
   }
 }

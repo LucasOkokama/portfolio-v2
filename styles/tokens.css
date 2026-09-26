@@ -1,1 +1,247 @@
+/* ========================= PRIMITIVE ========================= */
+:root {
+  /* Orange (Primary) */
+  --color-primitive-orange-50: oklch(97% 0.025 55);
+  --color-primitive-orange-100: oklch(93% 0.055 55);
+  --color-primitive-orange-200: oklch(88% 0.105 55);
+  --color-primitive-orange-300: oklch(80% 0.17 55);
+  --color-primitive-orange-400: oklch(74% 0.235 55);
+  --color-primitive-orange-500: oklch(65% 0.25 55);
+  --color-primitive-orange-600: oklch(57% 0.23 55);
+  --color-primitive-orange-700: oklch(48% 0.2 55);
+  --color-primitive-orange-800: oklch(40% 0.17 55);
+  --color-primitive-orange-900: oklch(32% 0.13 55);
+  --color-primitive-orange-950: oklch(24% 0.095 55);
 
+  /* Purple (Secondary) */
+  --color-primitive-purple-50: oklch(97% 0.02 300);
+  --color-primitive-purple-100: oklch(94% 0.04 300);
+  --color-primitive-purple-200: oklch(88% 0.08 300);
+  --color-primitive-purple-300: oklch(80% 0.13 300);
+  --color-primitive-purple-400: oklch(70% 0.18 300);
+  --color-primitive-purple-500: oklch(62% 0.21 300);
+  --color-primitive-purple-600: oklch(54% 0.2 300);
+  --color-primitive-purple-700: oklch(45% 0.17 300);
+  --color-primitive-purple-800: oklch(37% 0.14 300);
+  --color-primitive-purple-900: oklch(30% 0.11 300);
+  --color-primitive-purple-950: oklch(22% 0.08 300);
+
+  /* Neutral */
+  --color-primitive-light-50: oklch(0.9967 0.0013 106.4); /* #FEFEFD */
+  --color-primitive-light-100: oklch(0.9938 0.0013 106.4); /* #FDFDFC */
+  --color-primitive-light-200: oklch(0.9878 0.0013 106.4); /* #FBFBFA */
+  --color-primitive-light-300: oklch(0.9818 0.0013 106.4); /* #F9F9F8 */
+  --color-primitive-light-400: oklch(0.9756 0.0026 106.4); /* #F7F7F5 */
+  --color-primitive-light-500: oklch(0.9696 0.0026 106.4); /* #F5F5F3 */
+  --color-primitive-light-600: oklch(0.9636 0.0027 106.4); /* #F3F3F1 */
+  --color-primitive-light-700: oklch(0.9576 0.0027 106.4); /* #F1F1EF */
+  --color-primitive-light-800: oklch(0.9516 0.0027 106.4); /* #EFEFED */
+  --color-primitive-light-900: oklch(0.9422 0.004 106.5); /* #ECECE9 */
+  --color-primitive-light-950: oklch(0.9335 0.0027 106.5); /* #E9E9E7 */
+
+  --color-primitive-neutral-50: oklch(0.9158 0 0); /* #E3E3E3 */
+  --color-primitive-neutral-100: oklch(0.8792 0 0); /* #D7D7D7 */
+  --color-primitive-neutral-150: oklch(0.8421 0 0); /* #CBCBCB */
+  --color-primitive-neutral-200: oklch(0.8047 0 0); /* #BFBFBF */
+  --color-primitive-neutral-250: oklch(0.7668 0 0); /* #B3B3B3 */
+  --color-primitive-neutral-300: oklch(0.7284 0 0); /* #A7A7A7 */
+  --color-primitive-neutral-350: oklch(0.6927 0 0); /* #9C9C9C */
+  --color-primitive-neutral-400: oklch(0.6534 0 0); /* #909090 */
+  --color-primitive-neutral-450: oklch(0.6167 0 0); /* #858585 */
+  --color-primitive-neutral-500: oklch(0.5795 0 0); /* #7A7A7A */
+  --color-primitive-neutral-550: oklch(0.5417 0 0); /* #6F6F6F */
+  --color-primitive-neutral-600: oklch(0.5032 0 0); /* #646464 */
+  --color-primitive-neutral-650: oklch(0.464 0 0); /* #595959 */
+  --color-primitive-neutral-700: oklch(0.4276 0 0); /* #4F4F4F */
+  --color-primitive-neutral-750: oklch(0.3904 0 0); /* #454545 */
+  --color-primitive-neutral-800: oklch(0.3523 0 0); /* #3B3B3B */
+  --color-primitive-neutral-850: oklch(0.3171 0 0); /* #323232 */
+  --color-primitive-neutral-900: oklch(0.2768 0 0); /* #282828 */
+  --color-primitive-neutral-950: oklch(0.2393 0 0); /* #1F1F1F */
+
+  --color-primitive-dark-50: oklch(0.2143 0.0039 286.07); /* #19191B */
+  --color-primitive-dark-100: oklch(0.209 0 0); /* #181818 */
+  --color-primitive-dark-200: oklch(0.2055 0.0039 286.05); /* #171719 */
+  --color-primitive-dark-300: oklch(0.2011 0.0039 286.04); /* #161618 */
+  --color-primitive-dark-400: oklch(0.1966 0.004 286.03); /* #151517 */
+  --color-primitive-dark-500: oklch(0.1921 0.004 286.02); /* #141416 */
+  --color-primitive-dark-600: oklch(0.1876 0.004 286.01); /* #131315 */
+  --color-primitive-dark-700: oklch(0.1822 0 0); /* #121212 */
+  --color-primitive-dark-800: oklch(0.1739 0.0041 285.97); /* #101012 */
+  --color-primitive-dark-900: oklch(0.1642 0.0021 286.17); /* #0E0E0F */
+  --color-primitive-dark-950: oklch(0.1548 0.0021 286.15); /* #0C0C0D */
+
+  /* Green (Support) */
+  --color-primitive-green-50: oklch(98% 0.02 150);
+  --color-primitive-green-100: oklch(94% 0.05 150);
+  --color-primitive-green-200: oklch(89% 0.08 150);
+  --color-primitive-green-300: oklch(84% 0.12 150);
+  --color-primitive-green-400: oklch(76% 0.15 150);
+  --color-primitive-green-500: oklch(68% 0.17 150);
+  --color-primitive-green-600: oklch(59% 0.15 150);
+  --color-primitive-green-700: oklch(50% 0.13 150);
+  --color-primitive-green-800: oklch(41% 0.1 150);
+  --color-primitive-green-900: oklch(32% 0.08 150);
+  --color-primitive-green-950: oklch(24% 0.05 150);
+
+  /* Red (Support) */
+  --color-primitive-red-50: oklch(98% 0.02 25);
+  --color-primitive-red-100: oklch(94% 0.04 25);
+  --color-primitive-red-200: oklch(88% 0.07 25);
+  --color-primitive-red-300: oklch(83% 0.11 25);
+  --color-primitive-red-400: oklch(73% 0.16 25);
+  --color-primitive-red-500: oklch(63% 0.2 25);
+  --color-primitive-red-600: oklch(55% 0.19 25);
+  --color-primitive-red-700: oklch(48% 0.17 25);
+  --color-primitive-red-800: oklch(40% 0.14 25);
+  --color-primitive-red-900: oklch(32% 0.11 25);
+  --color-primitive-red-950: oklch(24% 0.08 25);
+
+  /* Yellow (Support) */
+  --color-primitive-yellow-50: oklch(98% 0.02 92);
+  --color-primitive-yellow-100: oklch(96% 0.05 92);
+  --color-primitive-yellow-200: oklch(93% 0.09 92);
+  --color-primitive-yellow-300: oklch(89% 0.13 92);
+  --color-primitive-yellow-400: oklch(85% 0.15 92);
+  --color-primitive-yellow-500: oklch(80% 0.16 92);
+  --color-primitive-yellow-600: oklch(70% 0.15 92);
+  --color-primitive-yellow-700: oklch(60% 0.13 92);
+  --color-primitive-yellow-800: oklch(50% 0.11 92);
+  --color-primitive-yellow-900: oklch(40% 0.09 92);
+  --color-primitive-yellow-950: oklch(30% 0.06 92);
+
+  /* Blue (Support) */
+  --color-primitive-blue-50: oklch(98% 0.02 250);
+  --color-primitive-blue-100: oklch(94% 0.04 250);
+  --color-primitive-blue-200: oklch(88% 0.07 250);
+  --color-primitive-blue-300: oklch(83% 0.1 250);
+  --color-primitive-blue-400: oklch(73% 0.14 250);
+  --color-primitive-blue-500: oklch(62% 0.17 250);
+  --color-primitive-blue-600: oklch(55% 0.16 250);
+  --color-primitive-blue-700: oklch(48% 0.15 250);
+  --color-primitive-blue-800: oklch(40% 0.12 250);
+  --color-primitive-blue-900: oklch(32% 0.1 250);
+  --color-primitive-blue-950: oklch(24% 0.07 250);
+
+  /* Values without hue or scale */
+  --color-primitive-black: oklch(0% 0 0);
+  --color-primitive-white: oklch(100% 0 0);
+  --color-primitive-transparent: transparent;
+}
+
+/* ========================= SEMANTIC ========================= */
+:root {
+  /* ---------- Brand ---------- */
+  --color-brand-primary-weakest: var(--color-primitive-orange-100);
+  --color-brand-primary-weaker: var(--color-primitive-orange-200);
+  --color-brand-primary-weak: var(--color-primitive-orange-300);
+  --color-brand-primary: var(--color-primitive-orange-400);
+  --color-brand-primary-strong: var(--color-primitive-orange-500);
+  --color-brand-primary-stronger: var(--color-primitive-orange-600);
+  --color-brand-primary-strongest: var(--color-primitive-orange-700);
+  --color-brand-text-secondary: var(--color-primitive-purple-500);
+
+  /* ---------- Content ---------- */
+  --color-content-text-primary: var(--color-primitive-neutral-850);
+  --color-content-background-primary: var(--color-primitive-white);
+  --color-content-border-primary: var(--color-primitive-neutral-250);
+
+  --color-content-text-secondary: var(--color-primitive-neutral-600);
+  --color-content-background-secondary: var(--color-primitive-light-400);
+  --color-content-border-secondary: var(--color-primitive-neutral-200);
+
+  --color-content-text-tertiary: var(--color-primitive-neutral-450);
+  --color-content-background-tertiary: var(--color-primitive-light-300);
+  --color-content-border-tertiary: var(--color-primitive-neutral-150);
+
+  --color-content-text-quaternary: var(--color-primitive-neutral-300);
+  --color-content-background-quaternary: var(--color-primitive-light-200);
+  --color-content-border-quaternary: var(--color-primitive-neutral-100);
+
+  --color-content-text-quinary: var(--color-primitive-neutral-150);
+  --color-content-background-quinary: var(--color-primitive-light-100);
+  --color-content-border-quinary: var(--color-primitive-neutral-50);
+
+  /* ---------- Action ---------- */
+  /* --color-action-background-primary: var(--color-primitive-orange-500);
+  --color-action-background-primary-hover: var(--color-primitive-orange-400); */
+  /* --color-action-background-neutral: var(--color-primitive-white);
+  --color-action-background-neutral-hover: var(--color-primitive-neutral-100); */
+}
+
+:root[data-theme='dark'] {
+  /* ---------- Brand ---------- */
+  --color-brand-primary-weakest: var(--color-primitive-orange-100);
+  --color-brand-primary-weaker: var(--color-primitive-orange-200);
+  --color-brand-primary-weak: var(--color-primitive-orange-300);
+  --color-brand-primary: var(--color-primitive-orange-400);
+  --color-brand-primary-strong: var(--color-primitive-orange-500);
+  --color-brand-primary-stronger: var(--color-primitive-orange-600);
+  --color-brand-primary-strongest: var(--color-primitive-orange-700);
+  --color-brand-text-secondary: var(--color-primitive-purple-500);
+
+  /* ---------- Content ---------- */
+  --color-content-text-primary: var(--color-primitive-neutral-250);
+  --color-content-background-primary: var(--color-primitive-dark-950);
+  --color-content-border-primary: var(--color-primitive-neutral-750);
+
+  --color-content-text-secondary: var(--color-primitive-neutral-450);
+  --color-content-background-secondary: var(--color-primitive-dark-100);
+  --color-content-border-secondary: var(--color-primitive-neutral-800);
+
+  --color-content-text-tertiary: var(--color-primitive-neutral-600);
+  --color-content-background-tertiary: var(--color-primitive-dark-400);
+  --color-content-border-tertiary: var(--color-primitive-neutral-850);
+
+  --color-content-text-quaternary: var(--color-primitive-neutral-750);
+  --color-content-background-quaternary: var(--color-primitive-dark-700);
+  --color-content-border-quaternary: var(--color-primitive-neutral-900);
+
+  --color-content-text-quinary: var(--color-primitive-neutral-900);
+  --color-content-background-quinary: var(--color-primitive-dark-900);
+  --color-content-border-quinary: var(--color-primitive-neutral-950);
+
+  /* ---------- Action ---------- */
+  /* --color-action-background-primary: var(--color-primitive-orange-500);
+  --color-action-background-primary-hover: var(--color-primitive-orange-400); */
+  /* --color-action-background-neutral: var(--color-primitive-neutral-900);
+  --color-action-background-neutral-hover: var(--color-primitive-neutral-800); */
+}
+
+/* =========================  COMPONENT ========================= */
+:root {
+  /* --color-button-background-neutral: var(--color-action-background-neutral);
+  --color-button-background-neutral-hover: var(--color-action-background-neutral-hover); */
+
+  /* ---------- Container ---------- */
+  --color-container-background: var(--color-content-background-quaternary);
+  --color-container-border: var(--color-content-border-quaternary);
+
+  /* ---------- MenuMain ---------- */
+  --color-menumain-background: var(--color-content-background-quaternary);
+  --color-menumain-border: var(--color-content-border-quaternary);
+  --color-menumain-text: var(--color-content-text-secondary);
+  --color-menumain-text-hover: var(--color-brand-primary);
+  --color-menumain-text-background-hover: var(
+    --color-content-background-secondary
+  );
+  --color-menumain-text-active: var(--color-brand-primary);
+  --color-menumain-text-background-active: var(
+    --color-content-background-secondary
+  );
+  --color-menumain-config-button-backgroud: var(
+    --color-content-background-quinary
+  );
+  --color-menumain-config-button-border: var(--color-content-border-quinary);
+
+  /* ---------- ExternalLink ---------- */
+  --color-externallink-background: var(--color-content-background-secondary);
+  --color-externallink-border: var(--color-content-border-quaternary);
+  /* --color-externallink-text-primary: var(--color-content-text-quaternary); */
+  --color-externallink-text-secondary: var(--color-content-text-secondary);
+
+  /* ---------- Modal ---------- */
+  --color-modal-background: var(--color-content-background-tertiary);
+  --color-modal-border: var(--color-content-border-tertiary);
+  --color-modal-text-secondary: var(--color-content-text-secondary);
+}

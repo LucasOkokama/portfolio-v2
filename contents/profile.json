@@ -1,0 +1,13 @@
+{
+  "name": "Lucas Okokama",
+  "role": {
+    "pt": "Desenvolvedor Frontend",
+    "en": "Frontend Developer"
+  },
+  "contact": {
+    "curriculum": {
+      "pt": "Currículo",
+      "en": "Curriculum"
+    }
+  }
+}
