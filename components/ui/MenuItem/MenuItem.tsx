@@ -21,9 +21,6 @@ export function MenuItem({ href, children }: Props) {
     'transition-colors duration-300',
   );
 
-  // 'hover:bg-primitive-light-600',
-  // 'dark:hover:bg-primitive-neutral-950',
-
   const menuItemActiveClass = cn(
     'text-menumain-text-active',
     'bg-menumain-text-background-active',

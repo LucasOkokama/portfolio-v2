@@ -4,10 +4,95 @@
     "pt": "Desenvolvedor Frontend",
     "en": "Frontend Developer"
   },
-  "contact": {
-    "curriculum": {
-      "pt": "Currículo",
-      "en": "Curriculum"
+  "clock": {
+    "city": "São Paulo",
+    "timezone": "America/Sao_Paulo"
+  },
+  "contacts": {
+    "links": [
+      {
+        "icon": "github",
+        "website": {
+          "pt": "GitHub",
+          "en": "GitHub"
+        },
+        "href": "https://github.com/LucasOkokama",
+        "label": {
+          "pt": "@LucasOkokama",
+          "en": "@LucasOkokama"
+        }
+      },
+      {
+        "icon": "linkedin",
+        "website": {
+          "pt": "LinkedIn",
+          "en": "LinkedIn"
+        },
+        "href": "https://br.linkedin.com/in/lucas-okokama",
+        "label": {
+          "pt": "@lucas-okokama",
+          "en": "@lucas-okokama"
+        }
+      },
+      {
+        "icon": "gmail",
+        "website": {
+          "pt": "Gmail",
+          "en": "Gmail"
+        },
+        "href": "mailto:lucaslko429@gmail.com",
+        "label": {
+          "pt": "lucaslko429@gmail.com",
+          "en": "lucaslko429@gmail.com"
+        }
+      },
+      {
+        "icon": "grain",
+        "website": {
+          "pt": "Currículo",
+          "en": "Curriculum"
+        },
+        "href": "/pdf/curriculum/Curriculum_LucasOkokama.pdf",
+        "label": {
+          "pt": "Baixar PDF",
+          "en": "Download PDF"
+        }
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "pt": "Web Designer",
+      "en": "Web Designer"
+    },
+    {
+      "pt": "Inglês C1",
+      "en": "English C1"
+    },
+    {
+      "pt": "FATEC",
+      "en": "FATEC"
+    }
+  ],
+  "availability": {
+    "status": "available",
+    "available": {
+      "pt": "Disponível",
+      "en": "Available"
+    },
+    "unavailable": {
+      "pt": "Indisponível",
+      "en": "Unavailable"
+    }
+  },
+  "biography": {
+    "title": {
+      "pt": "Código, design e storytelling visual — criando experiências digitais.",
+      "en": "Code, design, and visual storytelling — crafting digital experiences."
+    },
+    "description": {
+      "pt": "Sou desenvolvedor frontend, com experiência também no desenvolvimento backend, e tenho interesse em criar soluções digitais funcionais, intuitivas e visualmente refinadas. Também me interesso por design e por diferentes áreas do audiovisual, como cinema, fotografia e edição.",
+      "en": "I am a frontend developer with experience in backend development, focused on creating functional, intuitive, and visually refined digital solutions. I am also interested in design and various areas of audiovisual production, including cinema, photography, and editing."
     }
   }
 }

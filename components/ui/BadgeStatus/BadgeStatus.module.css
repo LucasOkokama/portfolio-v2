@@ -1,0 +1,16 @@
+@keyframes badge-status-pulse {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: badge-status-pulse 2s ease-in-out infinite;
+}

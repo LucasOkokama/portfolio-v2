@@ -170,6 +170,29 @@
   --color-content-background-quinary: var(--color-content-background-quinary);
   --color-content-border-quinary: var(--color-content-border-quinary);
 
+  /* ---------- Feedback ---------- */
+  --color-feedback-text-success: var(--color-feedback-text-success);
+  --color-feedback-background-success: var(--color-feedback-background-success);
+  --color-feedback-border-success: var(--color-feedback-border-success);
+
+  --color-feedback-text-warning: var(--color-feedback-text-warning);
+  --color-feedback-background-warning: var(--color-feedback-background-warning);
+  --color-feedback-border-warning: var(--color-feedback-border-warning);
+
+  --color-feedback-text-error: var(--color-feedback-text-error);
+  --color-feedback-background-error: var(--color-feedback-background-error);
+  --color-feedback-border-error: var(--color-feedback-border-error);
+
+  --color-feedback-text-information: var(--color-feedback-text-information);
+  --color-feedback-background-information: var(
+    --color-feedback-background-information
+  );
+  --color-feedback-border-information: var(--color-feedback-border-information);
+
+  --color-feedback-text-new: var(--color-feedback-text-new);
+  --color-feedback-background-new: var(--color-feedback-background-new);
+  --color-feedback-border-new: var(--color-feedback-border-new);
+
   /* Action */
   /* --color-action-background-primary: var(--color-action-background-primary);
   --color-action-background-primary-hover: var(
@@ -185,9 +208,64 @@
   /* --color-button-background-neutral: var(--color-action-background-neutral);
   --color-button-background-neutral-hover: var(--color-action-background-neutral-hover); */
 
+  /* ---------- BadgeStatus ---------- */
+  --color-badgestatus-background-success: var(
+    --color-badgestatus-background-success
+  );
+  --color-badgestatus-border-success: var(--color-badgestatus-border-success);
+  --color-badgestatus-text-success: var(--color-badgestatus-text-success);
+
+  --color-badgestatus-background-warning: var(
+    --color-badgestatus-background-warning
+  );
+  --color-badgestatus-border-warning: var(--color-badgestatus-border-warning);
+  --color-badgestatus-text-warning: var(--color-badgestatus-text-warning);
+
+  --color-badgestatus-background-error: var(
+    --color-badgestatus-background-error
+  );
+  --color-badgestatus-border-error: var(--color-badgestatus-border-error);
+  --color-badgestatus-text-error: var(--color-badgestatus-text-error);
+
+  --color-badgestatus-background-information: var(
+    --color-badgestatus-background-information
+  );
+  --color-badgestatus-border-information: var(
+    --color-badgestatus-border-information
+  );
+  --color-badgestatus-text-information: var(
+    --color-badgestatus-text-information
+  );
+
+  --color-badgestatus-background-new: var(--color-badgestatus-background-new);
+  --color-badgestatus-border-new: var(--color-badgestatus-border-new);
+  --color-badgestatus-text-new: var(--color-badgestatus-text-new);
+
+  --color-badgestatus-background-neutral: var(
+    --color-badgestatus-background-neutral
+  );
+  --color-badgestatus-border-neutral: var(--color-badgestatus-border-neutral);
+  --color-badgestatus-text-neutral: var(--color-badgestatus-text-neutral);
+
+  /* ---------- Clock ---------- */
+  --color-clock-background: var(--color-clock-background);
+  --color-clock-border: var(--color-clock-border);
+  --color-clock-text-primary: var(--color-clock-text-primary);
+  --color-clock-text-secondary: var(--color-clock-text-secondary);
+
   /* ---------- Container ---------- */
   --color-container-background: var(--color-container-background);
   --color-container-border: var(--color-container-border);
+
+  /* ---------- ExternalLink ---------- */
+  --color-externallink-background: var(--color-externallink-background);
+  --color-externallink-border: var(--color-externallink-border);
+  --color-externallink-text-primary: var(--color-externallink-text-primary);
+  --color-externallink-text-secondary: var(--color-externallink-text-secondary);
+
+  /* ---------- Highlights ---------- */
+  --color-highlights-text: var(--color-highlights-text);
+  --color-highlights-slash: var(--color-highlights-slash);
 
   /* ---------- MenuMain ---------- */
   --color-menumain-background: var(--color-menumain-background);
@@ -207,12 +285,6 @@
   --color-menumain-config-button-border: var(
     --color-menumain-config-button-border
   );
-
-  /* ---------- ExternalLink ---------- */
-  --color-externallink-background: var(--color-externallink-background);
-  --color-externallink-border: var(--color-externallink-border);
-  /* --color-externallink-text-primary: var(--color-externallink-text-primary); */
-  --color-externallink-text-secondary: var(--color-externallink-text-secondary);
 
   /* ---------- Modal ---------- */
   --color-modal-background: var(--color-modal-background);

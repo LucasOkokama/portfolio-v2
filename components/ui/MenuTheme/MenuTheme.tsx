@@ -1,5 +1,6 @@
 'use client';
 
+import { SkeletonGeneric } from '@/components/layouts/SkeletonGeneric/SkeletonGeneric';
 import { useMounted } from '@/hooks/useMounted';
 import { uiIcons } from '@/icon/ui';
 import { cn } from '@/lib/utils/cn';
@@ -57,14 +58,7 @@ export function MenuTheme() {
         >
           <AnimatePresence mode="wait" initial={false}>
             {!mounted ? (
-              <motion.span
-                key="loading"
-                className="bg-content-text-secondary/30 size-3.5 animate-pulse rounded-sm"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15 }}
-              />
+              <SkeletonGeneric className="size-3.5" />
             ) : SelectedIcon ? (
               <motion.span
                 key={selectedTheme.value}

@@ -58,12 +58,12 @@ export function ExternalLink({
         'min-w-0',
         'flex flex-col gap-2.5',
         'bg-externallink-background',
-        'border-externallink-border rounded-md border',
-        'px-4 py-3',
+        'border-externallink-border rounded-2xl border',
+        'p-4',
         'overflow-hidden',
       )}
     >
-      <div className="flex items-center gap-3">
+      <div className="text-externallink-text-primary flex items-center gap-3">
         <Icon width={20} height={20} className="shrink-0" />
 
         <span className="text-sm">{website}</span>

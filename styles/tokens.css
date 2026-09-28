@@ -162,6 +162,27 @@
   --color-content-background-quinary: var(--color-primitive-light-100);
   --color-content-border-quinary: var(--color-primitive-neutral-50);
 
+  /* ---------- Feedback ---------- */
+  --color-feedback-text-success: var(--color-primitive-green-800);
+  --color-feedback-background-success: var(--color-primitive-green-100);
+  --color-feedback-border-success: var(--color-primitive-green-200);
+
+  --color-feedback-text-warning: var(--color-primitive-yellow-800);
+  --color-feedback-background-warning: var(--color-primitive-yellow-100);
+  --color-feedback-border-warning: var(--color-primitive-yellow-200);
+
+  --color-feedback-text-error: var(--color-primitive-red-800);
+  --color-feedback-background-error: var(--color-primitive-red-100);
+  --color-feedback-border-error: var(--color-primitive-red-200);
+
+  --color-feedback-text-information: var(--color-primitive-blue-800);
+  --color-feedback-background-information: var(--color-primitive-blue-100);
+  --color-feedback-border-information: var(--color-primitive-blue-200);
+
+  --color-feedback-text-new: var(--color-primitive-purple-800);
+  --color-feedback-background-new: var(--color-primitive-purple-100);
+  --color-feedback-border-new: var(--color-primitive-purple-200);
+
   /* ---------- Action ---------- */
   /* --color-action-background-primary: var(--color-primitive-orange-500);
   --color-action-background-primary-hover: var(--color-primitive-orange-400); */
@@ -181,25 +202,46 @@
   --color-brand-text-secondary: var(--color-primitive-purple-500);
 
   /* ---------- Content ---------- */
-  --color-content-text-primary: var(--color-primitive-neutral-250);
+  --color-content-text-primary: var(--color-primitive-neutral-150);
   --color-content-background-primary: var(--color-primitive-dark-950);
   --color-content-border-primary: var(--color-primitive-neutral-750);
 
-  --color-content-text-secondary: var(--color-primitive-neutral-450);
+  --color-content-text-secondary: var(--color-primitive-neutral-300);
   --color-content-background-secondary: var(--color-primitive-dark-100);
   --color-content-border-secondary: var(--color-primitive-neutral-800);
 
-  --color-content-text-tertiary: var(--color-primitive-neutral-600);
+  --color-content-text-tertiary: var(--color-primitive-neutral-450);
   --color-content-background-tertiary: var(--color-primitive-dark-400);
   --color-content-border-tertiary: var(--color-primitive-neutral-850);
 
-  --color-content-text-quaternary: var(--color-primitive-neutral-750);
+  --color-content-text-quaternary: var(--color-primitive-neutral-600);
   --color-content-background-quaternary: var(--color-primitive-dark-700);
   --color-content-border-quaternary: var(--color-primitive-neutral-900);
 
-  --color-content-text-quinary: var(--color-primitive-neutral-900);
+  --color-content-text-quinary: var(--color-primitive-neutral-750);
   --color-content-background-quinary: var(--color-primitive-dark-900);
   --color-content-border-quinary: var(--color-primitive-neutral-950);
+
+  /* ---------- Feedback ---------- */
+  --color-feedback-text-success: var(--color-primitive-green-400);
+  --color-feedback-background-success: var(--color-primitive-green-950);
+  --color-feedback-border-success: var(--color-primitive-green-900);
+
+  --color-feedback-text-warning: var(--color-primitive-yellow-400);
+  --color-feedback-background-warning: var(--color-primitive-yellow-950);
+  --color-feedback-border-warning: var(--color-primitive-yellow-900);
+
+  --color-feedback-text-error: var(--color-primitive-red-400);
+  --color-feedback-background-error: var(--color-primitive-red-950);
+  --color-feedback-border-error: var(--color-primitive-red-900);
+
+  --color-feedback-text-information: var(--color-primitive-blue-400);
+  --color-feedback-background-information: var(--color-primitive-blue-950);
+  --color-feedback-border-information: var(--color-primitive-blue-900);
+
+  --color-feedback-text-new: var(--color-primitive-purple-400);
+  --color-feedback-background-new: var(--color-primitive-purple-950);
+  --color-feedback-border-new: var(--color-primitive-purple-900);
 
   /* ---------- Action ---------- */
   /* --color-action-background-primary: var(--color-primitive-orange-500);
@@ -213,9 +255,60 @@
   /* --color-button-background-neutral: var(--color-action-background-neutral);
   --color-button-background-neutral-hover: var(--color-action-background-neutral-hover); */
 
+  /* ---------- BadgeStatus ---------- */
+  --color-badgestatus-background-success: var(
+    --color-feedback-background-success
+  );
+  --color-badgestatus-border-success: var(--color-feedback-border-success);
+  --color-badgestatus-text-success: var(--color-feedback-text-success);
+
+  --color-badgestatus-background-warning: var(
+    --color-feedback-background-warning
+  );
+  --color-badgestatus-border-warning: var(--color-feedback-border-warning);
+  --color-badgestatus-text-warning: var(--color-feedback-text-warning);
+
+  --color-badgestatus-background-error: var(--color-feedback-background-error);
+  --color-badgestatus-border-error: var(--color-feedback-border-error);
+  --color-badgestatus-text-error: var(--color-feedback-text-error);
+
+  --color-badgestatus-background-information: var(
+    --color-feedback-background-information
+  );
+  --color-badgestatus-border-information: var(
+    --color-feedback-border-information
+  );
+  --color-badgestatus-text-information: var(--color-feedback-text-information);
+
+  --color-badgestatus-background-new: var(--color-feedback-background-new);
+  --color-badgestatus-border-new: var(--color-feedback-border-new);
+  --color-badgestatus-text-new: var(--color-feedback-text-new);
+
+  --color-badgestatus-background-neutral: var(
+    --color-content-background-secondary
+  );
+  --color-badgestatus-border-neutral: var(--color-content-border-secondary);
+  --color-badgestatus-text-neutral: var(--color-content-text-secondary);
+
+  /* ---------- Clock ---------- */
+  --color-clock-background: var(--color-content-background-secondary);
+  --color-clock-border: var(--color-content-border-quaternary);
+  --color-clock-text-primary: var(--color-content-text-primary);
+  --color-clock-text-secondary: var(--color-content-text-tertiary);
+
   /* ---------- Container ---------- */
   --color-container-background: var(--color-content-background-quaternary);
   --color-container-border: var(--color-content-border-quaternary);
+
+  /* ---------- ExternalLink ---------- */
+  --color-externallink-background: var(--color-content-background-secondary);
+  --color-externallink-border: var(--color-content-border-quaternary);
+  --color-externallink-text-primary: var(--color-content-text-primary);
+  --color-externallink-text-secondary: var(--color-content-text-secondary);
+
+  /* ---------- Highlights ---------- */
+  --color-highlights-text: var(--color-content-text-tertiary);
+  --color-highlights-slash: var(--color-content-text-quinary);
 
   /* ---------- MenuMain ---------- */
   --color-menumain-background: var(--color-content-background-quaternary);
@@ -233,12 +326,6 @@
     --color-content-background-quinary
   );
   --color-menumain-config-button-border: var(--color-content-border-quinary);
-
-  /* ---------- ExternalLink ---------- */
-  --color-externallink-background: var(--color-content-background-secondary);
-  --color-externallink-border: var(--color-content-border-quaternary);
-  /* --color-externallink-text-primary: var(--color-content-text-quaternary); */
-  --color-externallink-text-secondary: var(--color-content-text-secondary);
 
   /* ---------- Modal ---------- */
   --color-modal-background: var(--color-content-background-tertiary);

@@ -67,7 +67,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <div
           className={cn(
-            'w-full max-w-4xl',
+            'w-full max-w-5xl',
             'mx-auto',
             'flex flex-col items-center',
           )}
