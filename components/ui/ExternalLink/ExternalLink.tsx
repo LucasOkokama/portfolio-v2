@@ -47,7 +47,7 @@ export function ExternalLink({
         setIsHovered(false);
       }}
       animate={{
-        flex: isActive ? '1.7 1 0%' : '1 1 0%',
+        flexGrow: isActive ? 1.7 : 1,
         opacity: isDimmed ? 0.35 : 1,
       }}
       transition={{
@@ -55,7 +55,7 @@ export function ExternalLink({
         ease: 'easeInOut',
       }}
       className={cn(
-        'min-w-0',
+        'min-w-0 flex-1 basis-0',
         'flex flex-col gap-2.5',
         'bg-externallink-background',
         'border-externallink-border rounded-2xl border',
@@ -63,8 +63,22 @@ export function ExternalLink({
         'overflow-hidden',
       )}
     >
-      <div className="text-externallink-text-primary flex items-center gap-3">
-        <Icon width={20} height={20} className="shrink-0" />
+      <div className="text-externallink-text-primary flex items-center gap-2.5">
+        <motion.div
+          initial={false}
+          animate={{
+            scale: isActive ? 1.05 : 0.95,
+            rotate: isActive ? -2.5 : 0,
+            rotateY: isActive ? 360 : 0,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          className="shrink-0"
+        >
+          <Icon width={20} height={20} />
+        </motion.div>
 
         <span className="text-sm">{website}</span>
       </div>

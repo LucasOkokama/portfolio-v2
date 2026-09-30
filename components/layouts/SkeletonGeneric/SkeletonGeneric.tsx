@@ -22,7 +22,10 @@ export function SkeletonGeneric({ className }: SkeletonProps) {
         ease: 'easeOut',
       }}
       className={cn(
-        'bg-content-text-secondary/30',
+        'inline-block',
+        'h-4',
+        'w-12',
+        'bg-content-text-primary/30',
         'animate-pulse',
         'rounded-sm',
         className,

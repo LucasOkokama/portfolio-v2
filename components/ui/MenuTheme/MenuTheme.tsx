@@ -138,11 +138,9 @@ export function MenuTheme() {
                         'transition-all duration-150 ease-out',
                         'cursor-pointer',
                         'data-[highlighted]:pl-3',
-                        'data-[highlighted]:text-brand-primary',
-                        'data-[highlighted]:bg-primitive-orange-200/20',
-                        'data-[highlighted]:border-primitive-orange-200/70',
-                        'dark:data-[highlighted]:bg-primitive-orange-400/20',
-                        'dark:data-[highlighted]:border-primitive-orange-400/40',
+                        'data-[highlighted]:bg-modal-background-hover',
+                        'data-[highlighted]:border-modal-border-hover',
+                        'data-[highlighted]:text-modal-text-hover',
                         'focus:outline-none',
                       )}
                     >

@@ -1,3 +1,4 @@
+import { HalftoneBackground } from '@/components/layouts/HalftoneBackground/HalftoneBackground';
 import { MenuMain } from '@/components/layouts/MenuMain/MenuMain';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
@@ -6,24 +7,28 @@ import { getAppLocale, localize } from '@/lib/utils/localize';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { Geist, Geist_Mono } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Inter, Outfit, Playfair_Display, Roboto_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { Providers } from '../providers';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const playfair = Playfair_Display({
+  variable: '--font-playfair',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const outfit = Outfit({
+  variable: '--font-outfit',
   subsets: ['latin'],
 });
 
-const rafgins = localFont({
-  src: '../../fonts/rafgins/Rafgins-Regular.otf',
-  variable: '--font-rafgins',
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+});
+
+const robotoMono = Roboto_Mono({
+  variable: '--font-roboto-mono',
+  subsets: ['latin'],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -63,8 +68,15 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={cn(geistSans.variable, geistMono.variable, rafgins.variable)}
+        className={cn(
+          playfair.variable,
+          outfit.variable,
+          inter.variable,
+          robotoMono.variable,
+        )}
       >
+        <HalftoneBackground />
+
         <div
           className={cn(
             'w-full max-w-5xl',

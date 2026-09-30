@@ -1,12 +1,7 @@
-import { ExternalLinksGroup } from '@/components/features/ExternalLinkGroup/ExternalLinkGroup';
-import { Container } from '@/components/layouts/Container/Container';
-import { BadgeStatus } from '@/components/ui/BadgeStatus/BadgeStatus';
-import { Clock } from '@/components/ui/Clock/Clock';
-import { Highlights } from '@/components/ui/Highlights/Highlights';
+import { Section } from '@/components/layouts/Section/Section';
+import { SectionAboutMe } from '@/components/sections/SectionAboutMe/SectionAboutMe';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
-import { profile } from '@/lib/utils/loaders';
-import { localize } from '@/lib/utils/localize';
 import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 
@@ -20,117 +15,29 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const isAvailable = profile.availability.status === 'available';
-  const availabilityVariant = isAvailable ? 'success' : 'warning';
-  const availabilityLabel = localize(
-    isAvailable
-      ? profile.availability.available
-      : profile.availability.unavailable,
-    locale,
-  );
-
   return (
-    <div className={cn('w-full')}>
-      <div className={cn('flex gap-4')}>
-        <div className={cn('flex w-8/24 flex-col gap-4')}>
-          <Container className={cn('px-10 pt-12 pb-10')}>
-            <div>
-              <h1 className="font-rafgins text-6xl font-bold tracking-wide">
-                {profile.name}
-              </h1>
-              <span
-                className={cn(
-                  'text-content-text-quaternary mt-3 block text-sm font-semibold tracking-widest',
-                )}
-              >
-                {localize(profile.role, locale).toUpperCase()}
-              </span>
-            </div>
-          </Container>
+    <div className={cn('flex w-full flex-col gap-12')}>
+      <SectionAboutMe locale={locale} />
 
-          <Container className={cn('p-4')}>
-            <div className="flex flex-col gap-2">
-              <Clock
-                city={profile.clock.city}
-                timezone={profile.clock.timezone}
-                showSeconds
-              />
+      <Section title="Technologies" command="$ stack inspect --runtime">
+        <div>123</div>
+      </Section>
 
-              <ExternalLinksGroup
-                items={profile.contacts.links}
-                locale={locale}
-              />
-            </div>
-          </Container>
-        </div>
-        <div className={cn('flex grow flex-col gap-4')}>
-          <Container className="px-7 py-4">
-            <div className={cn('flex justify-between')}>
-              <Highlights items={profile.highlights} locale={locale} />
+      <Section title="Projects" command=">_ find ~/projects -maxdepth 1">
+        <div>123</div>
+      </Section>
 
-              <BadgeStatus
-                variant={availabilityVariant}
-                indicatorVariant={availabilityVariant}
-              >
-                {availabilityLabel}
-              </BadgeStatus>
-            </div>
-          </Container>
+      <Section title="Journey" command="$ git log --reverse --oneline">
+        <div>123</div>
+      </Section>
 
-          <Container className="p-7">
-            <div className={cn('flex flex-col gap-4')}>
-              <h1
-                className={cn(
-                  'text-content-text-primary text-3xl font-extrabold',
-                )}
-              >
-                {localize(profile.biography.title, locale)}
-              </h1>
-              <span
-                className={cn('text-content-text-secondary text-sm leading-7')}
-              >
-                {localize(profile.biography.description, locale)}
-              </span>
-            </div>
-          </Container>
-        </div>
-      </div>
+      <Section title="Certificates" command=">_ openssl x509 -noout -dates">
+        <div>123</div>
+      </Section>
 
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
-      <p>123</p>
+      <Section title="Statistics" command="$ metricsctl stats --summary">
+        <div>123</div>
+      </Section>
     </div>
   );
 }

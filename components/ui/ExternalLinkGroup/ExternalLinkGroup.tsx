@@ -4,7 +4,7 @@ import { ExternalLink } from '@/components/ui/ExternalLink/ExternalLink';
 import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { localize } from '@/lib/utils/localize';
-import type { IContactLink } from '@/types/contents.type';
+import type { IContactLink } from '@/types/profile.type';
 import { useState } from 'react';
 
 interface Props {
