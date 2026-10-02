@@ -27,7 +27,7 @@ export async function MenuMain() {
             className={cn(
               'cursor-pointer',
               'text-brand-primary',
-              'hover:text-brand-text-secondary',
+              'hover:text-brand-secondary',
               'transition-colors duration-500',
             )}
           >

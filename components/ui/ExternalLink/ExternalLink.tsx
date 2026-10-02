@@ -63,7 +63,7 @@ export function ExternalLink({
         'overflow-hidden',
       )}
     >
-      <div className="text-externallink-text-primary flex items-center gap-2.5">
+      <div className="text-externallink-website-text flex items-center gap-2.5">
         <motion.div
           initial={false}
           animate={{
@@ -99,7 +99,7 @@ export function ExternalLink({
             className={cn(
               'flex items-center',
               'gap-1',
-              'text-externallink-text-secondary',
+              'text-externallink-username-text',
               'text-xs font-medium',
               'whitespace-nowrap',
             )}

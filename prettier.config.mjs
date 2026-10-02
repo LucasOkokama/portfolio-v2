@@ -7,6 +7,7 @@ const config = {
   trailingComma: 'all',
   arrowParens: 'avoid',
   useTabs: false,
+  endOfLine: 'lf',
 };
 
 export default config;

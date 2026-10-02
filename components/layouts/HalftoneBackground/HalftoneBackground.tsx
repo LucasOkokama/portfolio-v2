@@ -3,11 +3,7 @@ import { cn } from '@/lib/utils/cn';
 export function HalftoneBackground() {
   return (
     <svg
-      className={cn(
-        'pointer-events-none fixed inset-0 -z-10',
-        'h-dvh w-dvw',
-        'text-content-background-quinary',
-      )}
+      className={cn('pointer-events-none fixed inset-0 -z-10', 'h-dvh w-dvw')}
       aria-hidden="true"
     >
       <defs>
@@ -18,7 +14,12 @@ export function HalftoneBackground() {
           patternUnits="userSpaceOnUse"
           patternTransform="rotate(45)"
         >
-          <circle cx="2" cy="2" r="1" fill="currentColor" />
+          <circle
+            cx="2"
+            cy="2"
+            r="1"
+            className="fill-halftonebackground-fill"
+          />
         </pattern>
       </defs>
 

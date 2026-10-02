@@ -1,0 +1,85 @@
+{
+  "sectionName": {
+    "pt": "Tecnologias",
+    "en": "Technologies"
+  },
+  "technologyGroups": [
+    {
+      "icon": "layout",
+      "title": {
+        "pt": "Frontend",
+        "en": "Frontend"
+      },
+      "description": {
+        "pt": "Tecnologias para criação de interfaces modernas, responsivas e interativas.",
+        "en": "Technologies for building modern, responsive, and interactive interfaces."
+      },
+      "techs": [
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" },
+        { "label": "JavaScript", "icon": "javascript" },
+        { "label": "TypeScript", "icon": "typescript" },
+        { "label": "React.js", "icon": "react" },
+        { "label": "Next.js", "icon": "nextJS" },
+        { "label": "Tailwind CSS", "icon": "tailwindCSS" }
+      ]
+    },
+    {
+      "icon": "gear",
+      "title": {
+        "pt": "Backend",
+        "en": "Backend"
+      },
+      "description": {
+        "pt": "Tecnologias para desenvolvimento de APIs, aplicações e serviços no lado do servidor.",
+        "en": "Technologies for developing APIs, applications, and server-side services."
+      },
+      "techs": [
+        { "label": "Java", "icon": "java" },
+        { "label": "Python", "icon": "python" },
+        { "label": "Node.js", "icon": "nodeJS" },
+        { "label": "Express.js", "icon": "express" },
+        { "label": "Spring Boot", "icon": "springBoot" }
+      ]
+    },
+    {
+      "icon": "server",
+      "title": {
+        "pt": "Databases & Charts",
+        "en": "Databases & Charts"
+      },
+      "description": {
+        "pt": "Tecnologias para armazenamento, consulta, gerenciamento e visualização de dados.",
+        "en": "Technologies for data storage, querying, management, and data visualization."
+      },
+      "techs": [
+        { "label": "MySQL", "icon": "mysql" },
+        { "label": "PostgreSQL", "icon": "postgresql" },
+        { "label": "Pandas", "icon": "pandas" },
+        { "label": "Plotly", "icon": "plotly" }
+      ]
+    },
+    {
+      "icon": "spanner",
+      "title": {
+        "pt": "Tools & DevOps",
+        "en": "Tools & DevOps"
+      },
+      "description": {
+        "pt": "Ferramentas utilizadas para desenvolvimento, colaboração, testes, design e produtividade.",
+        "en": "Tools used for development, collaboration, testing, design, and productivity."
+      },
+      "techs": [
+        { "label": "Postman", "icon": "postman" },
+        { "label": "Git", "icon": "git" },
+        { "label": "GitHub", "icon": "github" },
+        { "label": "Docker", "icon": "docker" },
+        { "label": "VS Code", "icon": "visualStudioCode" },
+        { "label": "IntelliJ IDEA", "icon": "intellijIdea" },
+        { "label": "Eclipse", "icon": "eclipse" },
+        { "label": "Figma", "icon": "figma" },
+        { "label": "Vercel", "icon": "vercel" }
+      ]
+    }
+  ]
+}

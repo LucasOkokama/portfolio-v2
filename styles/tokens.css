@@ -263,9 +263,9 @@
   --color-feedback-border-information: var(--color-primitive-blue-light-400);
   --color-feedback-text-information: var(--color-primitive-blue-light-900);
 
-  --color-feedback-background-new: var(--color-primitive-purple-100);
-  --color-feedback-border-new: var(--color-primitive-purple-200);
-  --color-feedback-text-new: var(--color-primitive-purple-800);
+  --color-feedback-background-new: var(--color-primitive-purple-light-50);
+  --color-feedback-border-new: var(--color-primitive-purple-light-200);
+  --color-feedback-text-new: var(--color-primitive-purple-light-950);
 
   --color-feedback-background-neutral: var(
     --color-content-background-quaternary
@@ -336,9 +336,9 @@
   --color-feedback-border-information: var(--color-primitive-blue-dark-600);
   --color-feedback-text-information: var(--color-primitive-blue-dark-100);
 
-  --color-feedback-background-new: var(--color-primitive-purple-950);
-  --color-feedback-border-new: var(--color-primitive-purple-900);
-  --color-feedback-text-new: var(--color-primitive-purple-400);
+  --color-feedback-background-new: var(--color-primitive-purple-dark-950);
+  --color-feedback-border-new: var(--color-primitive-purple-dark-900);
+  --color-feedback-text-new: var(--color-primitive-purple-dark-50);
 
   --color-feedback-background-neutral: var(
     --color-content-background-secondary
@@ -393,11 +393,22 @@
   --color-badgestatus-border-neutral: var(--color-feedback-border-neutral);
   --color-badgestatus-text-neutral: var(--color-feedback-text-neutral);
 
+  /* ---------- BadgeTag ---------- */
+  --color-badgetag-background: var(--color-content-background-tertiary);
+  --color-badgetag-text: var(--color-content-text-tertiary);
+  --color-badgetag-text-hover: var(--color-content-text-primary);
+  --color-badgetag-border: var(--color-content-border-tertiary);
+  --color-badgetag-border-hover: oklch(
+    from var(--color-brand-secondary) l c h / 65%
+  );
+
   /* ---------- Clock ---------- */
   --color-clock-background: var(--color-content-background-secondary);
   --color-clock-border: var(--color-content-border-quaternary);
-  --color-clock-text-primary: var(--color-content-text-secondary);
-  --color-clock-text-secondary: var(--color-content-text-quaternary);
+  --color-clock-icon: var(--color-content-text-secondary);
+  --color-clock-city-text: var(--color-content-text-secondary);
+  --color-clock-gmt-text: var(--color-content-text-quaternary);
+  --color-clock-time-text: var(--color-content-text-secondary);
 
   /* ---------- Container ---------- */
   --color-container-background: var(--color-content-background-quaternary);
@@ -406,43 +417,98 @@
   /* ---------- ExternalLink ---------- */
   --color-externallink-background: var(--color-content-background-secondary);
   --color-externallink-border: var(--color-content-border-quaternary);
-  --color-externallink-text-primary: var(--color-content-text-primary);
-  --color-externallink-text-secondary: var(--color-content-text-secondary);
+  --color-externallink-website-text: var(--color-content-text-primary);
+  --color-externallink-username-text: var(--color-content-text-secondary);
+
+  /* ---------- HalftoneBackground ---------- */
+  --color-halftonebackground-fill: var(--color-content-background-quinary);
 
   /* ---------- Highlights ---------- */
   --color-highlights-text: var(--color-content-text-tertiary);
-  --color-highlights-slash: var(--color-content-text-quinary);
+  --color-highlights-slash-text: var(--color-content-text-quinary);
 
   /* ---------- MenuMain ---------- */
   --color-menumain-background: var(--color-content-background-quaternary);
   --color-menumain-border: var(--color-content-border-quaternary);
   --color-menumain-text: var(--color-content-text-secondary);
-  --color-menumain-text-hover: var(--color-brand-primary);
-  --color-menumain-text-background-hover: var(
+
+  --color-menumain-item-text: var(--color-content-text-secondary);
+  --color-menumain-item-text-hover: var(--color-brand-primary);
+  --color-menumain-item-background-hover: var(
     --color-content-background-secondary
   );
-  --color-menumain-text-active: var(--color-brand-primary);
-  --color-menumain-text-background-active: var(
+  --color-menumain-item-text-active: var(--color-brand-primary);
+  --color-menumain-item-background-active: var(
     --color-content-background-secondary
   );
-  --color-menumain-config-button-backgroud: var(
+
+  --color-menumain-configbutton-background: var(
     --color-content-background-quinary
   );
-  --color-menumain-config-button-border: var(--color-content-border-quinary);
+  --color-menumain-configbutton-border: var(--color-content-border-quinary);
 
-  /* ---------- Modal ---------- */
-  --color-modal-background: var(--color-content-background-tertiary);
-  --color-modal-border: var(--color-content-border-tertiary);
-  --color-modal-text-secondary: var(--color-content-text-secondary);
-  --color-modal-background-hover: oklch(
+  --color-menumain-dropdown-background: var(
+    --color-content-background-tertiary
+  );
+  --color-menumain-dropdown-border: var(--color-content-border-tertiary);
+
+  --color-menumain-dropdownitem-text: var(--color-content-text-secondary);
+  --color-menumain-dropdownitem-text-hover: var(--color-brand-primary);
+  --color-menumain-dropdownitem-background-hover: oklch(
     from var(--color-brand-primary-weakest) l c h / 10%
   );
-  --color-modal-border-hover: oklch(
+  --color-menumain-dropdownitem-border-hover: oklch(
     from var(--color-brand-primary-weaker) l c h / 15%
   );
-  --color-modal-text-hover: var(--color-brand-primary);
 
   /* ---------- Section ---------- */
-  --color-section-text-primary: var(--color-content-text-primary);
-  --color-section-text-secondary: var(--color-content-text-quinary);
+  --color-section-title-text: var(--color-content-text-primary);
+  --color-section-label-text: var(--color-content-text-quinary);
+
+  /* ---------- SkeletonGeneric ---------- */
+  --color-skeletongeneric-background: oklch(
+    from var(--color-content-text-primary) l c h / 30%
+  );
+
+  /* ---------- TechnologiesGrid ---------- */
+  --color-technologiesgrid-categorytechs-background: var(
+    --color-content-background-quinary
+  );
+  --color-technologiesgrid-categorytechs-background-selected: var(
+    --color-content-background-tertiary
+  );
+  --color-technologiesgrid-categorytechs-border: var(
+    --color-content-border-quinary
+  );
+  --color-technologiesgrid-categorytechs-border-selected: var(
+    --color-content-border-tertiary
+  );
+  --color-technologiesgrid-categorytechstitle-text: var(
+    --color-content-text-quaternary
+  );
+  --color-technologiesgrid-categorytechstitle-text-selected: var(
+    --color-content-text-secondary
+  );
+  --color-technologiesgrid-categorytechsdescription-text: var(
+    --color-content-text-quaternary
+  );
+  --color-technologiesgrid-categorytechsdescription-text-selected: var(
+    --color-content-text-tertiary
+  );
+  --color-technologiesgrid-icon: var(--color-content-text-quinary);
+  --color-technologiesgrid-icon-selected: var(--color-brand-primary);
+  --color-technologiesgrid-iconbox-background: var(
+    --color-content-background-quinary
+  );
+  --color-technologiesgrid-iconbox-background-selected: oklch(
+    from var(--color-brand-primary-weakest) l c h / 12%
+  );
+
+  --color-technologiesgrid-techs-background: var(
+    --color-content-background-quinary
+  );
+  --color-technologiesgrid-techs-border: var(--color-content-border-quinary);
+  --color-technologiesgrid-techs-grid: var(
+    --color-content-background-quaternary
+  );
 }

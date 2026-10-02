@@ -14,7 +14,7 @@ export interface IContactLink {
   label: ILocalizedText;
 }
 
-export interface IProfile {
+export interface ISectionProfile {
   name: string;
   role: ILocalizedText;
   clock: {

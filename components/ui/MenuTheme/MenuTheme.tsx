@@ -51,8 +51,8 @@ export function MenuTheme() {
           className={cn(
             'size-8.5',
             'flex items-center justify-center',
-            'bg-menumain-config-button-backgroud',
-            'border-menumain-config-button-border rounded-lg border',
+            'bg-menumain-configbutton-background',
+            'border-menumain-configbutton-border rounded-lg border',
             'cursor-pointer',
           )}
         >
@@ -115,8 +115,8 @@ export function MenuTheme() {
               transition={{ duration: 0.15, ease: 'easeOut' }}
               className={cn(
                 'w-32',
-                'bg-modal-background',
-                'border-modal-border rounded-md border p-1 shadow-md',
+                'bg-menumain-dropdown-background',
+                'border-menumain-dropdown-border rounded-md border p-1 shadow-md',
               )}
             >
               <DropdownMenu.RadioGroup
@@ -133,14 +133,14 @@ export function MenuTheme() {
                       value={option.value}
                       className={cn(
                         'flex items-center justify-between px-2 py-1.5',
-                        'text-modal-text-secondary',
+                        'text-menumain-dropdownitem-text',
                         'rounded-md border border-transparent',
                         'transition-all duration-150 ease-out',
                         'cursor-pointer',
                         'data-[highlighted]:pl-3',
-                        'data-[highlighted]:bg-modal-background-hover',
-                        'data-[highlighted]:border-modal-border-hover',
-                        'data-[highlighted]:text-modal-text-hover',
+                        'data-[highlighted]:bg-menumain-dropdownitem-background-hover',
+                        'data-[highlighted]:border-menumain-dropdownitem-border-hover',
+                        'data-[highlighted]:text-menumain-dropdownitem-text-hover',
                         'focus:outline-none',
                       )}
                     >

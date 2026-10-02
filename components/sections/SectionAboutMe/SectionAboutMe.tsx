@@ -67,7 +67,7 @@ export function SectionAboutMe({ locale }: Props) {
                   {index > 0 && (
                     <span
                       aria-hidden="true"
-                      className={cn('text-highlights-slash text-xs')}
+                      className={cn('text-highlights-slash-text text-xs')}
                     >
                       /
                     </span>

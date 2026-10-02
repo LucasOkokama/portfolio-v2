@@ -15,15 +15,15 @@ export function MenuItem({ href, children }: Props) {
 
   const menuItemClass = cn(
     'cursor-pointer rounded-full px-4 py-2',
-    'text-menumain-text text-sm font-medium',
-    'hover:text-menumain-text-hover',
-    'hover:bg-menumain-text-background-hover',
+    'text-menumain-item-text text-sm font-medium',
+    'hover:text-menumain-item-text-hover',
+    'hover:bg-menumain-item-background-hover',
     'transition-colors duration-300',
   );
 
   const menuItemActiveClass = cn(
-    'text-menumain-text-active',
-    'bg-menumain-text-background-active',
+    'text-menumain-item-text-active',
+    'bg-menumain-item-background-active',
   );
 
   return (

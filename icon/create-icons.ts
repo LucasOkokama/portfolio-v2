@@ -13,14 +13,18 @@ type AssertNoDuplicateKeys<A extends IconRegistry, B extends IconRegistry> =
         DUPLICATE: DuplicateKeys<A, B>;
       };
 
-export function createIcons<
-  const A extends IconRegistry,
-  const B extends IconRegistry,
-  const C extends IconRegistry,
->(
-  a: A,
-  b: B & AssertNoDuplicateKeys<A, B>,
-  c: C & AssertNoDuplicateKeys<A, C> & AssertNoDuplicateKeys<B, C>,
-): A & B & C {
-  return Object.assign({}, a, b, c);
+type MergeRegistries<
+  Registries extends readonly IconRegistry[],
+  Result extends IconRegistry = Record<never, never>,
+> = Registries extends readonly [
+  infer First extends IconRegistry,
+  ...infer Rest extends IconRegistry[],
+]
+  ? MergeRegistries<Rest, Result & First & AssertNoDuplicateKeys<Result, First>>
+  : Result;
+
+export function createIcons<const Registries extends readonly IconRegistry[]>(
+  ...registries: Registries
+): MergeRegistries<Registries> {
+  return Object.assign({}, ...registries);
 }

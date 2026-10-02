@@ -292,6 +292,13 @@
   /* --color-button-background-neutral: var(--color-action-background-neutral);
   --color-button-background-neutral-hover: var(--color-action-background-neutral-hover); */
 
+  /* ---------- BadgeTag ---------- */
+  --color-badgetag-background: var(--color-badgetag-background);
+  --color-badgetag-text: var(--color-badgetag-text);
+  --color-badgetag-text-hover: var(--color-badgetag-text-hover);
+  --color-badgetag-border: var(--color-badgetag-border);
+  --color-badgetag-border-hover: var(--color-badgetag-border-hover);
+
   /* ---------- BadgeStatus ---------- */
   --color-badgestatus-background-success: var(
     --color-badgestatus-background-success
@@ -334,8 +341,10 @@
   /* ---------- Clock ---------- */
   --color-clock-background: var(--color-clock-background);
   --color-clock-border: var(--color-clock-border);
-  --color-clock-text-primary: var(--color-clock-text-primary);
-  --color-clock-text-secondary: var(--color-clock-text-secondary);
+  --color-clock-icon: var(--color-clock-icon);
+  --color-clock-city-text: var(--color-clock-city-text);
+  --color-clock-gmt-text: var(--color-clock-gmt-text);
+  --color-clock-time-text: var(--color-clock-time-text);
 
   /* ---------- Container ---------- */
   --color-container-background: var(--color-container-background);
@@ -344,43 +353,109 @@
   /* ---------- ExternalLink ---------- */
   --color-externallink-background: var(--color-externallink-background);
   --color-externallink-border: var(--color-externallink-border);
-  --color-externallink-text-primary: var(--color-externallink-text-primary);
-  --color-externallink-text-secondary: var(--color-externallink-text-secondary);
+  --color-externallink-website-text: var(--color-externallink-website-text);
+  --color-externallink-username-text: var(--color-externallink-username-text);
+
+  /* ---------- HalftoneBackground ---------- */
+  --color-halftonebackground-fill: var(--color-halftonebackground-fill);
 
   /* ---------- Highlights ---------- */
   --color-highlights-text: var(--color-highlights-text);
-  --color-highlights-slash: var(--color-highlights-slash);
+  --color-highlights-slash-text: var(--color-highlights-slash-text);
 
   /* ---------- MenuMain ---------- */
   --color-menumain-background: var(--color-menumain-background);
   --color-menumain-border: var(--color-menumain-border);
   --color-menumain-text: var(--color-menumain-text);
-  --color-menumain-text-hover: var(--color-menumain-text-hover);
-  --color-menumain-text-background-hover: var(
-    --color-menumain-text-background-hover
+
+  --color-menumain-item-text: var(--color-menumain-item-text);
+  --color-menumain-item-text-hover: var(--color-menumain-item-text-hover);
+  --color-menumain-item-background-hover: var(
+    --color-menumain-item-background-hover
   );
-  --color-menumain-text-active: var(--color-menumain-text-active);
-  --color-menumain-text-background-active: var(
-    --color-menumain-text-background-active
-  );
-  --color-menumain-config-button-backgroud: var(
-    --color-menumain-config-button-backgroud
-  );
-  --color-menumain-config-button-border: var(
-    --color-menumain-config-button-border
+  --color-menumain-item-text-active: var(--color-menumain-item-text-active);
+  --color-menumain-item-background-active: var(
+    --color-menumain-item-background-active
   );
 
-  /* ---------- Modal ---------- */
-  --color-modal-background: var(--color-modal-background);
-  --color-modal-border: var(--color-modal-border);
-  --color-modal-text-secondary: var(--color-modal-text-secondary);
-  --color-modal-background-hover: var(--color-modal-background-hover);
-  --color-modal-border-hover: var(--color-modal-border-hover);
-  --color-modal-text-hover: var(--color-modal-text-hover);
+  --color-menumain-configbutton-background: var(
+    --color-menumain-configbutton-background
+  );
+  --color-menumain-configbutton-border: var(
+    --color-menumain-configbutton-border
+  );
+
+  --color-menumain-dropdown-background: var(
+    --color-menumain-dropdown-background
+  );
+  --color-menumain-dropdown-border: var(--color-menumain-dropdown-border);
+
+  --color-menumain-dropdownitem-text: var(--color-menumain-dropdownitem-text);
+  --color-menumain-dropdownitem-text-hover: var(
+    --color-menumain-dropdownitem-text-hover
+  );
+  --color-menumain-dropdownitem-background-hover: var(
+    --color-menumain-dropdownitem-background-hover
+  );
+  --color-menumain-dropdownitem-border-hover: var(
+    --color-menumain-dropdownitem-border-hover
+  );
 
   /* ---------- Section ---------- */
-  --color-section-text-primary: var(--color-section-text-primary);
-  --color-section-text-secondary: var(--color-section-text-secondary);
+  --color-section-title-text: var(--color-section-title-text);
+  --color-section-label-text: var(--color-section-label-text);
+
+  /* ---------- SkeletonGeneric ---------- */
+  --color-skeletongeneric-background: var(--color-skeletongeneric-background);
+
+  /* ---------- TechnologiesGrid ---------- */
+  --color-technologiesgrid-categorytechs-background: var(
+    --color-technologiesgrid-categorytechs-background
+  );
+  --color-technologiesgrid-categorytechs-background-selected: var(
+    --color-technologiesgrid-categorytechs-background-selected
+  );
+  --color-technologiesgrid-categorytechs-border: var(
+    --color-technologiesgrid-categorytechs-border
+  );
+  --color-technologiesgrid-categorytechs-border-selected: var(
+    --color-technologiesgrid-categorytechs-border-selected
+  );
+  --color-technologiesgrid-categorytechstitle-text: var(
+    --color-technologiesgrid-categorytechstitle-text
+  );
+  --color-technologiesgrid-categorytechstitle-text-selected: var(
+    --color-technologiesgrid-categorytechstitle-text-selected
+  );
+  --color-technologiesgrid-categorytechsdescription-text: var(
+    --color-technologiesgrid-categorytechsdescription-text
+  );
+  --color-technologiesgrid-categorytechsdescription-text-selected: var(
+    --color-technologiesgrid-categorytechsdescription-text-selected
+  );
+  --color-technologiesgrid-icon: var(--color-technologiesgrid-icon);
+  --color-technologiesgrid-icon-selected: var(
+    --color-technologiesgrid-icon-selected
+  );
+  --color-technologiesgrid-iconbox-background: var(
+    --color-technologiesgrid-iconbox-background
+  );
+  --color-technologiesgrid-iconbox-background-selected: var(
+    --color-technologiesgrid-iconbox-background-selected
+  );
+
+  --color-technologiesgrid-techs-background: var(
+    --color-technologiesgrid-techs-background
+  );
+  --color-technologiesgrid-techs-border: var(
+    --color-technologiesgrid-techs-border
+  );
+  --color-technologiesgrid-techs-grid: var(--color-technologiesgrid-techs-grid);
+}
+
+::selection {
+  background-color: oklch(from var(--color-brand-secondary) l c h / 25%);
+  color: var(--color-content-text-primary);
 }
 
 body {

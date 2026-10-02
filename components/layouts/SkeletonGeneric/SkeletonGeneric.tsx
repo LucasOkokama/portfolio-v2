@@ -25,7 +25,7 @@ export function SkeletonGeneric({ className }: SkeletonProps) {
         'inline-block',
         'h-4',
         'w-12',
-        'bg-content-text-primary/30',
+        'bg-skeletongeneric-background',
         'animate-pulse',
         'rounded-sm',
         className,

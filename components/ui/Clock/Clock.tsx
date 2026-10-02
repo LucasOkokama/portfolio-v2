@@ -83,20 +83,14 @@ export function Clock({ city, timezone, showSeconds = false }: Props) {
       )}
     >
       <div className={cn('flex items-center justify-center', 'gap-2.5')}>
-        <uiIcons.pin
-          width={16}
-          height={16}
-          className={cn('text-clock-text-primary')}
-        />
+        <uiIcons.pin width={16} height={16} className={cn('text-clock-icon')} />
 
         <div>
-          <span className={cn('text-clock-text-primary', 'font-semibold')}>
+          <span className={cn('text-clock-city-text', 'font-semibold')}>
             {city}
           </span>{' '}
           {gmt ? (
-            <span
-              className={cn('text-clock-text-secondary', 'mt-0.5', 'text-xs')}
-            >
+            <span className={cn('text-clock-gmt-text', 'mt-0.5', 'text-xs')}>
               {gmt}
             </span>
           ) : (
@@ -111,7 +105,7 @@ export function Clock({ city, timezone, showSeconds = false }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            'text-clock-text-primary',
+            'text-clock-time-text',
             'font-semibold',
             'transition-colors',
             'hover:text-brand-primary',

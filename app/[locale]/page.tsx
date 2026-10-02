@@ -1,5 +1,6 @@
 import { Section } from '@/components/layouts/Section/Section';
 import { SectionAboutMe } from '@/components/sections/SectionAboutMe/SectionAboutMe';
+import { SectionTechnology } from '@/components/sections/SectionTechnology/SectionTechnology';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { hasLocale } from 'next-intl';
@@ -16,12 +17,10 @@ export default async function HomePage({ params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
 
   return (
-    <div className={cn('flex w-full flex-col gap-12')}>
+    <div className={cn('flex w-full flex-col gap-16')}>
       <SectionAboutMe locale={locale} />
 
-      <Section title="Technologies" command="$ stack inspect --runtime">
-        <div>123</div>
-      </Section>
+      <SectionTechnology locale={locale} />
 
       <Section title="Projects" command=">_ find ~/projects -maxdepth 1">
         <div>123</div>
