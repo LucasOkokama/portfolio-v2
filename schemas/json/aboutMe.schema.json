@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the JSON Schema used to validate this file."
+    },
+    "name": { "type": "string" },
+    "role": {
+      "type": "object",
+      "properties": { "pt": { "type": "string" }, "en": { "type": "string" } },
+      "required": ["pt", "en"],
+      "additionalProperties": false
+    },
+    "clock": {
+      "type": "object",
+      "properties": {
+        "city": { "type": "string" },
+        "timezone": { "type": "string" }
+      },
+      "required": ["city", "timezone"],
+      "additionalProperties": false
+    },
+    "contacts": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "enum": [
+                  "logo",
+                  "figma",
+                  "github",
+                  "gmail",
+                  "grain",
+                  "linkedin",
+                  "vercel",
+                  "css",
+                  "docker",
+                  "eclipse",
+                  "express",
+                  "git",
+                  "html5",
+                  "intellijIdea",
+                  "java",
+                  "javascript",
+                  "mysql",
+                  "nextJS",
+                  "nodeJS",
+                  "pandas",
+                  "plotly",
+                  "postgresql",
+                  "postman",
+                  "python",
+                  "react",
+                  "springBoot",
+                  "tailwindCSS",
+                  "typescript",
+                  "visualStudioCode",
+                  "arrowUpRight",
+                  "check",
+                  "desktopComputer",
+                  "gear",
+                  "layout",
+                  "moon",
+                  "pin",
+                  "server",
+                  "spanner",
+                  "sun"
+                ]
+              },
+              "website": {
+                "type": "object",
+                "properties": {
+                  "pt": { "type": "string" },
+                  "en": { "type": "string" }
+                },
+                "required": ["pt", "en"],
+                "additionalProperties": false
+              },
+              "href": { "type": "string" },
+              "label": {
+                "type": "object",
+                "properties": {
+                  "pt": { "type": "string" },
+                  "en": { "type": "string" }
+                },
+                "required": ["pt", "en"],
+                "additionalProperties": false
+              }
+            },
+            "required": ["icon", "website", "href", "label"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["links"],
+      "additionalProperties": false
+    },
+    "highlights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pt": { "type": "string" },
+          "en": { "type": "string" }
+        },
+        "required": ["pt", "en"],
+        "additionalProperties": false
+      }
+    },
+    "availability": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "boolean" },
+        "available": {
+          "type": "object",
+          "properties": {
+            "pt": { "type": "string" },
+            "en": { "type": "string" }
+          },
+          "required": ["pt", "en"],
+          "additionalProperties": false
+        },
+        "unavailable": {
+          "type": "object",
+          "properties": {
+            "pt": { "type": "string" },
+            "en": { "type": "string" }
+          },
+          "required": ["pt", "en"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["status", "available", "unavailable"],
+      "additionalProperties": false
+    },
+    "biography": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "object",
+          "properties": {
+            "pt": { "type": "string" },
+            "en": { "type": "string" }
+          },
+          "required": ["pt", "en"],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "pt": { "type": "string" },
+            "en": { "type": "string" }
+          },
+          "required": ["pt", "en"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["title", "description"],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "role",
+    "clock",
+    "contacts",
+    "highlights",
+    "availability",
+    "biography"
+  ],
+  "additionalProperties": false
+}

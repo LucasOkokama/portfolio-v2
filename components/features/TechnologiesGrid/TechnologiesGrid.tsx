@@ -5,7 +5,7 @@ import type { ILocale } from '@/i18n/routing';
 import { icons } from '@/icon';
 import { cn } from '@/lib/utils/cn';
 import { localize } from '@/lib/utils/localize';
-import type { ITechnologyGroup } from '@/types/technologies.type';
+import type { ITechnologyGroup } from '@/schemas/zod/technologies';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -37,6 +37,7 @@ export function TechnologiesGrid({ locale, technologies }: Props) {
                 'border-technologiesgrid-categorytechs-border rounded-xl border',
                 'p-4',
                 'transition-colors duration-200',
+                'cursor-pointer',
                 isSelected &&
                   'bg-technologiesgrid-categorytechs-background-selected border-technologiesgrid-categorytechs-border-selected',
               )}

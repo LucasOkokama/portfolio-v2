@@ -1,4 +1,5 @@
 import type { SvgIconComponent } from '@/types/icons.type';
+import { iconNames } from '../icons-names';
 import ArrowUpRightIcon from './akar-icons--arrow-up-right.svg';
 import PinIcon from './at-icons--pin.svg';
 import CheckIcon from './bi--check.svg';
@@ -11,14 +12,14 @@ import GearIcon from './fa6-solid--gear.svg';
 import DesktopComputerIcon from './heroicons-solid--desktop-computer.svg';
 
 export const uiIcons = {
-  arrowUpRight: ArrowUpRightIcon,
-  check: CheckIcon,
-  desktopComputer: DesktopComputerIcon,
-  gear: GearIcon,
-  layout: LayoutIcon,
-  moon: MoonIcon,
-  pin: PinIcon,
-  server: ServerIcon,
-  spanner: SpannerIcon,
-  sun: SunIcon,
+  [iconNames.ui.arrowUpRight]: ArrowUpRightIcon,
+  [iconNames.ui.check]: CheckIcon,
+  [iconNames.ui.desktopComputer]: DesktopComputerIcon,
+  [iconNames.ui.gear]: GearIcon,
+  [iconNames.ui.layout]: LayoutIcon,
+  [iconNames.ui.moon]: MoonIcon,
+  [iconNames.ui.pin]: PinIcon,
+  [iconNames.ui.server]: ServerIcon,
+  [iconNames.ui.spanner]: SpannerIcon,
+  [iconNames.ui.sun]: SunIcon,
 } satisfies Record<string, SvgIconComponent>;

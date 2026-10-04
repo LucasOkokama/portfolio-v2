@@ -4,7 +4,7 @@ import { Clock } from '@/components/ui/Clock/Clock';
 import { ExternalLinksGroup } from '@/components/ui/ExternalLinkGroup/ExternalLinkGroup';
 import { type ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
-import { profile } from '@/lib/utils/loaders';
+import { aboutMe } from '@/lib/utils/loaders';
 import { localize } from '@/lib/utils/localize';
 import { Fragment } from 'react/jsx-runtime';
 
@@ -13,13 +13,13 @@ type Props = {
 };
 
 export function SectionAboutMe({ locale }: Props) {
-  const isAvailable = profile.availability.status === 'available';
+  const isAvailable = aboutMe.availability.status === true;
   const availabilityVariant = isAvailable ? 'success' : 'warning';
 
   const availabilityLabel = localize(
     isAvailable
-      ? profile.availability.available
-      : profile.availability.unavailable,
+      ? aboutMe.availability.available
+      : aboutMe.availability.unavailable,
     locale,
   );
 
@@ -29,7 +29,7 @@ export function SectionAboutMe({ locale }: Props) {
         <Container className={cn('p-7')}>
           <div>
             <h1 className="font-playfair text-6xl font-semibold">
-              {profile.name}
+              {aboutMe.name}
             </h1>
 
             <span
@@ -37,7 +37,7 @@ export function SectionAboutMe({ locale }: Props) {
                 'text-content-text-quinary mt-3 block text-sm font-semibold tracking-widest',
               )}
             >
-              {localize(profile.role, locale).toUpperCase()}
+              {localize(aboutMe.role, locale).toUpperCase()}
             </span>
           </div>
         </Container>
@@ -45,13 +45,13 @@ export function SectionAboutMe({ locale }: Props) {
         <Container className={cn('p-4')}>
           <div className="flex flex-col gap-2">
             <Clock
-              city={profile.clock.city}
-              timezone={profile.clock.timezone}
+              city={aboutMe.clock.city}
+              timezone={aboutMe.clock.timezone}
               showSeconds
             />
 
             <ExternalLinksGroup
-              items={profile.contacts.links}
+              items={aboutMe.contacts.links}
               locale={locale}
             />
           </div>
@@ -62,7 +62,7 @@ export function SectionAboutMe({ locale }: Props) {
         <Container className="px-7 py-4">
           <div className={cn('flex justify-between')}>
             <div className={cn('flex items-center gap-3 font-medium')}>
-              {profile.highlights.map((item, index) => (
+              {aboutMe.highlights.map((item, index) => (
                 <Fragment key={index}>
                   {index > 0 && (
                     <span
@@ -96,13 +96,13 @@ export function SectionAboutMe({ locale }: Props) {
                 'text-content-text-primary font-outfit text-3xl font-bold',
               )}
             >
-              {localize(profile.biography.title, locale)}
+              {localize(aboutMe.biography.title, locale)}
             </h2>
 
             <span
               className={cn('text-content-text-secondary text-sm leading-6')}
             >
-              {localize(profile.biography.description, locale)}
+              {localize(aboutMe.biography.description, locale)}
             </span>
           </div>
         </Container>

@@ -2,7 +2,7 @@ import { HalftoneBackground } from '@/components/layouts/HalftoneBackground/Half
 import { MenuMain } from '@/components/layouts/MenuMain/MenuMain';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
-import { profile } from '@/lib/utils/loaders';
+import { aboutMe } from '@/lib/utils/loaders';
 import { getAppLocale, localize } from '@/lib/utils/localize';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
@@ -36,8 +36,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      default: `Portfolio | ${profile.name} - ${localize(profile.role, locale)}`,
-      template: `%s | ${profile.name}`,
+      default: `Portfolio | ${aboutMe.name} - ${localize(aboutMe.role, locale)}`,
+      template: `%s | ${aboutMe.name}`,
     },
     icons: {
       icon: [

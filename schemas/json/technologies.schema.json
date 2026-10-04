@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the JSON Schema used to validate this file."
+    },
+    "sectionName": {
+      "type": "object",
+      "properties": { "pt": { "type": "string" }, "en": { "type": "string" } },
+      "required": ["pt", "en"],
+      "additionalProperties": false
+    },
+    "technologyGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string",
+            "enum": [
+              "logo",
+              "figma",
+              "github",
+              "gmail",
+              "grain",
+              "linkedin",
+              "vercel",
+              "css",
+              "docker",
+              "eclipse",
+              "express",
+              "git",
+              "html5",
+              "intellijIdea",
+              "java",
+              "javascript",
+              "mysql",
+              "nextJS",
+              "nodeJS",
+              "pandas",
+              "plotly",
+              "postgresql",
+              "postman",
+              "python",
+              "react",
+              "springBoot",
+              "tailwindCSS",
+              "typescript",
+              "visualStudioCode",
+              "arrowUpRight",
+              "check",
+              "desktopComputer",
+              "gear",
+              "layout",
+              "moon",
+              "pin",
+              "server",
+              "spanner",
+              "sun"
+            ]
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "techs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": { "type": "string" },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "logo",
+                    "figma",
+                    "github",
+                    "gmail",
+                    "grain",
+                    "linkedin",
+                    "vercel",
+                    "css",
+                    "docker",
+                    "eclipse",
+                    "express",
+                    "git",
+                    "html5",
+                    "intellijIdea",
+                    "java",
+                    "javascript",
+                    "mysql",
+                    "nextJS",
+                    "nodeJS",
+                    "pandas",
+                    "plotly",
+                    "postgresql",
+                    "postman",
+                    "python",
+                    "react",
+                    "springBoot",
+                    "tailwindCSS",
+                    "typescript",
+                    "visualStudioCode",
+                    "arrowUpRight",
+                    "check",
+                    "desktopComputer",
+                    "gear",
+                    "layout",
+                    "moon",
+                    "pin",
+                    "server",
+                    "spanner",
+                    "sun"
+                  ]
+                }
+              },
+              "required": ["label", "icon"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["icon", "title", "description", "techs"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["sectionName", "technologyGroups"],
+  "additionalProperties": false
+}

@@ -1,5 +1,5 @@
 import { brandIcons } from './brand';
-import { createIcons } from './create-icons';
+import { createIcons } from './icons-create';
 import { logosIcons } from './logos';
 import { techsIcons } from './techs';
 import { uiIcons } from './ui';

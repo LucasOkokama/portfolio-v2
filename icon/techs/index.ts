@@ -1,4 +1,5 @@
 import type { SvgIconComponent } from '@/types/icons.type';
+import { iconNames } from '../icons-names';
 import CSSIcon from './css.svg';
 import DockerIcon from './docker.svg';
 import EclipseIcon from './eclipse.svg';
@@ -23,26 +24,26 @@ import TypescriptIcon from './typescript.svg';
 import VisualStudioCodeIcon from './visual-studio-code.svg';
 
 export const techsIcons = {
-  css: CSSIcon,
-  docker: DockerIcon,
-  eclipse: EclipseIcon,
-  express: ExpressIcon,
-  git: GitIcon,
-  html5: Html5Icon,
-  intellijIdea: IntelliJIdeaIcon,
-  java: JavaIcon,
-  javascript: JavascriptIcon,
-  mysql: MysqlIcon,
-  nextJS: NextJSIcon,
-  nodeJS: NodeJSIcon,
-  pandas: PandasIcon,
-  plotly: PlotlyIcon,
-  postgresql: PostgresqlIcon,
-  postman: PostmanIcon,
-  python: PythonIcon,
-  react: ReactIcon,
-  springBoot: SpringBootIcon,
-  tailwindCSS: TailwindCSSIcon,
-  typescript: TypescriptIcon,
-  visualStudioCode: VisualStudioCodeIcon,
+  [iconNames.techs.css]: CSSIcon,
+  [iconNames.techs.docker]: DockerIcon,
+  [iconNames.techs.eclipse]: EclipseIcon,
+  [iconNames.techs.express]: ExpressIcon,
+  [iconNames.techs.git]: GitIcon,
+  [iconNames.techs.html5]: Html5Icon,
+  [iconNames.techs.intellijIdea]: IntelliJIdeaIcon,
+  [iconNames.techs.java]: JavaIcon,
+  [iconNames.techs.javascript]: JavascriptIcon,
+  [iconNames.techs.mysql]: MysqlIcon,
+  [iconNames.techs.nextJS]: NextJSIcon,
+  [iconNames.techs.nodeJS]: NodeJSIcon,
+  [iconNames.techs.pandas]: PandasIcon,
+  [iconNames.techs.plotly]: PlotlyIcon,
+  [iconNames.techs.postgresql]: PostgresqlIcon,
+  [iconNames.techs.postman]: PostmanIcon,
+  [iconNames.techs.python]: PythonIcon,
+  [iconNames.techs.react]: ReactIcon,
+  [iconNames.techs.springBoot]: SpringBootIcon,
+  [iconNames.techs.tailwindCSS]: TailwindCSSIcon,
+  [iconNames.techs.typescript]: TypescriptIcon,
+  [iconNames.techs.visualStudioCode]: VisualStudioCodeIcon,
 } satisfies Record<string, SvgIconComponent>;

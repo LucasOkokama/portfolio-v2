@@ -3,7 +3,7 @@ import { getLocale } from 'next-intl/server';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { defaultLocale, routing } from '@/i18n/routing';
-import type { ILocalizedText } from '@/types/profile.type';
+import type { ILocalizedText } from '@/schemas/zod/common';
 import { getAppLocale, localize, localizeAll } from './localize';
 
 vi.mock('next-intl/server', () => ({

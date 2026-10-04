@@ -1,4 +1,5 @@
 {
+  "$schema": "../schemas/json/technologies.schema.json",
   "sectionName": {
     "pt": "Tecnologias",
     "en": "Technologies"

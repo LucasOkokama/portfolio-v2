@@ -12,6 +12,10 @@ jobs:
     strategy:
       matrix:
         include:
+          - name: Schemas Diff
+            command: schemas:diff
+          - name: Schemas Parse
+            command: schemas:parse
           - name: Lint
             command: lint
           - name: Typecheck

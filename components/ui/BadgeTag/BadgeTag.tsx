@@ -1,6 +1,6 @@
 import { icons } from '@/icon';
 import { cn } from '@/lib/utils/cn';
-import type { IIconName } from '@/types/icons.type';
+import type { IIconName } from '@/schemas/zod/common';
 
 interface Props {
   label: string;

@@ -1,5 +1,5 @@
 import { defaultLocale, routing, type ILocale } from '@/i18n/routing';
-import type { ILocalizedText } from '@/types/profile.type';
+import type { ILocalizedText } from '@/schemas/zod/common';
 import { hasLocale } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 

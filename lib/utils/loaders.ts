@@ -1,8 +1,7 @@
-import profileData from '@/contents/profile.json';
-import tecnologiesData from '@/contents/technologies.json';
-import type { ISectionProfile } from '@/types/profile.type';
-import type { ISectionTechnology } from '@/types/technologies.type';
+import aboutMeData from '@/contents/aboutMe.json';
+import technologiesData from '@/contents/technologies.json';
+import { sectionAboutMeSchema } from '@/schemas/zod/aboutme';
+import { sectionTechnologySchema } from '@/schemas/zod/technologies';
 
-// DTL --> REMOVE "as" IN THE FUTURE
-export const profile = profileData as ISectionProfile;
-export const technologies = tecnologiesData as ISectionTechnology;
+export const aboutMe = sectionAboutMeSchema.parse(aboutMeData);
+export const technologies = sectionTechnologySchema.parse(technologiesData);
