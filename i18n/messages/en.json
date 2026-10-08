@@ -1,7 +1,4 @@
 {
-  "header": {
-    "title": "School"
-  },
   "mainmenu": {
     "projects": "Projects",
     "journey": "Journey",
@@ -17,5 +14,10 @@
   "locale": {
     "en": "English",
     "pt": "Portuguese"
+  },
+  "projectCard": {
+    "repo": "Repo",
+    "live": "Live",
+    "details": "Details"
   }
 }

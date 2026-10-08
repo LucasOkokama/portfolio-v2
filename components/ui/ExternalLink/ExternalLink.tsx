@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils/cn';
 import type { IIconName } from '@/schemas/zod/common';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Text } from '../Text/Text';
 
 interface Props {
   href: string;
@@ -55,15 +56,16 @@ export function ExternalLink({
         ease: 'easeInOut',
       }}
       className={cn(
-        'min-w-0 flex-1 basis-0',
-        'flex flex-col gap-2.5',
-        'bg-externallink-background',
-        'border-externallink-border rounded-2xl border',
+        'min-w-0',
+        'flex flex-1 basis-0 flex-col gap-2.5',
+        'rounded-2xl border',
         'p-4',
         'overflow-hidden',
+        'bg-neutral-100 dark:bg-neutral-800',
+        'border-neutral-200 dark:border-neutral-700',
       )}
     >
-      <div className="text-externallink-website-text flex items-center gap-2.5">
+      <div className="flex items-center gap-2.5">
         <motion.div
           initial={false}
           animate={{
@@ -75,12 +77,11 @@ export function ExternalLink({
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="shrink-0"
         >
           <Icon width={20} height={20} />
         </motion.div>
 
-        <span className="text-sm">{website}</span>
+        <Text text={website} />
       </div>
 
       {username && (
@@ -94,19 +95,13 @@ export function ExternalLink({
             duration: 0.3,
             ease: 'easeOut',
           }}
+          className="flex items-center gap-1"
         >
-          <span
-            className={cn(
-              'flex items-center',
-              'gap-1',
-              'text-externallink-username-text',
-              'text-xs font-medium',
-              'whitespace-nowrap',
-            )}
-          >
-            {username}
-            <uiIcons.arrowUpRight width={10} height={8} />
-          </span>
+          <Text
+            text={username}
+            className={cn('text-xs', 'whitespace-nowrap')}
+          />
+          <uiIcons.arrowUpRight width={10} height={8} />
         </motion.div>
       )}
     </motion.a>

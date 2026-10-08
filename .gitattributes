@@ -1,24 +1,5 @@
-# Normalize line endings in the repository
-* text=auto
-
-# Source files
-*.js   text eol=lf
-*.jsx  text eol=lf
-*.ts   text eol=lf
-*.tsx  text eol=lf
-*.css  text eol=lf
-*.scss text eol=lf
-*.html text eol=lf
-*.json text eol=lf
-*.md   text eol=lf
-*.yml  text eol=lf
-*.yaml text eol=lf
-
-# Config files
-*.mjs  text eol=lf
-*.cjs  text eol=lf
-*.mts  text eol=lf
-*.cts  text eol=lf
+# Normalize all text files to LF in the repository
+* text=auto eol=lf
 
 # Windows-specific scripts
 *.bat text eol=crlf
@@ -32,8 +13,17 @@
 *.gif  binary
 *.webp binary
 *.ico  binary
-*.pdf  binary
-*.woff  binary
-*.woff2 binary
-*.ttf  binary
 *.eot  binary
+*.ttf  binary
+*.woff binary
+*.woff2 binary
+*.mp3  binary
+*.mp4  binary
+*.mov  binary
+*.pdf  binary
+*.zip  binary
+*.gz   binary
+*.7z   binary
+*.tar  binary
+*.dll  binary
+*.exe  binary

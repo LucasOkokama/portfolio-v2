@@ -1,0 +1,21 @@
+.banner {
+  transition-property: transform;
+  transition-duration: 6000ms;
+  transition-timing-function: ease-in-out;
+}
+
+.scrollable:hover .banner {
+  transform: translateY(calc(-100% + 248px));
+  transition-delay: 500ms;
+}
+
+.scrollable:not(:hover) .banner {
+  transition-duration: 2000ms;
+  transition-timing-function: ease-in-out;
+}
+
+.bannerStatic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

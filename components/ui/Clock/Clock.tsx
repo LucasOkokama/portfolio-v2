@@ -4,6 +4,7 @@ import { SkeletonGeneric } from '@/components/layouts/SkeletonGeneric/SkeletonGe
 import { uiIcons } from '@/icon/ui';
 import { cn } from '@/lib/utils/cn';
 import { useSyncExternalStore } from 'react';
+import { Text } from '../Text/Text';
 
 interface Props {
   city: string;
@@ -73,26 +74,25 @@ export function Clock({ city, timezone, showSeconds = false }: Props) {
   return (
     <div
       className={cn(
-        'bg-clock-background',
-        'border-clock-border',
-        'flex justify-between',
-        'gap-2.5',
+        'flex justify-between gap-2.5',
         'rounded-2xl border',
         'p-4',
         'text-sm',
+        'bg-neutral-100 dark:bg-neutral-800',
+        'border-neutral-200 dark:border-neutral-700',
       )}
     >
-      <div className={cn('flex items-center justify-center', 'gap-2.5')}>
-        <uiIcons.pin width={16} height={16} className={cn('text-clock-icon')} />
+      <div className={cn('flex items-center justify-center gap-2.5')}>
+        <uiIcons.pin width={16} height={16} />
 
-        <div>
-          <span className={cn('text-clock-city-text', 'font-semibold')}>
-            {city}
-          </span>{' '}
+        <div className={cn('flex items-center justify-center gap-1')}>
+          <Text text={city} className={cn('font-semibold')} />
           {gmt ? (
-            <span className={cn('text-clock-gmt-text', 'mt-0.5', 'text-xs')}>
-              {gmt}
-            </span>
+            <Text
+              text={gmt}
+              muted
+              className={cn('mt-0.5', 'text-xs', 'font-medium')}
+            />
           ) : (
             <SkeletonGeneric className="h-3.5 w-10" />
           )}
@@ -105,10 +105,9 @@ export function Clock({ city, timezone, showSeconds = false }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            'text-clock-time-text',
             'font-semibold',
-            'transition-colors',
-            'hover:text-brand-primary',
+            'transition-colors duration-200',
+            'hover:text-orange-500 dark:hover:text-amber-400',
           )}
         >
           {time}

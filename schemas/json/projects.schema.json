@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the JSON Schema used to validate this file."
+    },
+    "sectionName": {
+      "type": "object",
+      "properties": { "pt": { "type": "string" }, "en": { "type": "string" } },
+      "required": ["pt", "en"],
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "logo": { "type": "string" },
+          "summary": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "keyFeatures": {
+            "minItems": 1,
+            "maxItems": 5,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "pt": { "type": "string" },
+                "en": { "type": "string" }
+              },
+              "required": ["pt", "en"],
+              "additionalProperties": false
+            }
+          },
+          "technologies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": { "type": "string", "minLength": 1 },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "logo",
+                    "figma",
+                    "github",
+                    "gmail",
+                    "grain",
+                    "linkedin",
+                    "pexels",
+                    "vercel",
+                    "css",
+                    "docker",
+                    "eclipse",
+                    "express",
+                    "git",
+                    "html5",
+                    "intellijIdea",
+                    "java",
+                    "javascript",
+                    "mysql",
+                    "nextJS",
+                    "nodeJS",
+                    "pandas",
+                    "plotly",
+                    "postgresql",
+                    "postman",
+                    "python",
+                    "react",
+                    "springBoot",
+                    "styledComponents",
+                    "tailwindCSS",
+                    "typescript",
+                    "visualStudioCode",
+                    "vite",
+                    "arrowRight",
+                    "arrowUpRight",
+                    "check",
+                    "desktopComputer",
+                    "externalLink",
+                    "gear",
+                    "infoSquareFilled",
+                    "layout",
+                    "moon",
+                    "pin",
+                    "server",
+                    "spanner",
+                    "sun"
+                  ]
+                }
+              },
+              "required": ["label", "icon"],
+              "additionalProperties": false
+            }
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "repository": {
+                "anyOf": [
+                  { "type": "string", "format": "uri" },
+                  { "type": "null" }
+                ]
+              },
+              "design": {
+                "anyOf": [
+                  { "type": "string", "format": "uri" },
+                  { "type": "null" }
+                ]
+              },
+              "live": {
+                "anyOf": [
+                  { "type": "string", "format": "uri" },
+                  { "type": "null" }
+                ]
+              }
+            },
+            "required": ["repository", "design", "live"],
+            "additionalProperties": false
+          },
+          "banner": {
+            "type": "object",
+            "properties": {
+              "scrollable": { "type": "boolean" },
+              "default": { "type": "string", "minLength": 1 },
+              "light": { "type": ["string", "null"] },
+              "dark": { "type": ["string", "null"] }
+            },
+            "required": ["scrollable", "default", "light", "dark"],
+            "additionalProperties": false
+          },
+          "screenshots": { "type": "array", "items": { "type": "string" } },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": ["active", "completed", "onHold", "archived"]
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "fullStack",
+                  "frontend",
+                  "backend",
+                  "design",
+                  "configuration"
+                ]
+              },
+              "category": {
+                "type": "string",
+                "enum": ["personal", "client", "openSource", "academic"]
+              }
+            },
+            "required": ["status", "scope", "category"],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "logo",
+          "summary",
+          "description",
+          "keyFeatures",
+          "technologies",
+          "links",
+          "banner",
+          "screenshots",
+          "metadata"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["sectionName", "items"],
+  "additionalProperties": false
+}

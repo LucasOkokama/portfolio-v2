@@ -1,6 +1,8 @@
 'use client';
 
-import { BadgeTag } from '@/components/ui/BadgeTag/BadgeTag';
+import { Container } from '@/components/layouts/Container/Container';
+import { Text } from '@/components/ui/Text/Text';
+import { Title } from '@/components/ui/Title/Title';
 import type { ILocale } from '@/i18n/routing';
 import { icons } from '@/icon';
 import { cn } from '@/lib/utils/cn';
@@ -20,129 +22,149 @@ export function TechnologiesGrid({ locale, technologies }: Props) {
   const selectedGroup = technologies[selectedIndex];
 
   return (
-    <div className={cn('grid grid-cols-2 gap-6')}>
-      <div className={cn('flex flex-col gap-4')}>
+    <div className={cn('h-104', 'grid grid-cols-2 gap-6')}>
+      <div className={cn('flex flex-col justify-between')}>
         {technologies.map((group, index) => {
           const isSelected = index === selectedIndex;
           const Icon = icons[group.icon];
 
           return (
-            <button
+            <Container
               key={group.icon}
-              type="button"
-              onClick={() => setSelectedIndex(index)}
-              className={cn(
-                'flex items-start gap-4',
-                'bg-technologiesgrid-categorytechs-background',
-                'border-technologiesgrid-categorytechs-border rounded-xl border',
-                'p-4',
-                'transition-colors duration-200',
-                'cursor-pointer',
-                isSelected &&
-                  'bg-technologiesgrid-categorytechs-background-selected border-technologiesgrid-categorytechs-border-selected',
-              )}
+              className={cn('p-0')}
+              effect={{ type: 'select', selected: isSelected }}
             >
-              <div
+              <button
+                type="button"
+                onClick={() => setSelectedIndex(index)}
                 className={cn(
-                  'shrink-0',
-                  'flex items-center justify-center',
-                  'bg-technologiesgrid-iconbox-background',
-                  'border-technologiesgrid-categorytechs-border rounded-xl border',
-                  'p-2.5',
-                  'transition-colors duration-200',
-                  isSelected &&
-                    'bg-technologiesgrid-iconbox-background-selected',
+                  'focus-visible-inset',
+                  'w-full',
+                  'flex items-start gap-4',
+                  'rounded-2xl',
+                  'p-4',
+                  'cursor-pointer',
                 )}
               >
-                <Icon
+                <div
                   className={cn(
-                    'text-technologiesgrid-icon size-5',
+                    'flex shrink-0 items-center justify-center',
+                    'rounded-xl border',
+                    'p-2.5',
                     'transition-colors duration-200',
-                    isSelected && 'text-technologiesgrid-icon-selected',
-                  )}
-                />
-              </div>
-
-              <div className={cn('flex flex-col gap-1', 'text-left')}>
-                <span
-                  className={cn(
-                    'flex items-center justify-between',
-                    'transition-colors duration-200',
-                  )}
-                >
-                  <span
-                    className={cn(
-                      'font-medium',
-                      'text-technologiesgrid-categorytechstitle-text',
-                      isSelected &&
-                        'text-technologiesgrid-categorytechstitle-text-selected',
-                    )}
-                  >
-                    {localize(group.title, locale)}
-                  </span>
-                  <span
-                    className={cn(
-                      'text-technologiesgrid-categorytechsdescription-text flex gap-0.5 text-xs font-normal',
-                    )}
-                  >
-                    <span>[</span>
-                    <span>{group.techs.length}</span>
-                    <span>]</span>
-                  </span>
-                </span>
-
-                <p
-                  className={cn(
-                    'text-technologiesgrid-categorytechsdescription-text text-xs',
-                    'transition-colors duration-200',
+                    'bg-neutral-100 dark:bg-neutral-800',
+                    'border-neutral-200 dark:border-neutral-700',
+                    isSelected && 'bg-orange-500/10 dark:bg-amber-400/15',
                     isSelected &&
-                      'text-technologiesgrid-categorytechsdescription-text-selected',
+                      'border-orange-500/15 dark:border-amber-400/30',
                   )}
                 >
-                  {localize(group.description, locale)}
-                </p>
-              </div>
-            </button>
+                  <Icon
+                    className={cn(
+                      'size-5',
+                      'transition-colors duration-200',
+                      'text-neutral-400 dark:text-neutral-500',
+                      isSelected && 'text-orange-500 dark:text-amber-400',
+                    )}
+                  />
+                </div>
+
+                <div className={cn('flex flex-col gap-1', 'text-left')}>
+                  <span
+                    className={cn(
+                      'flex items-center justify-between',
+                      'transition-colors duration-200',
+                    )}
+                  >
+                    <Title
+                      text={localize(group.title, locale)}
+                      className={cn(
+                        'text-md font-medium',
+                        !isSelected && 'text-neutral-400 dark:text-neutral-600',
+                      )}
+                    />
+
+                    <Text
+                      text={`[ ${group.techs.length} ]`}
+                      muted={!isSelected}
+                      className={cn('text-xs')}
+                    />
+                  </span>
+
+                  <Text
+                    text={localize(group.description, locale)}
+                    muted={!isSelected}
+                    className={cn('text-xs')}
+                  />
+                </div>
+              </button>
+            </Container>
           );
         })}
       </div>
 
-      <div
-        className={cn(
-          'min-w-0',
-          'flex flex-wrap content-start gap-3',
-          'border-technologiesgrid-techs-border rounded-xl border',
-          'p-8',
-          'bg-technologiesgrid-techs-background',
-          '[background-image:linear-gradient(to_right,var(--color-technologiesgrid-techs-grid)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-technologiesgrid-techs-grid)_1px,transparent_1px)]',
-          '[background-size:30px_30px]',
-        )}
-      >
+      <Container className={cn('overflow-y-auto')}>
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedIndex}
-            className="flex flex-wrap content-start gap-3"
+            className={cn('flex flex-wrap gap-3')}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {selectedGroup?.techs.map((tech, index) => (
-              <motion.div
-                key={tech.label}
-                initial={{ opacity: 0, y: 3, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{
-                  duration: 0.15,
-                  delay: index * 0.02,
-                  ease: 'easeOut',
-                }}
-              >
-                <BadgeTag label={tech.label} icon={tech.icon} />
-              </motion.div>
-            ))}
+            {selectedGroup?.techs.map((tech, index) => {
+              const Icon = icons[tech.icon];
+
+              return (
+                <motion.div
+                  key={tech.label}
+                  className="group min-w-34 flex-1"
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.05,
+                    ease: 'easeOut',
+                  }}
+                >
+                  <div
+                    className={cn(
+                      'h-full w-full',
+                      'flex flex-col items-center justify-center gap-2',
+                      'rounded-2xl border',
+                      'px-7 py-5',
+                      'transition-all duration-200',
+                      'bg-neutral-100 dark:bg-neutral-800',
+                      'border-neutral-200 dark:border-neutral-700',
+                      'hover:bg-neutral-200/70 dark:hover:bg-neutral-700/70',
+                      'hover:border-orange-500/75 dark:hover:border-amber-400/75',
+                      'hover:-translate-y-1',
+                    )}
+                  >
+                    <Icon
+                      className={cn(
+                        'size-6',
+                        'transition-transform duration-350',
+                        'group-hover:scale-115',
+                      )}
+                    />
+
+                    <Text
+                      text={tech.label.toUpperCase()}
+                      muted
+                      className={cn(
+                        'text-xs',
+                        'font-roboto-mono',
+                        'group-hover:text-neutral-700 dark:group-hover:text-neutral-300',
+                      )}
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </AnimatePresence>
-      </div>
+      </Container>
     </div>
   );
 }

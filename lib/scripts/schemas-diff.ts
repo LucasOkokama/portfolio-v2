@@ -46,17 +46,20 @@ function printDiff(fileName: string, current: string, generated: string) {
   }
 }
 
-for (const { schema, fileName } of schemas) {
-  const generated = await generateSchema(schema);
+for (const { zodSchema, jsonSchemaFilename } of schemas) {
+  const generated = await generateSchema(zodSchema);
 
-  const current = await readFile(path.join(schemasDirectory, fileName), 'utf8');
+  const current = await readFile(
+    path.join(schemasDirectory, jsonSchemaFilename),
+    'utf8',
+  );
 
   if (generated !== current) {
     hasChanges = true;
 
-    console.error(`\nSchema is out of date: ${fileName}`);
+    console.error(`\nSchema is out of date: ${jsonSchemaFilename}`);
 
-    printDiff(fileName, current, generated);
+    printDiff(jsonSchemaFilename, current, generated);
 
     console.error('─'.repeat(80));
   }

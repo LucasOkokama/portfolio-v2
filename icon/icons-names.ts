@@ -57,7 +57,7 @@ const defineIconGroups = <
 
 export const iconNames = defineIconGroups({
   brand: ['logo'],
-  logos: ['figma', 'github', 'gmail', 'grain', 'linkedin', 'vercel'],
+  logos: ['figma', 'github', 'gmail', 'grain', 'linkedin', 'pexels', 'vercel'],
   techs: [
     'css',
     'docker',
@@ -78,15 +78,20 @@ export const iconNames = defineIconGroups({
     'python',
     'react',
     'springBoot',
+    'styledComponents',
     'tailwindCSS',
     'typescript',
     'visualStudioCode',
+    'vite',
   ],
   ui: [
+    'arrowRight',
     'arrowUpRight',
     'check',
     'desktopComputer',
+    'externalLink',
     'gear',
+    'infoSquareFilled',
     'layout',
     'moon',
     'pin',

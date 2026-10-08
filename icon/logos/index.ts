@@ -5,6 +5,7 @@ import GitHubIcon from './github.svg';
 import GmailIcon from './gmail.svg';
 import GrainIcon from './grain.svg';
 import LinkedInIcon from './linkedin.svg';
+import PexelsIcon from './pexels.svg';
 import VercelIcon from './vercel.svg';
 
 export const logosIcons = {
@@ -13,5 +14,6 @@ export const logosIcons = {
   [iconNames.logos.gmail]: GmailIcon,
   [iconNames.logos.grain]: GrainIcon,
   [iconNames.logos.linkedin]: LinkedInIcon,
+  [iconNames.logos.pexels]: PexelsIcon,
   [iconNames.logos.vercel]: VercelIcon,
 } satisfies Record<string, SvgIconComponent>;

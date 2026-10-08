@@ -1,21 +1,5 @@
-import aboutMeData from '@/contents/aboutMe.json';
-import technologiesData from '@/contents/technologies.json';
-import { sectionAboutMeSchema } from '@/schemas/zod/aboutme';
-import { sectionTechnologySchema } from '@/schemas/zod/technologies';
 import { ZodError } from 'zod';
-
-const schemas = [
-  {
-    name: 'aboutMe.json',
-    schema: sectionAboutMeSchema,
-    data: aboutMeData,
-  },
-  {
-    name: 'technologies.json',
-    schema: sectionTechnologySchema,
-    data: technologiesData,
-  },
-];
+import { schemas } from './schemas-generator';
 
 let hasErrors = false;
 
@@ -31,13 +15,13 @@ function printError(name: string, error: ZodError) {
   console.error('─'.repeat(80));
 }
 
-for (const { name, schema, data } of schemas) {
+for (const { zodSchema, jsonContent } of schemas) {
   try {
-    schema.parse(data);
+    zodSchema.parse(jsonContent.data);
   } catch (error) {
     if (error instanceof ZodError) {
       hasErrors = true;
-      printError(name, error);
+      printError(jsonContent.filename, error);
       continue;
     }
     throw error;

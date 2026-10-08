@@ -19,9 +19,11 @@ import PostmanIcon from './postman.svg';
 import PythonIcon from './python.svg';
 import ReactIcon from './react.svg';
 import SpringBootIcon from './spring-boot.svg';
+import StyledComponentsIcon from './styled-components.svg';
 import TailwindCSSIcon from './tailwind-css.svg';
 import TypescriptIcon from './typescript.svg';
 import VisualStudioCodeIcon from './visual-studio-code.svg';
+import ViteIcon from './vite.svg';
 
 export const techsIcons = {
   [iconNames.techs.css]: CSSIcon,
@@ -43,7 +45,9 @@ export const techsIcons = {
   [iconNames.techs.python]: PythonIcon,
   [iconNames.techs.react]: ReactIcon,
   [iconNames.techs.springBoot]: SpringBootIcon,
+  [iconNames.techs.styledComponents]: StyledComponentsIcon,
   [iconNames.techs.tailwindCSS]: TailwindCSSIcon,
   [iconNames.techs.typescript]: TypescriptIcon,
   [iconNames.techs.visualStudioCode]: VisualStudioCodeIcon,
+  [iconNames.techs.vite]: ViteIcon,
 } satisfies Record<string, SvgIconComponent>;

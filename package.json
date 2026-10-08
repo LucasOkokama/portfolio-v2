@@ -10,7 +10,7 @@
     "schemas:file": "tsx lib/scripts/schemas-file.ts",
     "schemas:diff": "tsx lib/scripts/schemas-diff.ts",
     "schemas:parse": "tsx lib/scripts/schemas-parse.ts",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
@@ -45,7 +45,6 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
-    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^5.0.3"
   }
 }

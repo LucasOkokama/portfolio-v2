@@ -23,11 +23,10 @@ export function SkeletonGeneric({ className }: SkeletonProps) {
       }}
       className={cn(
         'inline-block',
-        'h-4',
-        'w-12',
-        'bg-skeletongeneric-background',
-        'animate-pulse',
+        'h-4 w-12',
         'rounded-sm',
+        'animate-pulse',
+        'bg-black/10 dark:bg-white/10',
         className,
       )}
     />

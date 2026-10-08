@@ -16,9 +16,9 @@ export async function MenuMain() {
           'w-full',
           'flex items-center justify-between gap-6',
           'px-5 py-3',
-          'border-menumain-border border',
-          'rounded-full',
-          'bg-menumain-background',
+          'rounded-full border',
+          'bg-neutral-50 dark:bg-neutral-900',
+          'border-neutral-200 dark:border-neutral-700',
         )}
       >
         <div className={cn('flex items-center gap-6')}>
@@ -26,9 +26,9 @@ export async function MenuMain() {
             href="/"
             className={cn(
               'cursor-pointer',
-              'text-brand-primary',
-              'hover:text-brand-secondary',
               'transition-colors duration-500',
+              'text-orange-400 dark:text-amber-400',
+              'hover:text-orange-500 dark:hover:text-amber-500',
             )}
           >
             <brandIcons.logo width={26} height={26} />
@@ -38,7 +38,7 @@ export async function MenuMain() {
             className={cn(
               'flex gap-2',
               'text-sm font-medium',
-              'text-menumain-text',
+              'text-neutral-500 dark:text-neutral-400',
             )}
           >
             <MenuItem href="/projects">{tMainMenu('projects')}</MenuItem>

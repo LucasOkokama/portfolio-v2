@@ -64,15 +64,16 @@ export function MenuLocale() {
           className={cn(
             'size-8.5',
             'flex items-center justify-center',
-            'bg-menumain-configbutton-background',
-            'border-menumain-configbutton-border rounded-lg border',
-            'text-content-text-secondary text-xs font-medium',
+            'rounded-lg border',
+            'text-xs font-medium',
+            'bg-white dark:bg-neutral-800',
+            'border-neutral-200 dark:border-neutral-700',
+            'hover:bg-neutral-100 dark:hover:bg-neutral-700',
             'cursor-pointer',
           )}
         >
           <AnimatePresence mode="wait" initial={false}>
             <motion.span
-              className="inline-block font-semibold"
               key={selectedLocale.value}
               initial={{
                 opacity: 0,
@@ -118,8 +119,11 @@ export function MenuLocale() {
               transition={{ duration: 0.15, ease: 'easeOut' }}
               className={cn(
                 'w-38',
-                'bg-menumain-dropdown-background',
-                'border-menumain-dropdown-border rounded-md border p-1 shadow-md',
+                'rounded-md border',
+                'p-1',
+                'bg-white dark:bg-neutral-800',
+                'border-neutral-200 dark:border-neutral-700',
+                'shadow-md',
               )}
             >
               <DropdownMenu.RadioGroup
@@ -132,16 +136,18 @@ export function MenuLocale() {
                     key={option.value}
                     value={option.value}
                     className={cn(
-                      'flex items-center justify-between px-2 py-1.5',
-                      'text-menumain-dropdownitem-text',
+                      'flex items-center justify-between',
+                      'px-2 py-1.5',
                       'rounded-md border border-transparent',
-                      'transition-all duration-150 ease-out',
+                      'transition-all duration-200 ease-out',
                       'cursor-pointer',
                       'data-[highlighted]:pl-3',
-                      'data-[highlighted]:bg-menumain-dropdownitem-background-hover',
-                      'data-[highlighted]:border-menumain-dropdownitem-border-hover',
-                      'data-[highlighted]:text-menumain-dropdownitem-text-hover',
-                      'focus:outline-none',
+                      'data-[highlighted]:bg-orange-500/5',
+                      'data-[highlighted]:dark:bg-amber-400/15',
+                      'data-[highlighted]:border-orange-500/15',
+                      'data-[highlighted]:dark:border-amber-400/15',
+                      'data-[highlighted]:text-orange-500',
+                      'data-[highlighted]:dark:text-amber-400',
                     )}
                   >
                     <div className={cn('flex items-center gap-3', 'text-xs')}>
@@ -161,7 +167,7 @@ export function MenuLocale() {
                         }}
                       >
                         <uiIcons.check
-                          className="text-brand-primary"
+                          className={cn('text-orange-500 dark:text-amber-400')}
                           width={SIZE - 4}
                           height={SIZE - 4}
                         />

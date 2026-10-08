@@ -4,8 +4,8 @@ import { generateSchema, schemas } from './schemas-generator';
 
 const outputDirectory = path.resolve('schemas/json');
 
-for (const { schema, fileName } of schemas) {
-  const content = await generateSchema(schema);
+for (const { zodSchema, jsonSchemaFilename } of schemas) {
+  const content = await generateSchema(zodSchema);
 
-  await writeFile(path.join(outputDirectory, fileName), content);
+  await writeFile(path.join(outputDirectory, jsonSchemaFilename), content);
 }

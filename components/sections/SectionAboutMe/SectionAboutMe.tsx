@@ -2,6 +2,8 @@ import { Container } from '@/components/layouts/Container/Container';
 import { BadgeStatus } from '@/components/ui/BadgeStatus/BadgeStatus';
 import { Clock } from '@/components/ui/Clock/Clock';
 import { ExternalLinksGroup } from '@/components/ui/ExternalLinkGroup/ExternalLinkGroup';
+import { Text } from '@/components/ui/Text/Text';
+import { Title } from '@/components/ui/Title/Title';
 import { type ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { aboutMe } from '@/lib/utils/loaders';
@@ -26,19 +28,20 @@ export function SectionAboutMe({ locale }: Props) {
   return (
     <div className={cn('grid grid-cols-[6fr_12fr] gap-4')}>
       <div className={cn('flex min-w-0 flex-col gap-4')}>
-        <Container className={cn('p-7')}>
+        <Container>
           <div>
-            <h1 className="font-playfair text-6xl font-semibold">
-              {aboutMe.name}
-            </h1>
+            <Title
+              text={aboutMe.name}
+              className="font-playfair text-6xl font-semibold"
+            />
 
-            <span
+            <Text
+              text={localize(aboutMe.role, locale).toUpperCase()}
               className={cn(
-                'text-content-text-quinary mt-3 block text-sm font-semibold tracking-widest',
+                'mt-3',
+                'font-semibold tracking-widest text-neutral-300',
               )}
-            >
-              {localize(aboutMe.role, locale).toUpperCase()}
-            </span>
+            />
           </div>
         </Container>
 
@@ -59,23 +62,21 @@ export function SectionAboutMe({ locale }: Props) {
       </div>
 
       <div className={cn('flex min-w-0 flex-col gap-4')}>
-        <Container className="px-7 py-4">
+        <Container className={cn('py-4')}>
           <div className={cn('flex justify-between')}>
             <div className={cn('flex items-center gap-3 font-medium')}>
               {aboutMe.highlights.map((item, index) => (
                 <Fragment key={index}>
                   {index > 0 && (
-                    <span
+                    <Text
                       aria-hidden="true"
-                      className={cn('text-highlights-slash-text text-xs')}
-                    >
-                      /
-                    </span>
+                      muted
+                      className={cn('text-xs')}
+                      text="/"
+                    />
                   )}
 
-                  <span className={cn('text-highlights-text text-sm')}>
-                    {localize(item, locale)}
-                  </span>
+                  <Text text={localize(item, locale)} />
                 </Fragment>
               ))}
             </div>
@@ -89,21 +90,10 @@ export function SectionAboutMe({ locale }: Props) {
           </div>
         </Container>
 
-        <Container className="p-7">
+        <Container>
           <div className={cn('flex flex-col gap-4')}>
-            <h2
-              className={cn(
-                'text-content-text-primary font-outfit text-3xl font-bold',
-              )}
-            >
-              {localize(aboutMe.biography.title, locale)}
-            </h2>
-
-            <span
-              className={cn('text-content-text-secondary text-sm leading-6')}
-            >
-              {localize(aboutMe.biography.description, locale)}
-            </span>
+            <Title text={localize(aboutMe.biography.title, locale)} />
+            <Text text={localize(aboutMe.biography.description, locale)} />
           </div>
         </Container>
       </div>

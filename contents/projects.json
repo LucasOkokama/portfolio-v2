@@ -1,0 +1,66 @@
+{
+  "$schema": "../schemas/json/projects.schema.json",
+  "sectionName": {
+    "en": "Projects",
+    "pt": "Projetos"
+  },
+  "items": [
+    {
+      "id": "wemage",
+      "name": {
+        "en": "Wemage",
+        "pt": "Wemage"
+      },
+      "logo": "wemage",
+      "summary": {
+        "en": "A responsive image search platform that uses the Pexels API to help users discover, view, and download high-quality photos.",
+        "pt": "Uma plataforma responsiva de busca de imagens que utiliza a API do Pexels para ajudar usuários a encontrar, visualizar e baixar fotos em alta qualidade."
+      },
+      "description": {
+        "en": "Wemage is a React-based image search website powered by the Pexels API. Users can search for photos by keywords, browse results through a responsive masonry layout with pagination, visit photographers' pages, view images in full screen, and download them in high quality. The project also includes light and dark mode support and combines CSS, TailwindCSS, and Styled Components for a modern and flexible interface.",
+        "pt": "Wemage é um site de busca de imagens desenvolvido com React e integrado à API do Pexels. Os usuários podem pesquisar fotos por palavras-chave, navegar pelos resultados em um layout masonry responsivo com paginação, acessar as páginas dos fotógrafos, visualizar imagens em tela cheia e realizar downloads em alta qualidade. O projeto também conta com suporte aos modos claro e escuro e combina CSS, TailwindCSS e Styled Components para criar uma interface moderna e flexível."
+      },
+      "keyFeatures": [
+        {
+          "en": "Search and browse photos using the Pexels API",
+          "pt": "Pesquisar e navegar por fotos utilizando a API do Pexels"
+        },
+        {
+          "en": "Responsive masonry layout with pagination for efficient image browsing",
+          "pt": "Layout masonry responsivo com paginação para uma navegação eficiente pelas imagens"
+        },
+        {
+          "en": "Full-screen image viewing, photographer pages, and high-quality downloads",
+          "pt": "Visualização de imagens em tela cheia, acesso às páginas dos fotógrafos e downloads em alta qualidade"
+        }
+      ],
+      "technologies": [
+        { "label": "React", "icon": "react" },
+        { "label": "TailwindCSS", "icon": "tailwindCSS" },
+        { "label": "Styled Components", "icon": "styledComponents" },
+        { "label": "Vite", "icon": "vite" },
+        { "label": "Pexels API", "icon": "pexels" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" },
+        { "label": "TypeScript", "icon": "typescript" }
+      ],
+      "links": {
+        "repository": "https://github.com/LucasOkokama/pexels-image-search",
+        "design": null,
+        "live": "https://wemage.vercel.app/"
+      },
+      "banner": {
+        "scrollable": true,
+        "default": "/projects/wemage/BANNER_DARK.png",
+        "light": "/projects/wemage/BANNER_LIGHT.png",
+        "dark": "/projects/wemage/BANNER_DARK.png"
+      },
+      "screenshots": ["/projects/wemage/HOME.png"],
+      "metadata": {
+        "status": "completed",
+        "scope": "frontend",
+        "category": "personal"
+      }
+    }
+  ]
+}

@@ -18,7 +18,7 @@ export function HalftoneBackground() {
             cx="2"
             cy="2"
             r="1"
-            className="fill-halftonebackground-fill"
+            className="fill-neutral-100 dark:fill-neutral-900"
           />
         </pattern>
       </defs>

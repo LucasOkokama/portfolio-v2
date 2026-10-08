@@ -1,5 +1,6 @@
 import { Section } from '@/components/layouts/Section/Section';
 import { SectionAboutMe } from '@/components/sections/SectionAboutMe/SectionAboutMe';
+import { SectionProjects } from '@/components/sections/SectionProjects/SectionProjects';
 import { SectionTechnology } from '@/components/sections/SectionTechnology/SectionTechnology';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
@@ -22,9 +23,7 @@ export default async function HomePage({ params }: Props) {
 
       <SectionTechnology locale={locale} />
 
-      <Section title="Projects" command=">_ find ~/projects -maxdepth 1">
-        <div>123</div>
-      </Section>
+      <SectionProjects locale={locale} />
 
       <Section title="Journey" command="$ git log --reverse --oneline">
         <div>123</div>

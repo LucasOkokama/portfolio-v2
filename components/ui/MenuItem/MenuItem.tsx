@@ -13,23 +13,21 @@ export function MenuItem({ href, children }: Props) {
   const pathname = usePathname();
   const isActive = pathname === href;
 
-  const menuItemClass = cn(
-    'cursor-pointer rounded-full px-4 py-2',
-    'text-menumain-item-text text-sm font-medium',
-    'hover:text-menumain-item-text-hover',
-    'hover:bg-menumain-item-background-hover',
-    'transition-colors duration-300',
-  );
-
-  const menuItemActiveClass = cn(
-    'text-menumain-item-text-active',
-    'bg-menumain-item-background-active',
-  );
-
   return (
     <Link
       href={href}
-      className={cn(menuItemClass, isActive && menuItemActiveClass)}
+      className={cn(
+        'px-4 py-2',
+        'rounded-full',
+        'text-sm font-medium',
+        'cursor-pointer',
+        'hover:bg-black/3 dark:hover:bg-white/5',
+        'text-neutral-500 dark:text-neutral-400',
+        'hover:text-orange-600 dark:hover:text-orange-400',
+        'transition-colors duration-200',
+        isActive && 'text-orange-600 dark:text-orange-400',
+        isActive && 'bg-black/5 dark:bg-white/10',
+      )}
     >
       {children}
     </Link>
