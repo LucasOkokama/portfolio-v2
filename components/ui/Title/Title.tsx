@@ -1,12 +1,14 @@
 import { cn } from '@/lib/utils/cn';
 
 type TitleVariant = 'neutral' | 'primary' | 'secondary';
+type TitleLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 interface Props {
   text: string;
   className?: string;
   variant?: TitleVariant;
   hover?: boolean;
+  level?: TitleLevel;
 }
 
 const variantStyles: Record<TitleVariant, string> = {
@@ -26,9 +28,12 @@ export function Title({
   className,
   variant = 'neutral',
   hover = false,
+  level = 1,
 }: Props) {
+  const Heading = `h${level}` as const;
+
   return (
-    <h1
+    <Heading
       className={cn(
         'font-outfit text-3xl font-bold',
         'transition-colors duration-200',
@@ -38,6 +43,6 @@ export function Title({
       )}
     >
       {text}
-    </h1>
+    </Heading>
   );
 }

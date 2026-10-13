@@ -18,6 +18,13 @@
   "projectCard": {
     "repo": "Repositório",
     "live": "Acessar",
-    "details": "Detalhes"
+    "details": "Detalhes",
+    "design": "Design"
+  },
+  "projectDetails": {
+    "title": "Detalhes do Projetos",
+    "keyFeatures": "Destaques",
+    "builtWith": "Tecnologias",
+    "links": "Links"
   }
 }

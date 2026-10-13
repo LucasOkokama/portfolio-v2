@@ -20,10 +20,16 @@ import styles from './ProjectCard.module.css';
 type Props = {
   locale: ILocale;
   project: IProject;
+  onDetails: () => void;
   scrollable?: boolean;
 };
 
-export function ProjectCard({ locale, project, scrollable = false }: Props) {
+export function ProjectCard({
+  locale,
+  project,
+  onDetails,
+  scrollable = false,
+}: Props) {
   const mounted = useMounted();
   const { resolvedTheme } = useTheme();
   const tProjectCard = useTranslations('projectCard');
@@ -96,7 +102,7 @@ export function ProjectCard({ locale, project, scrollable = false }: Props) {
         </div>
       </div>
 
-      <div className={cn('flex flex-col gap-2', 'p-6')}>
+      <div className={cn('flex flex-col gap-2', 'p-6 pb-4')}>
         <Title
           text={localize(project.name, locale)}
           className={cn('text-xl font-semibold')}
@@ -154,6 +160,7 @@ export function ProjectCard({ locale, project, scrollable = false }: Props) {
               'transition-transform duration-200',
               'group-hover:translate-x-[3px]',
             )}
+            onClick={onDetails}
           />
         </div>
       </div>

@@ -33,6 +33,7 @@
               "icon": {
                 "type": "string",
                 "enum": [
+                  "fourPointedStar",
                   "logo",
                   "figma",
                   "github",
@@ -67,9 +68,14 @@
                   "vite",
                   "arrowRight",
                   "arrowUpRight",
+                  "brush",
                   "check",
+                  "chevronLeft",
+                  "chevronRight",
+                  "close",
                   "desktopComputer",
                   "externalLink",
+                  "fullscreen",
                   "gear",
                   "infoSquareFilled",
                   "layout",

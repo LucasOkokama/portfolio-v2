@@ -11,6 +11,13 @@ export async function getAppLocale(): Promise<ILocale> {
   return locale;
 }
 
+export function validateLocale(locale: string): ILocale {
+  if (!hasLocale(routing.locales, locale)) {
+    return defaultLocale;
+  }
+  return locale;
+}
+
 export function localize(value: ILocalizedText, locale: ILocale): string {
   return value[locale] || value[defaultLocale];
 }

@@ -42,6 +42,11 @@ const projectBannerSchema = z.object({
   dark: z.string().nullable(),
 });
 
+const projectScreenshotSchema = z.object({
+  name: localizedTextSchema,
+  path: z.string().min(1),
+});
+
 export const projectMetadataSchema = z.object({
   status: projectStatusSchema,
   scope: projectScopeSchema,
@@ -58,7 +63,7 @@ export const projectSchema = z.object({
   technologies: z.array(projectTechnologySchema),
   links: projectLinksSchema,
   banner: projectBannerSchema,
-  screenshots: z.array(z.string()),
+  screenshots: z.array(projectScreenshotSchema),
   metadata: projectMetadataSchema,
 });
 
@@ -72,6 +77,7 @@ export type IProjectScope = z.infer<typeof projectScopeSchema>;
 export type IProjectCategory = z.infer<typeof projectCategorySchema>;
 export type IProjectTechnology = z.infer<typeof projectTechnologySchema>;
 export type IProjectLinks = z.infer<typeof projectLinksSchema>;
+export type IProjectScreenshot = z.infer<typeof projectScreenshotSchema>;
 export type IProjectMetadata = z.infer<typeof projectMetadataSchema>;
 export type IProject = z.infer<typeof projectSchema>;
 export type ISectionProjects = z.infer<typeof sectionProjectsSchema>;

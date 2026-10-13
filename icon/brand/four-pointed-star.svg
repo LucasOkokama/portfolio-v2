@@ -1,0 +1,13 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="1 1 22 22"
+>
+	<path
+		d="M0 0h24v24H0z"
+		fill="none"
+	/>
+	<path
+		fill="currentColor"
+		d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3z"
+	/>
+</svg>

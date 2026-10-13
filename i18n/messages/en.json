@@ -16,8 +16,15 @@
     "pt": "Portuguese"
   },
   "projectCard": {
-    "repo": "Repo",
+    "repo": "Repository",
     "live": "Live",
-    "details": "Details"
+    "details": "Details",
+    "design": "Design"
+  },
+  "projectDetails": {
+    "title": "Project Details",
+    "keyFeatures": "Key Features",
+    "builtWith": "Built With",
+    "links": "Links"
   }
 }

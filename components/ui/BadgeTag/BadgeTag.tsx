@@ -15,12 +15,23 @@ interface Props {
   label: string;
   icon?: IIconName;
   variant?: BadgeTagVariant;
+  backgroundOpacity?: number;
   className?: string;
 }
 
+const variantBackgroundOpacity: Record<BadgeTagVariant, number> = {
+  success: 10,
+  warning: 10,
+  error: 10,
+  information: 10,
+  new: 10,
+  featured: 10,
+  neutral: 5,
+};
+
 const variantStyles: Record<BadgeTagVariant, string> = {
   success: cn(
-    'bg-green-400/10',
+    'bg-green-400/[var(--badge-bg-opacity)]',
     'border-green-600/20',
     'hover:border-green-600/50 dark:hover:border-green-500/50',
     'text-green-500 dark:text-green-400',
@@ -28,7 +39,7 @@ const variantStyles: Record<BadgeTagVariant, string> = {
   ),
 
   warning: cn(
-    'bg-yellow-400/10',
+    'bg-yellow-400/[var(--badge-bg-opacity)]',
     'border-yellow-600/20',
     'hover:border-yellow-600/50 dark:hover:border-yellow-500/50',
     'text-yellow-500 dark:text-yellow-400',
@@ -36,7 +47,7 @@ const variantStyles: Record<BadgeTagVariant, string> = {
   ),
 
   error: cn(
-    'bg-red-400/10',
+    'bg-red-400/[var(--badge-bg-opacity)]',
     'border-red-600/20',
     'hover:border-red-600/50 dark:hover:border-red-500/50',
     'text-red-500 dark:text-red-400',
@@ -44,7 +55,7 @@ const variantStyles: Record<BadgeTagVariant, string> = {
   ),
 
   information: cn(
-    'bg-blue-400/10',
+    'bg-blue-400/[var(--badge-bg-opacity)]',
     'border-blue-600/20',
     'hover:border-blue-600/50 dark:hover:border-blue-500/50',
     'text-blue-500 dark:text-blue-400',
@@ -52,7 +63,7 @@ const variantStyles: Record<BadgeTagVariant, string> = {
   ),
 
   new: cn(
-    'bg-purple-400/10',
+    'bg-purple-400/[var(--badge-bg-opacity)]',
     'border-purple-600/20',
     'hover:border-purple-600/50 dark:hover:border-purple-500/50',
     'text-purple-500 dark:text-purple-400',
@@ -60,7 +71,7 @@ const variantStyles: Record<BadgeTagVariant, string> = {
   ),
 
   featured: cn(
-    'bg-orange-400/10',
+    'bg-orange-400/[var(--badge-bg-opacity)]',
     'border-orange-600/20',
     'hover:border-orange-600/50 dark:hover:border-orange-500/50',
     'text-orange-500 dark:text-orange-400',
@@ -68,11 +79,11 @@ const variantStyles: Record<BadgeTagVariant, string> = {
   ),
 
   neutral: cn(
-    'bg-black/5 dark:bg-white/5',
-    'border-neutral-300 dark:border-neutral-800',
-    'hover:border-neutral-400 dark:hover:border-neutral-600',
+    'bg-black/[var(--badge-bg-opacity)] dark:bg-white/[var(--badge-bg-opacity)]',
+    'border-neutral-300 dark:border-neutral-600',
+    'hover:border-neutral-400 dark:hover:border-neutral-500',
     'text-neutral-500 dark:text-neutral-400',
-    'hover:text-neutral-700 dark:hover:text-neutral-300',
+    'hover:text-neutral-700 dark:hover:text-neutral-200',
   ),
 };
 
@@ -80,12 +91,20 @@ export function BadgeTag({
   label,
   icon,
   variant = 'neutral',
+  backgroundOpacity,
   className,
 }: Props) {
   const Icon = icon ? icons[icon] : undefined;
 
+  const bgOpacity = backgroundOpacity ?? variantBackgroundOpacity[variant];
+
   return (
     <div
+      style={
+        {
+          '--badge-bg-opacity': `${bgOpacity}%`,
+        } as React.CSSProperties
+      }
       className={cn(
         'flex items-center justify-center gap-1.5',
         'rounded-sm border',
@@ -97,7 +116,7 @@ export function BadgeTag({
     >
       {Icon && <Icon className={cn('size-3')} />}
 
-      <span className={cn('transition-colors duration-200', 'text-xs')}>
+      <span className={cn('text-xs', 'transition-colors duration-200')}>
         {label}
       </span>
     </div>

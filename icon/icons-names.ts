@@ -56,7 +56,7 @@ const defineIconGroups = <
 };
 
 export const iconNames = defineIconGroups({
-  brand: ['logo'],
+  brand: ['fourPointedStar', 'logo'],
   logos: ['figma', 'github', 'gmail', 'grain', 'linkedin', 'pexels', 'vercel'],
   techs: [
     'css',
@@ -87,9 +87,14 @@ export const iconNames = defineIconGroups({
   ui: [
     'arrowRight',
     'arrowUpRight',
+    'brush',
     'check',
+    'chevronLeft',
+    'chevronRight',
+    'close',
     'desktopComputer',
     'externalLink',
+    'fullscreen',
     'gear',
     'infoSquareFilled',
     'layout',

@@ -69,6 +69,7 @@
                 "icon": {
                   "type": "string",
                   "enum": [
+                    "fourPointedStar",
                     "logo",
                     "figma",
                     "github",
@@ -103,9 +104,14 @@
                     "vite",
                     "arrowRight",
                     "arrowUpRight",
+                    "brush",
                     "check",
+                    "chevronLeft",
+                    "chevronRight",
+                    "close",
                     "desktopComputer",
                     "externalLink",
+                    "fullscreen",
                     "gear",
                     "infoSquareFilled",
                     "layout",
@@ -157,7 +163,26 @@
             "required": ["scrollable", "default", "light", "dark"],
             "additionalProperties": false
           },
-          "screenshots": { "type": "array", "items": { "type": "string" } },
+          "screenshots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "object",
+                  "properties": {
+                    "pt": { "type": "string" },
+                    "en": { "type": "string" }
+                  },
+                  "required": ["pt", "en"],
+                  "additionalProperties": false
+                },
+                "path": { "type": "string", "minLength": 1 }
+              },
+              "required": ["name", "path"],
+              "additionalProperties": false
+            }
+          },
           "metadata": {
             "type": "object",
             "properties": {

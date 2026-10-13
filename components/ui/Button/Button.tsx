@@ -10,7 +10,7 @@ type ButtonProps = {
   iconPosition?: ButtonIconPosition;
   className?: string;
   iconClassName?: string;
-  onClick?: () => void;
+  onClick: () => void;
 } & (
   | {
       icon: IIconName;
@@ -24,23 +24,23 @@ type ButtonProps = {
 
 const variantStyles: Record<ButtonVariant, string> = {
   neutral: cn(
-    'border-neutral-300 dark:border-neutral-700',
-    'text-neutral-600 dark:text-neutral-300',
-    'hover:bg-neutral-200 dark:hover:bg-neutral-800',
-    'hover:border-neutral-300 dark:hover:border-neutral-600',
+    'bg-transparent dark:bg-white/10',
+    'border-neutral-300 dark:border-neutral-600',
+    'text-neutral-600 dark:text-neutral-200',
+    'hover:bg-black/3 hover:dark:bg-white/15',
     'hover:text-orange-500 dark:hover:text-amber-400',
   ),
   primary: cn(
-    'bg-orange-500 dark:bg-amber-400',
+    'bg-orange-400 dark:bg-amber-600',
     'border-transparent',
-    'text-neutral-50 dark:text-neutral-900',
-    'hover:bg-orange-600 dark:hover:bg-amber-500',
+    'text-neutral-50 dark:text-neutral-50',
+    'hover:bg-orange-500 dark:hover:bg-amber-700',
   ),
   secondary: cn(
-    'bg-purple-500 dark:bg-purple-400',
+    'bg-purple-400 dark:bg-purple-600',
     'border-transparent',
-    'text-neutral-50 dark:text-neutral-900',
-    'hover:bg-purple-600 dark:hover:bg-purple-500',
+    'text-neutral-50 dark:text-neutral-50',
+    'hover:bg-purple-500 dark:hover:bg-purple-700',
   ),
 };
 
