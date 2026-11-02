@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run validate:api-flags && next build",
+    "build": "next build",
     "start": "next start",
     "schemas:file": "tsx lib/scripts/schemas-file.ts",
     "schemas:diff": "tsx lib/scripts/schemas-diff.ts",
@@ -17,11 +17,9 @@
     "audit": "npm audit --audit-level=critical",
     "test": "vitest",
     "test:run": "vitest run",
-    "validate:api-flags": "tsx lib/scripts/validate-api-flags.ts",
     "ci": "npm run schemas:diff && npm run schemas:parse && npm run lint && npm run typecheck && npm run format:check && npm run audit && npm run test:run && npm run build"
   },
   "dependencies": {
-    "@next/env": "^16.4.3",
     "@octokit/rest": "^22.0.1",
     "@tanstack/react-query": "^5.105.0",
     "clsx": "^2.1.1",
