@@ -1,6 +1,6 @@
 import { icons } from '@/icon';
 import { cn } from '@/lib/utils/cn';
-import type { IIconName } from '@/schemas/zod/common';
+import type { IIconName } from '@/schemas/zod/common.schema';
 
 type ButtonVariant = 'neutral' | 'primary' | 'secondary';
 type ButtonIconPosition = 'left' | 'right';

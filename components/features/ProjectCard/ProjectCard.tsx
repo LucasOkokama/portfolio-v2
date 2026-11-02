@@ -11,7 +11,7 @@ import { useMounted } from '@/hooks/useMounted';
 import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { localize } from '@/lib/utils/localize';
-import type { IProject } from '@/schemas/zod/projects';
+import type { IProject } from '@/schemas/zod/projects.schema';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';

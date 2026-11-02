@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils/cn';
-import type { IProjectScreenshot } from '@/schemas/zod/projects';
+import type { IProjectScreenshot } from '@/schemas/zod/projects.schema';
 import type { EmblaCarouselType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';

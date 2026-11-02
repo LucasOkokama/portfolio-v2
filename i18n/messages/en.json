@@ -25,6 +25,20 @@
     "title": "Project Details",
     "keyFeatures": "Key Features",
     "builtWith": "Built With",
-    "links": "Links"
+    "links": "Links",
+    "metadata": "Metadata",
+    "githubRepository": {
+      "created": "Created",
+      "updated": "Updated",
+      "latestRelease": "Latest release",
+      "stars": "Stars",
+      "forks": "Forks",
+      "latestCommit": "Latest commit",
+      "license": "License"
+    },
+    "reload": "Reload",
+    "close": "Close",
+    "gallery": "Gallery",
+    "project": "Project"
   }
 }

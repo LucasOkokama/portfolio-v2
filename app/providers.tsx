@@ -1,5 +1,6 @@
 'use client';
 
+import { QueryProvider } from '@/components/providers/QueryProvider';
 import { ThemeProvider } from 'next-themes';
 
 /* < CTLFM --> TO BE REMOVED > */
@@ -24,7 +25,7 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
-      {children}
+      <QueryProvider>{children}</QueryProvider>
     </ThemeProvider>
   );
 }

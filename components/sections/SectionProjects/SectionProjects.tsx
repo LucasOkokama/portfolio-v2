@@ -7,7 +7,7 @@ import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { projects } from '@/lib/utils/loaders';
 import { localize } from '@/lib/utils/localize';
-import type { IProject } from '@/schemas/zod/projects';
+import type { IProject } from '@/schemas/zod/projects.schema';
 import { useCallback, useEffect, useState } from 'react';
 
 type Props = {
@@ -95,6 +95,7 @@ export function SectionProjects({ locale }: Props) {
         projectIndex={selectedIndex}
         project={selectedProject}
         open={selectedProject !== null}
+        isNavigationDisabled={projects.items.length <= 1}
         onOpenChange={open => {
           if (!open) {
             setSelectedProject(null);

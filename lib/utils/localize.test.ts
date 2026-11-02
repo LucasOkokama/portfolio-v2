@@ -1,9 +1,8 @@
+import { defaultLocale, routing } from '@/i18n/routing';
+import type { ILocalizedText } from '@/schemas/zod/common.schema';
 import { hasLocale } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-
-import { defaultLocale, routing } from '@/i18n/routing';
-import type { ILocalizedText } from '@/schemas/zod/common';
 import { getAppLocale, localize, localizeAll } from './localize';
 
 vi.mock('next-intl/server', () => ({
@@ -81,11 +80,11 @@ describe('getAppLocale', () => {
     expect(hasLocale).toHaveBeenCalledWith(routing.locales, 'pt');
   });
 
-  it('throws an error when the current locale is invalid', async () => {
+  it('returns the default locale when the current locale is invalid', async () => {
     vi.mocked(getLocale).mockResolvedValue('invalid');
     vi.mocked(hasLocale).mockReturnValue(false);
 
-    await expect(getAppLocale()).rejects.toThrow('Invalid locale: invalid');
+    await expect(getAppLocale()).resolves.toBe(defaultLocale);
 
     expect(getLocale).toHaveBeenCalledOnce();
     expect(hasLocale).toHaveBeenCalledWith(routing.locales, 'invalid');

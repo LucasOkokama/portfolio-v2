@@ -25,6 +25,20 @@
     "title": "Detalhes do Projetos",
     "keyFeatures": "Destaques",
     "builtWith": "Tecnologias",
-    "links": "Links"
+    "links": "Links",
+    "metadata": "Metadata",
+    "githubRepository": {
+      "created": "Criado",
+      "updated": "Atualizado",
+      "latestRelease": "Última release",
+      "stars": "Estrelas",
+      "forks": "Forks",
+      "latestCommit": "Último commit",
+      "license": "Licença"
+    },
+    "reload": "Recarregar",
+    "close": "Fechar",
+    "gallery": "Galeria",
+    "project": "Projeto"
   }
 }

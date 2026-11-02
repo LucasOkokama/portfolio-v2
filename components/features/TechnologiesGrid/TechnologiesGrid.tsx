@@ -7,7 +7,7 @@ import type { ILocale } from '@/i18n/routing';
 import { icons } from '@/icon';
 import { cn } from '@/lib/utils/cn';
 import { localize } from '@/lib/utils/localize';
-import type { ITechnologyGroup } from '@/schemas/zod/technologies';
+import type { ITechnologyGroup } from '@/schemas/zod/technologies.schema';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 

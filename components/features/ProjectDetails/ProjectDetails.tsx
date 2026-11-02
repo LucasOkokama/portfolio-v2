@@ -1,25 +1,41 @@
 'use client';
 
 import { Container } from '@/components/layouts/Container/Container';
+import { SkeletonGeneric } from '@/components/layouts/SkeletonGeneric/SkeletonGeneric';
+import { BadgeStatus } from '@/components/ui/BadgeStatus/BadgeStatus';
 import { BadgeTag } from '@/components/ui/BadgeTag/BadgeTag';
 import { ButtonLink } from '@/components/ui/ButtonLink/ButtonLink';
+import { ButtonRetry } from '@/components/ui/ButtonRetry/ButtonRetry';
 import { IconBulletList } from '@/components/ui/IconBulletList/IconBulletList';
 import { ImageCarousel } from '@/components/ui/ImageCarousel/ImageCarousel';
 import { Text } from '@/components/ui/Text/Text';
 import { Title } from '@/components/ui/Title/Title';
+import {
+  projectCategoryLabels,
+  projectScopeLabels,
+  projectStatusLabels,
+  projectStatusVariants,
+} from '@/constants/projects';
+import { useGitHubRepository } from '@/hooks/useGitHubRepository';
 import type { ILocale } from '@/i18n/routing';
 import { uiIcons } from '@/icon/ui';
+import { isClientApiError } from '@/lib/api/client/api-error';
+import { renderAsyncLabel } from '@/lib/utils/asyncRender';
 import { cn } from '@/lib/utils/cn';
+import { formatDateLong, formatNumberCompact } from '@/lib/utils/format';
 import { localize, localizeAll } from '@/lib/utils/localize';
-import type { IProject } from '@/schemas/zod/projects';
+import type { IProject } from '@/schemas/zod/projects.schema';
 import { useTranslations } from 'next-intl';
 import { Dialog } from 'radix-ui';
+
+const SIZE = 9;
 
 type Props = {
   locale: ILocale;
   projectIndex: number;
   project: IProject | null;
   open: boolean;
+  isNavigationDisabled: boolean;
   onOpenChange: (open: boolean) => void;
   onPrevious: () => void;
   onNext: () => void;
@@ -30,12 +46,24 @@ export function ProjectDetails({
   projectIndex,
   project,
   open,
+  isNavigationDisabled,
   onOpenChange,
   onPrevious,
   onNext,
 }: Props) {
   const tProjectDetails = useTranslations('projectDetails');
   const tProjectCard = useTranslations('projectCard');
+
+  const {
+    data: githubData,
+    isFetching: githubFetching,
+    error: githubError,
+    refetch: refetchGitHub,
+  } = useGitHubRepository(project?.projectName ?? '', locale, open);
+
+  const message = isClientApiError(githubError)
+    ? githubError.originalMessage || githubError.message
+    : githubError?.message;
 
   if (!project) {
     return null;
@@ -49,34 +77,62 @@ export function ProjectDetails({
             'z-20',
             'fixed inset-0',
             'backdrop-blur-xs',
-            'bg-black/5 dark:bg-black/20',
+            'bg-black/15 dark:bg-black/20',
           )}
         />
 
         <Dialog.Content
           className={cn(
             'z-25',
-            'fixed',
-            'top-1/2 left-1/2',
+            'fixed top-1/2 left-1/2',
             '-translate-x-1/2 -translate-y-1/2',
+            'w-[calc(100vw-4rem)] max-w-7xl',
+            'h-200 max-h-[calc(100dvh-4rem)]',
+            'flex flex-col',
+            'overflow-hidden',
           )}
         >
-          <Container className={cn('p-0', 'w-7xl')}>
+          <Container
+            className={cn(
+              'flex flex-col',
+              'h-full w-full',
+              'p-0',
+              'overflow-hidden',
+            )}
+          >
             <div
               className={cn(
-                'w-full',
                 'flex items-center justify-between',
                 'px-4 py-2',
-                'bg-stone-200/70 dark:bg-neutral-800',
+                'border-b',
+                'bg-neutral-200/70 dark:bg-neutral-950/40',
+                'border-b-neutral-300/70 dark:border-b-neutral-800',
                 'text-sm',
               )}
             >
-              <BadgeTag
-                label={`${projectIndex + 1}`}
-                variant="new"
-                backgroundOpacity={20}
-                className={cn('font-roboto-mono font-bold')}
-              />
+              <div className={cn('flex gap-3')}>
+                <BadgeTag
+                  label={`${projectIndex + 1}`}
+                  variant="new"
+                  className={cn('font-roboto-mono font-bold')}
+                />
+                <BadgeTag
+                  label={localize(
+                    projectCategoryLabels[project.metadata.category],
+                    locale,
+                  ).toUpperCase()}
+                  variant="information"
+                  className="font-semibold tracking-wider"
+                />
+                <BadgeTag
+                  label={localize(
+                    projectScopeLabels[project.metadata.scope],
+                    locale,
+                  ).toUpperCase()}
+                  variant="featured"
+                  className="font-semibold tracking-wider"
+                />
+              </div>
 
               <span
                 className={cn(
@@ -92,13 +148,18 @@ export function ProjectDetails({
                 <div className={cn('flex gap-1')}>
                   <button
                     onClick={onPrevious}
+                    disabled={isNavigationDisabled}
                     className={cn(
                       'p-2.5',
                       'rounded-lg border border-transparent',
-                      'cursor-pointer',
                       'transition-colors duration-200',
-                      'hover:text-neutral-950 dark:hover:text-neutral-50',
-                      'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
+                      isNavigationDisabled
+                        ? 'cursor-not-allowed opacity-50'
+                        : cn(
+                            'cursor-pointer',
+                            'hover:text-neutral-950 dark:hover:text-neutral-50',
+                            'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
+                          ),
                     )}
                   >
                     <uiIcons.chevronLeft width={12} height={12} />
@@ -106,13 +167,18 @@ export function ProjectDetails({
 
                   <button
                     onClick={onNext}
+                    disabled={isNavigationDisabled}
                     className={cn(
                       'p-2.5',
                       'rounded-lg border border-transparent',
-                      'cursor-pointer',
                       'transition-colors duration-200',
-                      'hover:text-neutral-950 dark:hover:text-neutral-50',
-                      'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
+                      isNavigationDisabled
+                        ? 'cursor-not-allowed opacity-50'
+                        : cn(
+                            'cursor-pointer',
+                            'hover:text-neutral-950 dark:hover:text-neutral-50',
+                            'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
+                          ),
                     )}
                   >
                     <uiIcons.chevronRight width={12} height={12} />
@@ -130,10 +196,149 @@ export function ProjectDetails({
                 </Dialog.Close>
               </div>
             </div>
-
-            <div className="grid grid-cols-[minmax(0,1fr)_2px_minmax(0,1fr)]">
-              <div className="p-6">
+            <div
+              className={cn(
+                'grid min-h-0 flex-1',
+                'grid-cols-[minmax(0,1fr)_2px_minmax(0,1fr)]',
+                'grid-rows-[minmax(0,1fr)]',
+              )}
+            >
+              <div
+                className={cn('flex flex-col gap-8', 'p-6', 'overflow-y-auto')}
+              >
                 <ImageCarousel slides={project.screenshots} />
+
+                <div className={cn('flex flex-col gap-3')}>
+                  <Title
+                    text={tProjectDetails('metadata').toUpperCase()}
+                    type="subTitle"
+                    className={cn('text-neutral-600 dark:text-neutral-400')}
+                    rightElement={
+                      <ButtonRetry
+                        message={message}
+                        loading={githubFetching}
+                        onRetry={() => void refetchGitHub()}
+                      />
+                    }
+                  />
+
+                  <div
+                    className={cn('font-roboto-mono flex flex-wrap gap-2.5')}
+                  >
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        prefix: `${tProjectDetails('githubRepository.created')}:`,
+                        value: githubData?.createdAt
+                          ? formatDateLong(githubData.createdAt, locale)
+                          : undefined,
+                        skeleton: <SkeletonGeneric className="h-3 w-16" />,
+                      })}
+                      icon="calendar"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        prefix: `${tProjectDetails('githubRepository.updated')}:`,
+                        value: githubData?.pushedAt
+                          ? formatDateLong(githubData.pushedAt, locale)
+                          : undefined,
+                        skeleton: <SkeletonGeneric className="h-3 w-16" />,
+                      })}
+                      icon="pencil"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        prefix: `${tProjectDetails(
+                          'githubRepository.latestRelease',
+                        )}:`,
+                        value: githubData?.latestRelease?.tagName,
+                      })}
+                      icon="label"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        value:
+                          githubData?.stars !== undefined
+                            ? formatNumberCompact(githubData.stars, locale)
+                            : undefined,
+                        suffix: tProjectDetails('githubRepository.stars'),
+                        skeleton: <SkeletonGeneric className="h-3 w-6" />,
+                      })}
+                      icon="star"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        value:
+                          githubData?.forks !== undefined
+                            ? formatNumberCompact(githubData.forks, locale)
+                            : undefined,
+                        suffix: tProjectDetails('githubRepository.forks'),
+                        skeleton: <SkeletonGeneric className="h-3 w-6" />,
+                      })}
+                      icon="gitBranch"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        value: githubData?.latestCommit?.sha.slice(0, 7),
+                        prefix: `${tProjectDetails(
+                          'githubRepository.latestCommit',
+                        )}:`,
+                        skeleton: <SkeletonGeneric className="h-3 w-12" />,
+                      })}
+                      icon="gitCommit"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={renderAsyncLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        prefix: `${tProjectDetails(
+                          'githubRepository.license',
+                        )}:`,
+                        value: githubData?.license,
+                        skeleton: <SkeletonGeneric className="h-3 w-6" />,
+                      })}
+                      icon="copyright"
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div
@@ -145,10 +350,27 @@ export function ProjectDetails({
                 )}
               />
 
-              <div className={cn('flex flex-col gap-8', 'p-6')}>
-                <div className={cn('flex flex-col gap-4')}>
+              <div
+                className={cn('flex flex-col gap-8', 'p-6', 'overflow-y-auto')}
+              >
+                <div className={cn('flex flex-col gap-3')}>
                   <Dialog.Title asChild>
-                    <Title text={localize(project.name, locale)} level={2} />
+                    <div className={cn('flex items-center gap-4')}>
+                      <Title text={localize(project.name, locale)} level={2} />
+
+                      <BadgeStatus
+                        label={localize(
+                          projectStatusLabels[project.metadata.status],
+                          locale,
+                        )}
+                        variant={projectStatusVariants[project.metadata.status]}
+                        indicatorVariant={
+                          project.metadata.status === 'active'
+                            ? 'success'
+                            : undefined
+                        }
+                      />
+                    </div>
                   </Dialog.Title>
 
                   <Dialog.Description asChild>
@@ -159,12 +381,12 @@ export function ProjectDetails({
                   </Dialog.Description>
                 </div>
 
-                <div className={cn('flex flex-col gap-4')}>
-                  <span
-                    className={cn('font-roboto-mono text-xs tracking-widest')}
-                  >
-                    {tProjectDetails('keyFeatures').toUpperCase()}
-                  </span>
+                <div className={cn('flex flex-col gap-3')}>
+                  <Title
+                    text={tProjectDetails('keyFeatures').toUpperCase()}
+                    type="subTitle"
+                    className={cn('text-neutral-600 dark:text-neutral-400')}
+                  />
 
                   <div
                     className={cn(
@@ -178,12 +400,12 @@ export function ProjectDetails({
                   </div>
                 </div>
 
-                <div className={cn('flex flex-col gap-4')}>
-                  <span
-                    className={cn('font-roboto-mono text-xs tracking-widest')}
-                  >
-                    {tProjectDetails('builtWith').toUpperCase()}
-                  </span>
+                <div className={cn('flex flex-col gap-3')}>
+                  <Title
+                    text={tProjectDetails('builtWith').toUpperCase()}
+                    type="subTitle"
+                    className={cn('text-neutral-600 dark:text-neutral-400')}
+                  />
 
                   <div className={cn('flex flex-wrap gap-2')}>
                     {project.technologies.map(item => (
@@ -196,12 +418,12 @@ export function ProjectDetails({
                   </div>
                 </div>
 
-                <div className={cn('flex flex-col gap-4')}>
-                  <span
-                    className={cn('font-roboto-mono text-xs tracking-widest')}
-                  >
-                    {tProjectDetails('links').toUpperCase()}
-                  </span>
+                <div className={cn('flex flex-col gap-3')}>
+                  <Title
+                    text={tProjectDetails('links').toUpperCase()}
+                    type="subTitle"
+                    className={cn('text-neutral-600 dark:text-neutral-400')}
+                  />
 
                   <div className={cn('flex gap-2')}>
                     {project.links.repository && (
@@ -235,9 +457,83 @@ export function ProjectDetails({
                 </div>
               </div>
             </div>
+            <div
+              className={cn(
+                'flex items-center justify-between',
+                'px-4 py-2',
+                'border-t',
+                'text-xs',
+                'bg-neutral-200/70 dark:bg-neutral-950/40',
+                'border-t-neutral-300/70 dark:border-t-neutral-800',
+                'text-neutral-400 dark:text-neutral-600',
+              )}
+            >
+              <div className={cn('flex items-center justify-center gap-2')}>
+                <div
+                  className={cn(
+                    'flex items-center justify-center gap-2',
+                    'h-6',
+                    'rounded-lg',
+                    'px-2.5',
+                    'bg-neutral-300/70 dark:bg-neutral-800/70',
+                  )}
+                >
+                  <span className={cn('font-bold')}>ESC</span>
+                </div>
+                <span className={cn('font-semibold tracking-wider')}>
+                  {tProjectDetails('close').toUpperCase()}
+                </span>
+              </div>
 
-            <div>
-              <span>Footer</span>
+              <div className={cn('flex items-center justify-center gap-2')}>
+                <div
+                  className={cn(
+                    'flex items-center justify-center gap-2',
+                    'h-6',
+                    'rounded-lg',
+                    'px-2.5',
+                    'bg-neutral-300/70 dark:bg-neutral-800/70',
+                  )}
+                >
+                  <uiIcons.caretLeft width={SIZE} height={SIZE} />
+                  <span>/</span>
+                  <uiIcons.caretRight width={SIZE} height={SIZE} />
+                </div>
+                <span className={cn('font-semibold tracking-wider')}>
+                  {tProjectDetails('gallery').toUpperCase()}
+                </span>
+              </div>
+
+              <div className={cn('flex items-center justify-center gap-2')}>
+                <div
+                  className={cn(
+                    'flex items-center justify-center gap-2',
+                    'h-6',
+                    'rounded-lg',
+                    'px-2.5',
+                    'bg-neutral-300/70 dark:bg-neutral-800/70',
+                  )}
+                >
+                  <span className={cn('font-semibold')}>SHIFT</span>
+                  <uiIcons.shift width={SIZE} height={SIZE} />
+                </div>
+                <div
+                  className={cn(
+                    'flex items-center justify-center gap-2',
+                    'h-6',
+                    'rounded-lg',
+                    'px-2.5',
+                    'bg-neutral-300/70 dark:bg-neutral-800/70',
+                  )}
+                >
+                  <uiIcons.caretLeft width={SIZE} height={SIZE} />
+                  <span>/</span>
+                  <uiIcons.caretRight width={SIZE} height={SIZE} />
+                </div>
+                <span className={cn('font-semibold tracking-wider')}>
+                  {tProjectDetails('project').toUpperCase()}
+                </span>
+              </div>
             </div>
           </Container>
         </Dialog.Content>

@@ -3,7 +3,7 @@
 import { uiIcons } from '@/icon/ui';
 import { cn } from '@/lib/utils/cn';
 import { localize, validateLocale } from '@/lib/utils/localize';
-import type { IProjectScreenshot } from '@/schemas/zod/projects';
+import type { IProjectScreenshot } from '@/schemas/zod/projects.schema';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
@@ -73,7 +73,7 @@ export function ImageCarousel({ slides }: Props) {
           'flex items-center justify-between',
           'px-2 py-1.5',
           'rounded-md',
-          'bg-stone-200/70 dark:bg-neutral-800/70',
+          'bg-neutral-200/70 dark:bg-neutral-800/70',
         )}
       >
         <a

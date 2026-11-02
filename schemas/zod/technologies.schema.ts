@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { iconNameSchema, localizedTextSchema } from './common';
+import { iconNameSchema, localizedTextSchema } from './common.schema';
 
 const technologyItemSchema = z.object({
   label: z.string(),

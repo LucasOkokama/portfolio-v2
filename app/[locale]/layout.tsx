@@ -88,7 +88,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Providers>
               <div
                 className={cn(
-                  'fixed top-4 left-1/2 z-50',
+                  'fixed top-4 left-1/2 z-15',
                   'w-full max-w-3xl',
                   '-translate-x-1/2',
                 )}

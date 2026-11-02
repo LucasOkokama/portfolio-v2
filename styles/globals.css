@@ -31,7 +31,7 @@
 }
 
 [data-theme='dark'] ::selection {
-  @apply bg-purple-500/25 text-neutral-100;
+  @apply bg-purple-500/40 text-neutral-100;
 }
 
 body {

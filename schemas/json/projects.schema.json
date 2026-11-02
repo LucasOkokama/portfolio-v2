@@ -17,7 +17,8 @@
       "items": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
+          "id": { "type": "string", "minLength": 1 },
+          "projectName": { "type": "string", "minLength": 1 },
           "name": {
             "type": "object",
             "properties": {
@@ -105,20 +106,31 @@
                     "arrowRight",
                     "arrowUpRight",
                     "brush",
+                    "calendar",
+                    "caretLeft",
+                    "caretRight",
                     "check",
                     "chevronLeft",
                     "chevronRight",
                     "close",
+                    "copyright",
                     "desktopComputer",
                     "externalLink",
                     "fullscreen",
                     "gear",
+                    "gitBranch",
+                    "gitCommit",
                     "infoSquareFilled",
+                    "label",
                     "layout",
                     "moon",
+                    "pencil",
                     "pin",
+                    "reload",
                     "server",
+                    "shift",
                     "spanner",
+                    "star",
                     "sun"
                   ]
                 }
@@ -211,6 +223,7 @@
         },
         "required": [
           "id",
+          "projectName",
           "name",
           "logo",
           "summary",

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { iconNameSchema, localizedTextSchema } from './common';
+import { iconNameSchema, localizedTextSchema } from './common.schema';
 
 export const projectStatusSchema = z.enum([
   'active',
@@ -54,7 +54,8 @@ export const projectMetadataSchema = z.object({
 });
 
 export const projectSchema = z.object({
-  id: z.string(),
+  id: z.string().min(1),
+  projectName: z.string().min(1),
   name: localizedTextSchema,
   logo: z.string(),
   summary: localizedTextSchema,

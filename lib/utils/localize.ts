@@ -1,21 +1,18 @@
 import { defaultLocale, routing, type ILocale } from '@/i18n/routing';
-import type { ILocalizedText } from '@/schemas/zod/common';
+import type { ILocalizedText } from '@/schemas/zod/common.schema';
 import { hasLocale } from 'next-intl';
 import { getLocale } from 'next-intl/server';
-
-export async function getAppLocale(): Promise<ILocale> {
-  const locale = await getLocale();
-  if (!hasLocale(routing.locales, locale)) {
-    throw new Error(`Invalid locale: ${locale}`);
-  }
-  return locale;
-}
 
 export function validateLocale(locale: string): ILocale {
   if (!hasLocale(routing.locales, locale)) {
     return defaultLocale;
   }
   return locale;
+}
+
+export async function getAppLocale(): Promise<ILocale> {
+  const locale = await getLocale();
+  return validateLocale(locale);
 }
 
 export function localize(value: ILocalizedText, locale: ILocale): string {

@@ -3,7 +3,7 @@
 import { icons } from '@/icon';
 import { uiIcons } from '@/icon/ui';
 import { cn } from '@/lib/utils/cn';
-import type { IIconName } from '@/schemas/zod/common';
+import type { IIconName } from '@/schemas/zod/common.schema';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Text } from '../Text/Text';

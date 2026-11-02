@@ -82,11 +82,10 @@ export function SectionAboutMe({ locale }: Props) {
             </div>
 
             <BadgeStatus
+              label={availabilityLabel}
               variant={availabilityVariant}
               indicatorVariant={availabilityVariant}
-            >
-              {availabilityLabel}
-            </BadgeStatus>
+            />
           </div>
         </Container>
 

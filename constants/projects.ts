@@ -1,9 +1,10 @@
-import type { ILocalizedText } from '@/schemas/zod/common';
+import type { BadgeStatusVariant } from '@/components/ui/BadgeStatus/BadgeStatus';
+import type { ILocalizedText } from '@/schemas/zod/common.schema';
 import type {
   IProjectCategory,
   IProjectScope,
   IProjectStatus,
-} from '@/schemas/zod/projects';
+} from '@/schemas/zod/projects.schema';
 
 export const projectStatusLabels: Record<IProjectStatus, ILocalizedText> = {
   active: {
@@ -15,7 +16,7 @@ export const projectStatusLabels: Record<IProjectStatus, ILocalizedText> = {
     en: 'Completed',
   },
   onHold: {
-    pt: 'Em espera',
+    pt: 'Parado',
     en: 'On Hold',
   },
   archived: {
@@ -23,6 +24,14 @@ export const projectStatusLabels: Record<IProjectStatus, ILocalizedText> = {
     en: 'Archived',
   },
 };
+
+export const projectStatusVariants: Record<IProjectStatus, BadgeStatusVariant> =
+  {
+    active: 'success',
+    completed: 'information',
+    onHold: 'warning',
+    archived: 'neutral',
+  };
 
 export const projectScopeLabels: Record<IProjectScope, ILocalizedText> = {
   fullStack: {
