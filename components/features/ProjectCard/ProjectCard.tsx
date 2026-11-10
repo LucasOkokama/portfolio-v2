@@ -4,9 +4,10 @@ import { Container } from '@/components/layouts/Container/Container';
 import { BadgeTag } from '@/components/ui/BadgeTag/BadgeTag';
 import { Button } from '@/components/ui/Button/Button';
 import { ButtonLink } from '@/components/ui/ButtonLink/ButtonLink';
+import { ImageFallback } from '@/components/ui/ImageFallback/ImageFallback';
 import { Text } from '@/components/ui/Text/Text';
 import { Title } from '@/components/ui/Title/Title';
-import { projectScopeLabels } from '@/constants/projects';
+import { projectScopeLabels } from '@/constants/projects.const';
 import { useMounted } from '@/hooks/useMounted';
 import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
@@ -14,8 +15,8 @@ import { localize } from '@/lib/utils/localize';
 import type { IProject } from '@/schemas/zod/projects.schema';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import styles from './ProjectCard.module.css';
+import { AsyncRenderImage } from '@/components/layouts/AsyncRenderImage/AsyncRenderImage';
 
 type Props = {
   locale: ILocale;
@@ -34,11 +35,13 @@ export function ProjectCard({
   const { resolvedTheme } = useTheme();
   const tProjectCard = useTranslations('projectCard');
 
-  const bannerSrc = !mounted
-    ? project.banner.default
-    : resolvedTheme === 'dark'
-      ? (project.banner.dark ?? project.banner.default)
-      : (project.banner.light ?? project.banner.default);
+  const bannerSrc = !project.banner.available
+    ? null
+    : !mounted
+      ? project.banner.default
+      : resolvedTheme === 'dark'
+        ? (project.banner.dark ?? project.banner.default)
+        : (project.banner.light ?? project.banner.default);
 
   return (
     <Container
@@ -78,27 +81,35 @@ export function ProjectCard({
             scrollable && styles.scrollable,
           )}
         >
-          <a
-            href={bannerSrc}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              'focus-visible-inset',
-              'block',
-              'h-full',
-              'rounded-t-2xl',
-              'overflow-hidden',
-              'cursor-pointer',
-            )}
-          >
-            <Image
-              src={bannerSrc}
-              alt=""
-              width={1366}
-              height={2455}
-              className={cn(styles.banner, !scrollable && styles.bannerStatic)}
-            />
-          </a>
+          {project.banner.available ? (
+            <a
+              href={bannerSrc!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'focus-visible-inset',
+                'block',
+                'h-full',
+                'rounded-t-2xl',
+                'overflow-hidden',
+                'cursor-pointer',
+              )}
+            >
+              <AsyncRenderImage
+                src={bannerSrc!}
+                alt=""
+                width={1366}
+                height={2455}
+                className={cn(
+                  styles.banner,
+                  !scrollable && styles.bannerStatic,
+                )}
+                locale={locale}
+              />
+            </a>
+          ) : (
+            <ImageFallback locale={locale} type="notAvailable" />
+          )}
         </div>
       </div>
 

@@ -6,6 +6,173 @@
   },
   "items": [
     {
+      "id": "loja-vinho",
+      "projectName": "loja-vinho",
+      "name": {
+        "en": "Wine Store",
+        "pt": "Loja de Vinhos"
+      },
+      "logo": null,
+      "summary": {
+        "en": "A full-stack e-commerce platform for wine shopping, featuring user authentication, product browsing, detailed product pages, and a shopping cart.",
+        "pt": "Uma plataforma full-stack de e-commerce para venda de vinhos, com autenticação de usuários, navegação por produtos, páginas de detalhes e carrinho de compras."
+      },
+      "description": {
+        "en": "Wine Store is a full-stack e-commerce application developed as part of a Web Programming course. The platform allows users to create and manage accounts, browse the wine catalog, view product details, add items to their shopping cart, and complete purchases. The frontend was built with Angular and TypeScript, while the backend uses Java and Spring Boot to provide REST API endpoints. Wine data is stored and managed in a MySQL database using SQL.",
+        "pt": "Loja de Vinhos é uma aplicação de e-commerce full-stack desenvolvida para a matéria de Programação Web. A plataforma permite que os usuários criem e gerenciem contas, naveguem pelo catálogo de vinhos, visualizem detalhes dos produtos, adicionem itens ao carrinho e realizem compras. O frontend foi desenvolvido com Angular e TypeScript, enquanto o backend utiliza Java e Spring Boot para disponibilizar endpoints de uma API REST. Os dados dos vinhos são armazenados e gerenciados em um banco de dados MySQL utilizando SQL."
+      },
+      "keyFeatures": [
+        {
+          "en": "User registration, authentication, and account management",
+          "pt": "Cadastro, autenticação e gerenciamento de contas de usuários"
+        },
+        {
+          "en": "Wine catalog browsing and detailed product information",
+          "pt": "Navegação pelo catálogo de vinhos e visualização de detalhes dos produtos"
+        },
+        {
+          "en": "Shopping cart functionality and purchase flow",
+          "pt": "Funcionalidade de carrinho de compras e fluxo de realização de compras"
+        },
+        {
+          "en": "REST API integration with a MySQL database for wine data management",
+          "pt": "Integração com API REST e banco de dados MySQL para gerenciamento dos dados dos vinhos"
+        }
+      ],
+      "technologies": [
+        { "label": "Angular", "icon": "angular" },
+        { "label": "Spring Boot", "icon": "springBoot" },
+        { "label": "MySQL", "icon": "mysql" },
+        { "label": "TypeScript", "icon": "typescript" },
+        { "label": "Java", "icon": "java" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" }
+      ],
+      "links": {
+        "repository": "https://github.com/LucasKazuhiro/loja-vinho",
+        "design": "https://www.figma.com/proto/JKhN9qtK5zfoH0lPQIZcJ6/VinhoEcommerce",
+        "live": null
+      },
+      "banner": {
+        "available": true,
+        "scrollable": true,
+        "default": "/projects/wemage/BANNER_DARK.png",
+        "light": "/projects/wemage/BANNER_LIGHT.png",
+        "dark": "/projects/wemage/BANNER_DARK.png"
+      },
+      "screenshots": [
+        {
+          "name": {
+            "pt": "Tela inicial",
+            "en": "Home Screen"
+          },
+          "path": "/projects/wemage/HOME.png"
+        }
+      ],
+      "metadata": {
+        "status": "completed",
+        "scope": "fullStack",
+        "category": "academic"
+      }
+    },
+    {
+      "id": "korosenku",
+      "projectName": "anime-blog-review",
+      "name": {
+        "en": "Korosenku",
+        "pt": "Korosenku"
+      },
+      "logo": "korosenku",
+      "summary": {
+        "en": "An anime review blog where users can explore personal reviews, favorite anime, characters, voice actors, animation studios, and music.",
+        "pt": "Um blog de reviews de animes onde é possível explorar avaliações pessoais, animes favoritos, personagens, dubladores, estúdios de animação e músicas."
+      },
+      "description": {
+        "en": "Korosenku is a personal anime review blog built to practice web development and share opinions. It features anime reviews, favorite collections, fuzzy search, dark mode, custom tooltips, and animations. Built with Angular and TailwindCSS on the frontend and Flask, Python, and Pandas on the backend, it uses local JSON and Markdown files for data.",
+        "pt": "Korosenku é um blog pessoal de reviews de anime, criado para praticar desenvolvimento web e compartilhar opiniões. Possui análises, coleções de favoritos, busca inteligente, modo escuro, tooltips e animações. Utiliza Angular e TailwindCSS no frontend e Flask, Python e Pandas no backend, com dados armazenados em arquivos JSON e Markdown."
+      },
+      "keyFeatures": [
+        {
+          "en": "Anime reviews with detailed information, including release dates, episode counts, and genres",
+          "pt": "Reviews de animes com informações detalhadas, incluindo datas de lançamento, quantidade de episódios e gêneros"
+        },
+        {
+          "en": "Collections of favorite anime, characters, voice actors, animation studios, and music",
+          "pt": "Coleções de animes, personagens, dubladores, estúdios de animação e músicas favoritas"
+        },
+        {
+          "en": "Fuzzy search functionality powered by Fuse.js",
+          "pt": "Sistema de pesquisa fuzzy utilizando Fuse.js"
+        },
+        {
+          "en": "Dark mode, custom tooltips, and visual animations",
+          "pt": "Modo escuro, tooltips personalizados e animações visuais"
+        },
+        {
+          "en": "Flask backend for providing data stored in local JSON and Markdown files",
+          "pt": "Backend com Flask para disponibilizar dados armazenados em arquivos JSON e Markdown locais"
+        }
+      ],
+      "technologies": [
+        { "label": "Angular", "icon": "angular" },
+        { "label": "Flask", "icon": "flask" },
+        { "label": "Pandas", "icon": "pandas" },
+        { "label": "TailwindCSS", "icon": "tailwindCSS" },
+        { "label": "Fuse.js", "icon": "fuseJS" },
+        { "label": "TypeScript", "icon": "typescript" },
+        { "label": "Python", "icon": "python" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" }
+      ],
+      "links": {
+        "repository": "https://github.com/LucasOkokama/anime-blog-review",
+        "design": "https://www.figma.com/proto/9xlVkFh4w7eP8Z3GWelY2q/Anime-Blog-Review?node-id=1-2&t=XBaEhW2ueDgbF9l7-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
+        "live": "https://korosenku.vercel.app/"
+      },
+      "banner": {
+        "available": true,
+        "scrollable": true,
+        "default": "/projects/korosenku/BANNER_DARK.png",
+        "light": "/projects/korosenku/BANNER_LIGHT.png",
+        "dark": "/projects/korosenku/BANNER_DARK.png"
+      },
+      "screenshots": [
+        {
+          "name": {
+            "pt": "Página Inicial",
+            "en": "Homepage"
+          },
+          "path": "/projects/korosenku/HOMEPAGE.png"
+        },
+        {
+          "name": {
+            "pt": "Favoritos",
+            "en": "Favorites"
+          },
+          "path": "/projects/korosenku/FAVORITES.png"
+        },
+        {
+          "name": {
+            "pt": "Músicas",
+            "en": "Musics"
+          },
+          "path": "/projects/korosenku/MUSICS.png"
+        },
+        {
+          "name": {
+            "pt": "Avaliação",
+            "en": "Review"
+          },
+          "path": "/projects/korosenku/REVIEW.png"
+        }
+      ],
+      "metadata": {
+        "status": "completed",
+        "scope": "fullStack",
+        "category": "personal"
+      }
+    },
+    {
       "id": "wemage",
       "projectName": "pexels-image-search",
       "name": {
@@ -38,19 +205,20 @@
       "technologies": [
         { "label": "React", "icon": "react" },
         { "label": "TailwindCSS", "icon": "tailwindCSS" },
-        { "label": "Styled Components", "icon": "styledComponents" },
-        { "label": "Vite", "icon": "vite" },
         { "label": "Pexels API", "icon": "pexels" },
+        { "label": "Styled Components", "icon": "styledComponents" },
+        { "label": "TypeScript", "icon": "typescript" },
         { "label": "HTML5", "icon": "html5" },
         { "label": "CSS3", "icon": "css" },
-        { "label": "TypeScript", "icon": "typescript" }
+        { "label": "Vite", "icon": "vite" }
       ],
       "links": {
-        "repository": "https://github.com/LucasOkokama/portfolio-v2",
-        "design": null,
+        "repository": "https://github.com/LucasOkokama/pexels-image-search",
+        "design": "https://www.figma.com/proto/4XOnKMPwSUb3F8eKU6V5j9/Unsplash-Image-Search?node-id=1-2&p=f&t=WyuvdZk1NbAvTCkh-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
         "live": "https://wemage.vercel.app/"
       },
       "banner": {
+        "available": true,
         "scrollable": true,
         "default": "/projects/wemage/BANNER_DARK.png",
         "light": "/projects/wemage/BANNER_LIGHT.png",
@@ -69,6 +237,167 @@
         "status": "completed",
         "scope": "frontend",
         "category": "personal"
+      }
+    },
+    {
+      "id": "earthwise",
+      "projectName": "earthwise-website",
+      "name": {
+        "en": "EarthWise",
+        "pt": "EarthWise"
+      },
+      "logo": "earthwise",
+      "summary": {
+        "en": "An environmental awareness website focused on promoting environmental preservation, featuring informative news articles, dark mode, and interactive visual elements.",
+        "pt": "Um website de conscientização ambiental focado na preservação do meio ambiente, com notícias informativas, modo escuro e elementos visuais interativos."
+      },
+      "description": {
+        "en": "EarthWise is a website focused on environmental preservation, developed as the final project for an Analysis and Systems Development course at Etec Parque Belém. The platform features pages such as Home, About Us, Login and Registration, and a news section designed to share environmental information. It also includes dark mode, article topic summaries, and visual animations. The project was built using HTML, CSS, PHP, and MySQL, with Docker added later to simplify local development and testing.",
+        "pt": "EarthWise é um website voltado à preservação ambiental, desenvolvido como projeto final do curso de Análise e Desenvolvimento de Sistemas da Etec Parque Belém. A plataforma possui páginas como Home, Sobre Nós, Login e Cadastro, além de uma seção de notícias dedicada à divulgação de informações ambientais. Também conta com modo escuro, sumários dos tópicos das notícias e animações visuais. O projeto foi desenvolvido utilizando HTML, CSS, PHP e MySQL, com Docker adicionado posteriormente para facilitar o desenvolvimento e os testes locais."
+      },
+      "keyFeatures": [
+        {
+          "en": "Environmental news section to promote awareness and share informative content",
+          "pt": "Seção de notícias ambientais para promover a conscientização e compartilhar conteúdos informativos"
+        },
+        {
+          "en": "Dark mode support for a more comfortable browsing experience",
+          "pt": "Suporte ao modo escuro para uma experiência de navegação mais confortável"
+        },
+        {
+          "en": "Article topic summaries and visual animations",
+          "pt": "Sumários dos tópicos dos artigos e animações visuais"
+        },
+        {
+          "en": "User registration and login pages",
+          "pt": "Páginas de cadastro e login de usuários"
+        },
+        {
+          "en": "Docker configuration for local development and testing",
+          "pt": "Configuração Docker para desenvolvimento e testes locais"
+        }
+      ],
+      "technologies": [
+        { "label": "MySQL", "icon": "mysql" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" },
+        { "label": "PHP", "icon": "php" },
+        { "label": "Docker", "icon": "docker" }
+      ],
+      "links": {
+        "repository": "https://github.com/LucasOkokama/EarthWise-website",
+        "design": null,
+        "live": "https://lucasokokama.github.io/EarthWise-website-host/"
+      },
+      "banner": {
+        "available": true,
+        "scrollable": true,
+        "default": "/projects/earthwise/BANNER_LIGHT.png",
+        "light": null,
+        "dark": null
+      },
+      "screenshots": [
+        {
+          "name": {
+            "pt": "Página de cadastro",
+            "en": "Registration Page"
+          },
+          "path": "/projects/earthwise/REGISTER.png"
+        },
+        {
+          "name": {
+            "pt": "Artigo sobre Logística Reversa",
+            "en": "Reverse Logistics Article"
+          },
+          "path": "/projects/earthwise/ARTICLE_1.png"
+        },
+        {
+          "name": {
+            "pt": "Autor e Artigos Relacionados",
+            "en": "Author and Related Articles"
+          },
+          "path": "/projects/earthwise/ARTICLE_2.png"
+        },
+        {
+          "name": {
+            "pt": "Sobre nós",
+            "en": "About User"
+          },
+          "path": "/projects/earthwise/ABOUT_US.png"
+        },
+        {
+          "name": {
+            "pt": "Nossa Equipe",
+            "en": "Our Team"
+          },
+          "path": "/projects/earthwise/TEAM.png"
+        }
+      ],
+      "metadata": {
+        "status": "completed",
+        "scope": "fullStack",
+        "category": "academic"
+      }
+    },
+    {
+      "id": "simulando-fatec-extrator",
+      "projectName": "simulando-fatec-extrator",
+      "name": {
+        "en": "Simulado Fatec Extractor",
+        "pt": "Exam Fatec Extrator"
+      },
+      "logo": null,
+      "summary": {
+        "en": "A Python-based tool that automates the extraction and formatting of FATEC entrance exam questions from PDF files into structured JSON using the Gemini AI API.",
+        "pt": "Uma ferramenta desenvolvida em Python que automatiza a extração e formatação de questões do vestibular da FATEC a partir de arquivos PDF para JSON estruturado, utilizando a API Gemini AI."
+      },
+      "description": {
+        "en": "Simulando Fatec Extractor is a Python-based tool developed as part of the Simulando Fatec project, a free platform for students to practice FATEC entrance exams. It automates the extraction of questions, answer keys, and images from official PDF files, converting them into structured JSON ready for database integration. The project uses PyMuPDF and Pillow for PDF and image processing, while Google's Gemini AI API assists in interpreting and formatting the extracted content. It supports processing multiple exams by year and semester, as well as selecting specific questions for extraction.",
+        "pt": "Simulando Fatec Extractor é uma ferramenta desenvolvida em Python como parte do projeto Simulando Fatec, uma plataforma gratuita para estudantes praticarem o vestibular da FATEC. Ela automatiza a extração de questões, gabaritos e imagens de arquivos PDF oficiais, convertendo-os em JSON estruturado para integração com bancos de dados. O projeto utiliza PyMuPDF e Pillow para processamento de PDFs e imagens, enquanto a API Gemini AI auxilia na interpretação e formatação dos conteúdos extraídos. Também permite processar diferentes provas por ano e semestre, além de selecionar questões específicas para extração."
+      },
+      "keyFeatures": [
+        {
+          "en": "Automated extraction and formatting of questions from official FATEC exam PDFs",
+          "pt": "Extração e formatação automatizada de questões a partir dos PDFs oficiais das provas da FATEC"
+        },
+        {
+          "en": "Gemini AI integration to interpret questions and generate structured JSON data",
+          "pt": "Integração com Gemini AI para interpretar questões e gerar dados estruturados em JSON"
+        },
+        {
+          "en": "Automatic extraction and association of images with their corresponding questions",
+          "pt": "Extração automática de imagens e associação com suas respectivas questões"
+        },
+        {
+          "en": "Support for processing exams by year and semester, with selective question extraction",
+          "pt": "Suporte ao processamento de provas por ano e semestre, com extração seletiva de questões"
+        },
+        {
+          "en": "Structured JSON output ready for database integration",
+          "pt": "Geração de arquivos JSON estruturados e preparados para integração com bancos de dados"
+        }
+      ],
+      "technologies": [
+        { "label": "Google Gemini AI", "icon": "gemini" },
+        { "label": "Python", "icon": "python" }
+      ],
+      "links": {
+        "repository": "https://github.com/LucasOkokama/simulando-fatec-extrator",
+        "design": null,
+        "live": null
+      },
+      "banner": {
+        "available": false,
+        "scrollable": false,
+        "default": null,
+        "light": null,
+        "dark": null
+      },
+      "screenshots": [],
+      "metadata": {
+        "status": "completed",
+        "scope": "backend",
+        "category": "academic"
       }
     }
   ]

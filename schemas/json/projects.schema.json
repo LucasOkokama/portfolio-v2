@@ -13,6 +13,7 @@
       "additionalProperties": false
     },
     "items": {
+      "minItems": 1,
       "type": "array",
       "items": {
         "type": "object",
@@ -28,7 +29,87 @@
             "required": ["pt", "en"],
             "additionalProperties": false
           },
-          "logo": { "type": "string" },
+          "logo": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "fourPointedStar",
+                  "logo",
+                  "figma",
+                  "gemini",
+                  "github",
+                  "gmail",
+                  "grain",
+                  "linkedin",
+                  "pexels",
+                  "vercel",
+                  "earthwise",
+                  "korosenku",
+                  "wemage",
+                  "angular",
+                  "css",
+                  "docker",
+                  "eclipse",
+                  "express",
+                  "flask",
+                  "fuseJS",
+                  "git",
+                  "html5",
+                  "intellijIdea",
+                  "java",
+                  "javascript",
+                  "mysql",
+                  "nextJS",
+                  "nodeJS",
+                  "pandas",
+                  "php",
+                  "plotly",
+                  "postgresql",
+                  "postman",
+                  "python",
+                  "react",
+                  "springBoot",
+                  "styledComponents",
+                  "tailwindCSS",
+                  "typescript",
+                  "visualStudioCode",
+                  "vite",
+                  "arrowRight",
+                  "arrowUpRight",
+                  "brush",
+                  "calendar",
+                  "caretLeft",
+                  "caretRight",
+                  "check",
+                  "chevronLeft",
+                  "chevronRight",
+                  "close",
+                  "copyright",
+                  "desktopComputer",
+                  "externalLink",
+                  "fullscreen",
+                  "gear",
+                  "gitBranch",
+                  "hash",
+                  "imageNotFound",
+                  "infoSquareFilled",
+                  "label",
+                  "layout",
+                  "moon",
+                  "pencil",
+                  "pin",
+                  "reload",
+                  "server",
+                  "shift",
+                  "spanner",
+                  "star",
+                  "sun"
+                ]
+              },
+              { "type": "null" }
+            ]
+          },
           "summary": {
             "type": "object",
             "properties": {
@@ -73,16 +154,23 @@
                     "fourPointedStar",
                     "logo",
                     "figma",
+                    "gemini",
                     "github",
                     "gmail",
                     "grain",
                     "linkedin",
                     "pexels",
                     "vercel",
+                    "earthwise",
+                    "korosenku",
+                    "wemage",
+                    "angular",
                     "css",
                     "docker",
                     "eclipse",
                     "express",
+                    "flask",
+                    "fuseJS",
                     "git",
                     "html5",
                     "intellijIdea",
@@ -92,6 +180,7 @@
                     "nextJS",
                     "nodeJS",
                     "pandas",
+                    "php",
                     "plotly",
                     "postgresql",
                     "postman",
@@ -119,7 +208,8 @@
                     "fullscreen",
                     "gear",
                     "gitBranch",
-                    "gitCommit",
+                    "hash",
+                    "imageNotFound",
                     "infoSquareFilled",
                     "label",
                     "layout",
@@ -165,15 +255,44 @@
             "additionalProperties": false
           },
           "banner": {
-            "type": "object",
-            "properties": {
-              "scrollable": { "type": "boolean" },
-              "default": { "type": "string", "minLength": 1 },
-              "light": { "type": ["string", "null"] },
-              "dark": { "type": ["string", "null"] }
-            },
-            "required": ["scrollable", "default", "light", "dark"],
-            "additionalProperties": false
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "available": { "type": "boolean", "const": true },
+                  "scrollable": { "type": "boolean" },
+                  "default": { "type": "string" },
+                  "light": { "type": ["string", "null"] },
+                  "dark": { "type": ["string", "null"] }
+                },
+                "required": [
+                  "available",
+                  "scrollable",
+                  "default",
+                  "light",
+                  "dark"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "available": { "type": "boolean", "const": false },
+                  "scrollable": { "type": "boolean" },
+                  "default": { "type": "null" },
+                  "light": { "type": "null" },
+                  "dark": { "type": "null" }
+                },
+                "required": [
+                  "available",
+                  "scrollable",
+                  "default",
+                  "light",
+                  "dark"
+                ],
+                "additionalProperties": false
+              }
+            ]
           },
           "screenshots": {
             "type": "array",

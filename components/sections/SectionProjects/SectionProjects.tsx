@@ -26,16 +26,22 @@ export function SectionProjects({ locale }: Props) {
 
     const previousIndex =
       (selectedIndex - 1 + projects.items.length) % projects.items.length;
+    const previousProject = projects.items[previousIndex];
 
-    setSelectedProject(projects.items[previousIndex]);
+    if (!previousProject) return;
+
+    setSelectedProject(previousProject);
   }, [selectedIndex]);
 
   const handleNext = useCallback(() => {
     if (selectedIndex === -1 || projects.items.length === 0) return;
 
     const nextIndex = (selectedIndex + 1) % projects.items.length;
+    const nextProject = projects.items[nextIndex];
 
-    setSelectedProject(projects.items[nextIndex]);
+    if (!nextProject) return;
+
+    setSelectedProject(nextProject);
   }, [selectedIndex]);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { API_ENABLED, API_ERROR_MESSAGES } from '@/constants/api';
+import { API_ENABLED, API_ERROR_MESSAGES } from '@/constants/api.const';
 import type { ILocale } from '@/i18n/routing';
 import { localize } from '@/lib/utils/localize';
 import type { IApiErrorCode } from '@/types/api.type';

@@ -1,4 +1,4 @@
-import { API_ERROR_CODES } from '@/constants/api';
+import { API_ERROR_CODES } from '@/constants/api.const';
 import type { IApiErrorCode, IServerApiError } from '@/types/api.type';
 
 export class ClientApiError extends Error {

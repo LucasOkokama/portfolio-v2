@@ -35,12 +35,23 @@ const projectLinksSchema = z.object({
   live: z.url().nullable(),
 });
 
-const projectBannerSchema = z.object({
-  scrollable: z.boolean(),
-  default: z.string().min(1),
-  light: z.string().nullable(),
-  dark: z.string().nullable(),
-});
+const projectBannerSchema = z.discriminatedUnion('available', [
+  z.object({
+    available: z.literal(true),
+    scrollable: z.boolean(),
+    default: z.string(),
+    light: z.string().nullable(),
+    dark: z.string().nullable(),
+  }),
+
+  z.object({
+    available: z.literal(false),
+    scrollable: z.boolean(),
+    default: z.null(),
+    light: z.null(),
+    dark: z.null(),
+  }),
+]);
 
 const projectScreenshotSchema = z.object({
   name: localizedTextSchema,
@@ -57,7 +68,7 @@ export const projectSchema = z.object({
   id: z.string().min(1),
   projectName: z.string().min(1),
   name: localizedTextSchema,
-  logo: z.string(),
+  logo: iconNameSchema.nullable(),
   summary: localizedTextSchema,
   description: localizedTextSchema,
   keyFeatures: z.array(localizedTextSchema).min(1).max(5),
@@ -70,7 +81,7 @@ export const projectSchema = z.object({
 
 export const sectionProjectsSchema = z.object({
   sectionName: localizedTextSchema,
-  items: z.array(projectSchema),
+  items: z.array(projectSchema).min(1),
 });
 
 export type IProjectStatus = z.infer<typeof projectStatusSchema>;

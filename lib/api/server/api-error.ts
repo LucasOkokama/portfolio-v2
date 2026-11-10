@@ -1,4 +1,4 @@
-import { API_ERROR_MESSAGES } from '@/constants/api';
+import { API_ERROR_MESSAGES } from '@/constants/api.const';
 import { defaultLocale } from '@/i18n/routing';
 import type { IApiErrorCode, IServerApiError } from '@/types/api.type';
 import { NextResponse } from 'next/server';

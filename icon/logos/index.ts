@@ -7,9 +7,11 @@ import GrainIcon from './grain.svg';
 import LinkedInIcon from './linkedin.svg';
 import PexelsIcon from './pexels.svg';
 import VercelIcon from './vercel.svg';
+import GeminiIcon from './gemini.svg';
 
 export const logosIcons = {
   [iconNames.logos.figma]: FigmaIcon,
+  [iconNames.logos.gemini]: GeminiIcon,
   [iconNames.logos.github]: GitHubIcon,
   [iconNames.logos.gmail]: GmailIcon,
   [iconNames.logos.grain]: GrainIcon,

@@ -14,8 +14,10 @@ import BrushIcon from './boxicons--brush-filled.svg';
 import LayoutIcon from './boxicons--layout-filled.svg';
 import ServerIcon from './boxicons--server-filled.svg';
 import SpannerIcon from './boxicons--spanner-filled.svg';
+import ImageNotFoundIcon from './carbon--no-image.svg';
 import CloseIcon from './ci--close-md.svg';
 import ExternalLinkIcon from './ci--external-link.svg';
+import HashIcon from './coolicons--hash-bulk-round.svg';
 import MoonIcon from './eva--moon-fill.svg';
 import SunIcon from './eva--sun-fill.svg';
 import GearIcon from './fa6-solid--gear.svg';
@@ -23,7 +25,6 @@ import CalendarIcon from './garden--calendar-fill-20.svg';
 import ReloadIcon from './garden--reload-fill-16.svg';
 import DesktopComputerIcon from './heroicons-solid--desktop-computer.svg';
 import FullscreenIcon from './keyline-icons--fullscreen-fill.svg';
-import GitCommitIcon from './keyline-icons--git-commit-horizontal-fill.svg';
 import ShiftIcon from './material-symbols--shift-rounded.svg';
 import LabelIcon from './material-symbols-light--label-rounded.svg';
 import CopyrightIcon from './mingcute--copyright-fill.svg';
@@ -41,13 +42,14 @@ export const uiIcons = {
   [iconNames.ui.chevronLeft]: ChevronLeftIcon,
   [iconNames.ui.chevronRight]: ChevronRightIcon,
   [iconNames.ui.close]: CloseIcon,
-  [iconNames.ui.gitBranch]: GitBranchIcon,
-  [iconNames.ui.gitCommit]: GitCommitIcon,
   [iconNames.ui.copyright]: CopyrightIcon,
   [iconNames.ui.desktopComputer]: DesktopComputerIcon,
   [iconNames.ui.externalLink]: ExternalLinkIcon,
   [iconNames.ui.fullscreen]: FullscreenIcon,
   [iconNames.ui.gear]: GearIcon,
+  [iconNames.ui.gitBranch]: GitBranchIcon,
+  [iconNames.ui.hash]: HashIcon,
+  [iconNames.ui.imageNotFound]: ImageNotFoundIcon,
   [iconNames.ui.infoSquareFilled]: InfoSquareFilledIcon,
   [iconNames.ui.label]: LabelIcon,
   [iconNames.ui.layout]: LayoutIcon,

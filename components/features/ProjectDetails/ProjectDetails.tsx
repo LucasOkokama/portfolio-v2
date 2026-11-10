@@ -1,5 +1,6 @@
 'use client';
 
+import { AsyncRenderLabel } from '@/components/layouts/AsyncRenderLabel/AsyncRenderLabel';
 import { Container } from '@/components/layouts/Container/Container';
 import { SkeletonGeneric } from '@/components/layouts/SkeletonGeneric/SkeletonGeneric';
 import { BadgeStatus } from '@/components/ui/BadgeStatus/BadgeStatus';
@@ -15,12 +16,12 @@ import {
   projectScopeLabels,
   projectStatusLabels,
   projectStatusVariants,
-} from '@/constants/projects';
+} from '@/constants/projects.const';
 import { useGitHubRepository } from '@/hooks/useGitHubRepository';
 import type { ILocale } from '@/i18n/routing';
+import { icons } from '@/icon';
 import { uiIcons } from '@/icon/ui';
 import { isClientApiError } from '@/lib/api/client/api-error';
-import { renderAsyncLabel } from '@/lib/utils/asyncRender';
 import { cn } from '@/lib/utils/cn';
 import { formatDateLong, formatNumberCompact } from '@/lib/utils/format';
 import { localize, localizeAll } from '@/lib/utils/localize';
@@ -53,6 +54,8 @@ export function ProjectDetails({
 }: Props) {
   const tProjectDetails = useTranslations('projectDetails');
   const tProjectCard = useTranslations('projectCard');
+
+  const ProjectLogo = project?.logo ? icons[project.logo] : undefined;
 
   const {
     data: githubData,
@@ -226,7 +229,7 @@ export function ProjectDetails({
                     className={cn('font-roboto-mono flex flex-wrap gap-2.5')}
                   >
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         prefix: `${tProjectDetails('githubRepository.created')}:`,
@@ -242,7 +245,7 @@ export function ProjectDetails({
                     />
 
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         prefix: `${tProjectDetails('githubRepository.updated')}:`,
@@ -258,7 +261,7 @@ export function ProjectDetails({
                     />
 
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         prefix: `${tProjectDetails(
@@ -273,7 +276,7 @@ export function ProjectDetails({
                     />
 
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         value:
@@ -290,7 +293,7 @@ export function ProjectDetails({
                     />
 
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         value:
@@ -307,7 +310,7 @@ export function ProjectDetails({
                     />
 
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         value: githubData?.latestCommit?.sha.slice(0, 7),
@@ -316,14 +319,14 @@ export function ProjectDetails({
                         )}:`,
                         skeleton: <SkeletonGeneric className="h-3 w-12" />,
                       })}
-                      icon="gitCommit"
+                      icon="hash"
                       className="py-1.75"
                       classNameIcon="text-amber-500 dark:text-amber-400"
                       classNameLabel="text-[11px]"
                     />
 
                     <BadgeTag
-                      label={renderAsyncLabel({
+                      label={AsyncRenderLabel({
                         loading: githubFetching,
                         error: githubError,
                         prefix: `${tProjectDetails(
@@ -356,6 +359,10 @@ export function ProjectDetails({
                 <div className={cn('flex flex-col gap-3')}>
                   <Dialog.Title asChild>
                     <div className={cn('flex items-center gap-4')}>
+                      {ProjectLogo && (
+                        <ProjectLogo className={cn('h-8 w-auto')} />
+                      )}
+
                       <Title text={localize(project.name, locale)} level={2} />
 
                       <BadgeStatus

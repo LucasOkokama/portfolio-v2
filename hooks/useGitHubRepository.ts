@@ -1,6 +1,6 @@
 'use client';
 
-import { API_ENABLED } from '@/constants/api';
+import { API_ENABLED } from '@/constants/api.const';
 import type { ILocale } from '@/i18n/routing';
 import { githubRepositoryDetailsQueryOptions } from '@/queries/github/github-repository.queries';
 import { useQuery } from '@tanstack/react-query';

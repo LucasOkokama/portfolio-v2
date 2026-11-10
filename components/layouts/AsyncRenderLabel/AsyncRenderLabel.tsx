@@ -1,5 +1,5 @@
 import { SkeletonGeneric } from '@/components/layouts/SkeletonGeneric/SkeletonGeneric';
-import { EMPTY_VALUE } from '@/constants/api';
+import { EMPTY_VALUE } from '@/constants/api.const';
 import type { ReactNode } from 'react';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   skeleton?: ReactNode;
 }
 
-export function renderAsyncLabel({
+export function AsyncRenderLabel({
   loading,
   error,
   prefix,

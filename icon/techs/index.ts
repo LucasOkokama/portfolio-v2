@@ -1,5 +1,6 @@
 import type { SvgIconComponent } from '@/types/icons.type';
 import { iconNames } from '../icons-names';
+import AngularIcon from './angular.svg';
 import CSSIcon from './css.svg';
 import DockerIcon from './docker.svg';
 import EclipseIcon from './eclipse.svg';
@@ -13,6 +14,7 @@ import MysqlIcon from './mysql.svg';
 import NextJSIcon from './next-js.svg';
 import NodeJSIcon from './node-js.svg';
 import PandasIcon from './pandas.svg';
+import PHPIcon from './php.svg';
 import PlotlyIcon from './plotly.svg';
 import PostgresqlIcon from './postgresql.svg';
 import PostmanIcon from './postman.svg';
@@ -24,12 +26,17 @@ import TailwindCSSIcon from './tailwind-css.svg';
 import TypescriptIcon from './typescript.svg';
 import VisualStudioCodeIcon from './visual-studio-code.svg';
 import ViteIcon from './vite.svg';
+import FlaskIcon from './flask.svg';
+import FuseJSIcon from './fuse-js.svg';
 
 export const techsIcons = {
+  [iconNames.techs.angular]: AngularIcon,
   [iconNames.techs.css]: CSSIcon,
   [iconNames.techs.docker]: DockerIcon,
   [iconNames.techs.eclipse]: EclipseIcon,
   [iconNames.techs.express]: ExpressIcon,
+  [iconNames.techs.flask]: FlaskIcon,
+  [iconNames.techs.fuseJS]: FuseJSIcon,
   [iconNames.techs.git]: GitIcon,
   [iconNames.techs.html5]: Html5Icon,
   [iconNames.techs.intellijIdea]: IntelliJIdeaIcon,
@@ -39,6 +46,7 @@ export const techsIcons = {
   [iconNames.techs.nextJS]: NextJSIcon,
   [iconNames.techs.nodeJS]: NodeJSIcon,
   [iconNames.techs.pandas]: PandasIcon,
+  [iconNames.techs.php]: PHPIcon,
   [iconNames.techs.plotly]: PlotlyIcon,
   [iconNames.techs.postgresql]: PostgresqlIcon,
   [iconNames.techs.postman]: PostmanIcon,

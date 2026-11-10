@@ -1,5 +1,5 @@
-import { API_ERROR_MESSAGES } from '@/constants/api';
-import { queryKeys } from '@/constants/query-keys';
+import { API_ERROR_MESSAGES } from '@/constants/api.const';
+import { queryKeys } from '@/constants/query-keys.const';
 import type { ILocale } from '@/i18n/routing';
 import { ClientApiError } from '@/lib/api/client/api-error';
 import { fetchGitHubRepositoryDetails } from '@/services/github/github.api';

@@ -118,7 +118,7 @@ export function BadgeTag({
         className,
       )}
     >
-      {Icon && <Icon className={cn('size-3', classNameIcon)} />}
+      {Icon && <Icon className={cn('h-3 w-auto', classNameIcon)} />}
 
       <span className={cn('text-xs', classNameLabel)}>{label}</span>
     </div>
