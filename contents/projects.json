@@ -6,13 +6,239 @@
   },
   "items": [
     {
-      "id": "loja-vinho",
-      "projectName": "loja-vinho",
-      "name": {
-        "en": "Wine Store",
-        "pt": "Loja de Vinhos"
+      "id": "startdoor",
+      "projectName": {
+        "en": "Startdoor",
+        "pt": "Startdoor"
       },
-      "logo": null,
+      "repository": {
+        "owner": "Balbinao",
+        "name": "Startdoor"
+      },
+      "logo": "startdoor",
+      "summary": {
+        "en": "A collaborative web platform for sharing and evaluating internship experiences, helping students discover and compare companies based on real feedback from other interns.",
+        "pt": "Uma plataforma web colaborativa para compartilhar e avaliar experiências de estágio, ajudando estudantes a descobrir e comparar empresas com base em relatos reais de outros estagiários."
+      },
+      "description": {
+        "en": "Startdoor is an academic platform developed by FATEC Ipiranga students to help students and interns make informed career decisions. It provides a centralized space for sharing company reviews, workplace insights, and internship experiences, alongside opportunity comparisons and personalized AI-powered recommendations.",
+        "pt": "Startdoor é uma plataforma acadêmica desenvolvida por estudantes da FATEC Ipiranga para auxiliar estudantes e estagiários na tomada de decisões profissionais. Oferece um espaço centralizado para compartilhar avaliações de empresas, informações sobre ambientes de trabalho e experiências de estágio, além de comparar oportunidades e receber recomendações personalizadas com IA."
+      },
+      "keyFeatures": [
+        {
+          "en": "Access to internship reviews, ratings, and feedback shared by other students",
+          "pt": "Acesso a avaliações, notas e relatos de experiências de estágio compartilhados por outros estudantes"
+        },
+        {
+          "en": "Company and internship opportunity comparison through charts and statistics",
+          "pt": "Comparação de empresas e oportunidades de estágio por meio de gráficos e estatísticas"
+        },
+        {
+          "en": "Personalized company recommendations powered by Google Gemini AI, based on student preferences and company evaluations",
+          "pt": "Recomendações personalizadas de empresas utilizando Google Gemini AI, com base nas preferências dos estudantes e nas avaliações das organizações"
+        },
+        {
+          "en": "JWT-based authentication and role-based access control",
+          "pt": "Autenticação utilizando JWT e controle de acesso baseado em permissões"
+        },
+        {
+          "en": "Docker-based deployment with pre-built frontend and backend images available on Docker Hub",
+          "pt": "Distribuição utilizando Docker, com imagens pré-construídas do frontend e backend disponíveis no Docker Hub"
+        }
+      ],
+      "technologies": [
+        {
+          "label": "React",
+          "icon": "react"
+        },
+        {
+          "label": "Spring Boot",
+          "icon": "springBoot"
+        },
+        {
+          "label": "MySQL",
+          "icon": "mysql"
+        },
+        {
+          "label": "MobX",
+          "icon": "mobx"
+        },
+        {
+          "label": "Zod",
+          "icon": "zod"
+        },
+        {
+          "label": "TailwindCSS",
+          "icon": "tailwindCSS"
+        },
+        {
+          "label": "Gemini AI",
+          "icon": "gemini"
+        },
+        {
+          "label": "Swagger",
+          "icon": "swagger"
+        },
+        {
+          "label": "Docker",
+          "icon": "docker"
+        },
+        {
+          "label": "Vite",
+          "icon": "vite"
+        },
+        {
+          "label": "TypeScript",
+          "icon": "typescript"
+        },
+        {
+          "label": "Java",
+          "icon": "java"
+        }
+      ],
+      "links": {
+        "repository": "https://github.com/Balbinao/Startdoor",
+        "design": "https://www.figma.com/proto/uMYDnHDMyCmws5SYpOI9VS/AvaliarEstagios_Prototipo?node-id=3-3&p=f&t=2pt5tdZCC8aVvnQo-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A3&show-proto-sidebar=1",
+        "live": "https://startdoor-landing-page.vercel.app/"
+      },
+      "banner": {
+        "available": true,
+        "scrollable": true,
+        "default": "/project/startdoor/BANNER_DARK.png",
+        "light": null,
+        "dark": null
+      },
+      "screenshots": [
+        {
+          "name": {
+            "pt": "Login de Usuário",
+            "en": "User Login"
+          },
+          "path": "/project/startdoor/LOGIN.png"
+        },
+        {
+          "name": {
+            "pt": "Cadastro de Usuário",
+            "en": "User Registration"
+          },
+          "path": "/project/startdoor/REGISTER.png"
+        },
+        {
+          "name": {
+            "pt": "Tela Inicial",
+            "en": "Home Screen"
+          },
+          "path": "/project/startdoor/HOMEPAGE.png"
+        },
+        {
+          "name": {
+            "pt": "Pesquisa de Empresa",
+            "en": "Company Search"
+          },
+          "path": "/project/startdoor/SEARCH.png"
+        },
+        {
+          "name": {
+            "pt": "Recomendações de Empresa",
+            "en": "Company Recommendations"
+          },
+          "path": "/project/startdoor/RECOMMENDATIONS.png"
+        },
+        {
+          "name": {
+            "pt": "Análise de Empresa #1",
+            "en": "Company Analysis #1"
+          },
+          "path": "/project/startdoor/ANALYSIS_1.png"
+        },
+        {
+          "name": {
+            "pt": "Análise de Empresa #2",
+            "en": "Company Analysis #2"
+          },
+          "path": "/project/startdoor/ANALYSIS_2.png"
+        },
+        {
+          "name": {
+            "pt": "Perfil | Informações Gerais",
+            "en": "Profile | General Information"
+          },
+          "path": "/project/startdoor/PROFILE_GENERAL_INFO.png"
+        },
+        {
+          "name": {
+            "pt": "Perfil | Experiência Acadêmica",
+            "en": "Profile | Academic Experience"
+          },
+          "path": "/project/startdoor/PROFILE_EXPERIENCE_ACADEMIC.png"
+        },
+        {
+          "name": {
+            "pt": "Perfil | Experiência Profissional",
+            "en": "Profile | Professional Experience"
+          },
+          "path": "/project/startdoor/PROFILE_EXPERIENCE_PROFESSIONAL.png"
+        },
+        {
+          "name": {
+            "pt": "Perfil | Edição",
+            "en": "Profile | Edit"
+          },
+          "path": "/project/startdoor/PROFILE_EDIT.png"
+        },
+        {
+          "name": {
+            "pt": "Empresa | Informações Gerais",
+            "en": "Company | General Information"
+          },
+          "path": "/project/startdoor/COMPANY_GENERAL_INFO.png"
+        },
+        {
+          "name": {
+            "pt": "Empresa | Avaliações de Emprego",
+            "en": "Company | Job Reviews"
+          },
+          "path": "/project/startdoor/COMPANY_REVIEWS.png"
+        },
+        {
+          "name": {
+            "pt": "Avaliação de Emprego | Visualizar",
+            "en": "Job Review | View"
+          },
+          "path": "/project/startdoor/REVIEW_VIEW.png"
+        },
+        {
+          "name": {
+            "pt": "Avaliação de Emprego | Editar",
+            "en": "Job Review | Edit"
+          },
+          "path": "/project/startdoor/REVIEW_EDIT.png"
+        },
+        {
+          "name": {
+            "pt": "Empresas Favoritas",
+            "en": "Favorite Companies"
+          },
+          "path": "/project/startdoor/FAVORITES.png"
+        }
+      ],
+      "metadata": {
+        "status": "completed",
+        "scope": "fullStack",
+        "category": "academic"
+      }
+    },
+    {
+      "id": "loja-vinho",
+      "projectName": {
+        "en": "Wine Store",
+        "pt": "Loja de Vinho"
+      },
+      "repository": {
+        "owner": "LucasOkokama",
+        "name": "loja-vinho"
+      },
+      "logo": "lojaVinho",
       "summary": {
         "en": "A full-stack e-commerce platform for wine shopping, featuring user authentication, product browsing, detailed product pages, and a shopping cart.",
         "pt": "Uma plataforma full-stack de e-commerce para venda de vinhos, com autenticação de usuários, navegação por produtos, páginas de detalhes e carrinho de compras."
@@ -56,17 +282,45 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/projects/wemage/BANNER_DARK.png",
-        "light": "/projects/wemage/BANNER_LIGHT.png",
-        "dark": "/projects/wemage/BANNER_DARK.png"
+        "default": "/project/loja-vinho/BANNER_LIGHT.png",
+        "light": null,
+        "dark": null
       },
       "screenshots": [
         {
           "name": {
-            "pt": "Tela inicial",
+            "pt": "Cadastro de Usuário",
+            "en": "User Registration"
+          },
+          "path": "/project/loja-vinho/REGISTER.png"
+        },
+        {
+          "name": {
+            "pt": "Tela Inicial",
             "en": "Home Screen"
           },
-          "path": "/projects/wemage/HOME.png"
+          "path": "/project/loja-vinho/HOME.png"
+        },
+        {
+          "name": {
+            "pt": "Pesquisa de Vinhos",
+            "en": "Wine Search"
+          },
+          "path": "/project/loja-vinho/SEARCH.png"
+        },
+        {
+          "name": {
+            "pt": "Detalhe do Vinho",
+            "en": "Wine Details"
+          },
+          "path": "/project/loja-vinho/DETAIL.png"
+        },
+        {
+          "name": {
+            "pt": "Carrinho de Compras",
+            "en": "Shopping Cart"
+          },
+          "path": "/project/loja-vinho/CART.png"
         }
       ],
       "metadata": {
@@ -77,10 +331,13 @@
     },
     {
       "id": "korosenku",
-      "projectName": "anime-blog-review",
-      "name": {
+      "projectName": {
         "en": "Korosenku",
         "pt": "Korosenku"
+      },
+      "repository": {
+        "owner": "LucasOkokama",
+        "name": "anime-blog-review"
       },
       "logo": "korosenku",
       "summary": {
@@ -132,38 +389,38 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/projects/korosenku/BANNER_DARK.png",
-        "light": "/projects/korosenku/BANNER_LIGHT.png",
-        "dark": "/projects/korosenku/BANNER_DARK.png"
+        "default": "/project/korosenku/BANNER_DARK.png",
+        "light": "/project/korosenku/BANNER_LIGHT.png",
+        "dark": "/project/korosenku/BANNER_DARK.png"
       },
       "screenshots": [
         {
           "name": {
-            "pt": "Página Inicial",
-            "en": "Homepage"
+            "pt": "Tela Inicial",
+            "en": "Home Screen"
           },
-          "path": "/projects/korosenku/HOMEPAGE.png"
+          "path": "/project/korosenku/HOMEPAGE.png"
         },
         {
           "name": {
             "pt": "Favoritos",
             "en": "Favorites"
           },
-          "path": "/projects/korosenku/FAVORITES.png"
+          "path": "/project/korosenku/FAVORITES.png"
         },
         {
           "name": {
             "pt": "Músicas",
             "en": "Musics"
           },
-          "path": "/projects/korosenku/MUSICS.png"
+          "path": "/project/korosenku/MUSICS.png"
         },
         {
           "name": {
-            "pt": "Avaliação",
-            "en": "Review"
+            "pt": "Avaliação de Anime",
+            "en": "Anime Review"
           },
-          "path": "/projects/korosenku/REVIEW.png"
+          "path": "/project/korosenku/REVIEW.png"
         }
       ],
       "metadata": {
@@ -174,10 +431,13 @@
     },
     {
       "id": "wemage",
-      "projectName": "pexels-image-search",
-      "name": {
+      "projectName": {
         "en": "Wemage",
         "pt": "Wemage"
+      },
+      "repository": {
+        "owner": "LucasOkokama",
+        "name": "pexels-image-search"
       },
       "logo": "wemage",
       "summary": {
@@ -207,10 +467,10 @@
         { "label": "TailwindCSS", "icon": "tailwindCSS" },
         { "label": "Pexels API", "icon": "pexels" },
         { "label": "Styled Components", "icon": "styledComponents" },
+        { "label": "Vite", "icon": "vite" },
         { "label": "TypeScript", "icon": "typescript" },
         { "label": "HTML5", "icon": "html5" },
-        { "label": "CSS3", "icon": "css" },
-        { "label": "Vite", "icon": "vite" }
+        { "label": "CSS3", "icon": "css" }
       ],
       "links": {
         "repository": "https://github.com/LucasOkokama/pexels-image-search",
@@ -220,17 +480,17 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/projects/wemage/BANNER_DARK.png",
-        "light": "/projects/wemage/BANNER_LIGHT.png",
-        "dark": "/projects/wemage/BANNER_DARK.png"
+        "default": "/project/wemage/BANNER_DARK.png",
+        "light": "/project/wemage/BANNER_LIGHT.png",
+        "dark": "/project/wemage/BANNER_DARK.png"
       },
       "screenshots": [
         {
           "name": {
-            "pt": "Tela inicial",
+            "pt": "Tela Inicial",
             "en": "Home Screen"
           },
-          "path": "/projects/wemage/HOME.png"
+          "path": "/project/wemage/HOME.png"
         }
       ],
       "metadata": {
@@ -241,10 +501,13 @@
     },
     {
       "id": "earthwise",
-      "projectName": "earthwise-website",
-      "name": {
+      "projectName": {
         "en": "EarthWise",
         "pt": "EarthWise"
+      },
+      "repository": {
+        "owner": "LucasOkokama",
+        "name": "EarthWise-website"
       },
       "logo": "earthwise",
       "summary": {
@@ -292,45 +555,52 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/projects/earthwise/BANNER_LIGHT.png",
+        "default": "/project/earthwise/BANNER_LIGHT.png",
         "light": null,
         "dark": null
       },
       "screenshots": [
         {
           "name": {
-            "pt": "Página de cadastro",
-            "en": "Registration Page"
+            "pt": "Cadastro de Usuário",
+            "en": "User Register"
           },
-          "path": "/projects/earthwise/REGISTER.png"
+          "path": "/project/earthwise/REGISTER.png"
+        },
+        {
+          "name": {
+            "pt": "Cadastro de Usuário",
+            "en": "User Register"
+          },
+          "path": "/project/earthwise/REGISTER.png"
         },
         {
           "name": {
             "pt": "Artigo sobre Logística Reversa",
             "en": "Reverse Logistics Article"
           },
-          "path": "/projects/earthwise/ARTICLE_1.png"
+          "path": "/project/earthwise/ARTICLE_1.png"
         },
         {
           "name": {
             "pt": "Autor e Artigos Relacionados",
             "en": "Author and Related Articles"
           },
-          "path": "/projects/earthwise/ARTICLE_2.png"
+          "path": "/project/earthwise/ARTICLE_2.png"
         },
         {
           "name": {
             "pt": "Sobre nós",
             "en": "About User"
           },
-          "path": "/projects/earthwise/ABOUT_US.png"
+          "path": "/project/earthwise/ABOUT_US.png"
         },
         {
           "name": {
             "pt": "Nossa Equipe",
             "en": "Our Team"
           },
-          "path": "/projects/earthwise/TEAM.png"
+          "path": "/project/earthwise/TEAM.png"
         }
       ],
       "metadata": {
@@ -341,10 +611,13 @@
     },
     {
       "id": "simulando-fatec-extrator",
-      "projectName": "simulando-fatec-extrator",
-      "name": {
+      "projectName": {
         "en": "Simulado Fatec Extractor",
-        "pt": "Exam Fatec Extrator"
+        "pt": "Exam Fatec Extractor"
+      },
+      "repository": {
+        "owner": "LucasOkokama",
+        "name": "simulando-fatec-extrator"
       },
       "logo": null,
       "summary": {

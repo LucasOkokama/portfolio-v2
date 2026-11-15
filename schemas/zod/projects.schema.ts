@@ -24,6 +24,11 @@ export const projectCategorySchema = z.enum([
   'academic',
 ]);
 
+const projectRepositorySchema = z.object({
+  owner: z.string().min(1),
+  name: z.string().min(1),
+});
+
 const projectTechnologySchema = z.object({
   label: z.string().min(1),
   icon: iconNameSchema,
@@ -66,8 +71,8 @@ export const projectMetadataSchema = z.object({
 
 export const projectSchema = z.object({
   id: z.string().min(1),
-  projectName: z.string().min(1),
-  name: localizedTextSchema,
+  projectName: localizedTextSchema,
+  repository: projectRepositorySchema,
   logo: iconNameSchema.nullable(),
   summary: localizedTextSchema,
   description: localizedTextSchema,
@@ -88,6 +93,7 @@ export type IProjectStatus = z.infer<typeof projectStatusSchema>;
 export type IProjectScope = z.infer<typeof projectScopeSchema>;
 export type IProjectCategory = z.infer<typeof projectCategorySchema>;
 export type IProjectTechnology = z.infer<typeof projectTechnologySchema>;
+export type IProjectRepository = z.infer<typeof projectRepositorySchema>;
 export type IProjectLinks = z.infer<typeof projectLinksSchema>;
 export type IProjectScreenshot = z.infer<typeof projectScreenshotSchema>;
 export type IProjectMetadata = z.infer<typeof projectMetadataSchema>;

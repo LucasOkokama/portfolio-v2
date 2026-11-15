@@ -1,5 +1,6 @@
 import 'server-only';
 
+import type { IProjectRepository } from '@/schemas/zod/projects.schema';
 import type { IGitHubRepositoryResponse } from '@/types/github.type';
 import { Octokit } from '@octokit/rest';
 
@@ -8,13 +9,12 @@ const octokit = new Octokit({
   userAgent: 'portfolio-v2',
 });
 
-const OWNER = 'LucasOkokama';
-
 function isNotFoundError(error: unknown): boolean {
   return (
     typeof error === 'object' &&
     error !== null &&
     'status' in error &&
+    typeof error.status === 'number' &&
     error.status === 404
   );
 }
@@ -24,12 +24,13 @@ function isEmptyRepositoryError(error: unknown): boolean {
     typeof error === 'object' &&
     error !== null &&
     'status' in error &&
+    typeof error.status === 'number' &&
     error.status === 409
   );
 }
 
 async function getRepositoryLatestCommit(
-  repositoryName: string,
+  repository: IProjectRepository,
   defaultBranch: string | null,
 ) {
   if (!defaultBranch) {
@@ -38,8 +39,8 @@ async function getRepositoryLatestCommit(
 
   try {
     const { data } = await octokit.rest.repos.getCommit({
-      owner: OWNER,
-      repo: repositoryName,
+      owner: repository.owner,
+      repo: repository.name,
       ref: defaultBranch,
     });
 
@@ -53,11 +54,30 @@ async function getRepositoryLatestCommit(
   }
 }
 
-async function getRepositoryLatestRelease(repositoryName: string) {
+async function getRepositoryCommitsCount(
+  repository: IProjectRepository,
+): Promise<number> {
+  const { headers, data } = await octokit.rest.repos.listCommits({
+    owner: repository.owner,
+    repo: repository.name,
+    per_page: 1,
+  });
+
+  const link = headers.link;
+  if (!link) {
+    return data.length;
+  }
+
+  const lastPage = link.match(/&page=(\d+)>;\s*rel="last"/);
+
+  return lastPage ? Number(lastPage[1]) : data.length;
+}
+
+async function getRepositoryLatestRelease(repository: IProjectRepository) {
   try {
     const { data } = await octokit.rest.repos.getLatestRelease({
-      owner: OWNER,
-      repo: repositoryName,
+      owner: repository.owner,
+      repo: repository.name,
     });
 
     return data;
@@ -71,25 +91,34 @@ async function getRepositoryLatestRelease(repositoryName: string) {
 }
 
 export async function getGitHubRepositoryDetails(
-  repositoryName: string,
+  repository: IProjectRepository,
 ): Promise<IGitHubRepositoryResponse> {
-  const { data: repository } = await octokit.rest.repos.get({
-    owner: OWNER,
-    repo: repositoryName,
+  const { data } = await octokit.rest.repos.get({
+    owner: repository.owner,
+    repo: repository.name,
   });
 
-  const [repositoryCommit, repositoryRelease] = await Promise.all([
-    getRepositoryLatestCommit(repositoryName, repository.default_branch),
-    getRepositoryLatestRelease(repositoryName),
-  ]);
+  const [repositoryCommit, repositoryCommitsCount, repositoryRelease] =
+    await Promise.all([
+      getRepositoryLatestCommit(repository, data.default_branch),
+      getRepositoryCommitsCount(repository),
+      getRepositoryLatestRelease(repository),
+    ]);
 
   return {
-    createdAt: repository.created_at,
-    pushedAt: repository.pushed_at,
+    htmlUrl: data.html_url,
+    defaultBranch: data.default_branch,
+    createdAt: data.created_at,
+    pushedAt: data.pushed_at,
 
-    stars: repository.stargazers_count,
-    forks: repository.forks_count,
-    license: repository.license?.spdx_id ?? null,
+    stars: data.stargazers_count,
+    forks: data.forks_count,
+    license: data.license?.spdx_id
+      ? {
+          spdx_id: data.license.spdx_id,
+          url: `https://choosealicense.com/licenses/${data.license.key}/`,
+        }
+      : null,
 
     latestCommit: repositoryCommit
       ? {
@@ -98,6 +127,8 @@ export async function getGitHubRepositoryDetails(
           message: repositoryCommit.commit.message,
         }
       : null,
+
+    commits: repositoryCommitsCount,
 
     latestRelease: repositoryRelease
       ? {

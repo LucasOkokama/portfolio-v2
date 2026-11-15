@@ -11,23 +11,28 @@ import type { IServerApiSuccess } from '@/types/api.type';
 import type { IGitHubRepositoryResponse } from '@/types/github.type';
 import { NextResponse } from 'next/server';
 
-interface Props {
-  params: Promise<{
-    repositoryName: string;
-  }>;
-}
-
-export async function GET(_request: Request, { params }: Props) {
+export async function GET(request: Request) {
   const apiGuardResponse = requireApiEnabled();
+
   if (apiGuardResponse) {
     return apiGuardResponse;
   }
 
   try {
-    const { repositoryName } = await params;
-    const normalizedRepositoryName = repositoryName.trim();
+    const { searchParams } = new URL(request.url);
 
-    if (!normalizedRepositoryName) {
+    const owner = searchParams.get('owner')?.trim();
+    const repositoryName = searchParams.get('repository')?.trim();
+
+    if (!owner) {
+      return createApiErrorResponse(
+        API_ERROR_MESSAGES.GITHUB_INVALID_OWNER[defaultLocale],
+        400,
+        'GITHUB_INVALID_OWNER',
+      );
+    }
+
+    if (!repositoryName) {
       return createApiErrorResponse(
         API_ERROR_MESSAGES.GITHUB_INVALID_REPOSITORY_NAME[defaultLocale],
         400,
@@ -35,7 +40,10 @@ export async function GET(_request: Request, { params }: Props) {
       );
     }
 
-    const data = await getGitHubRepositoryDetails(normalizedRepositoryName);
+    const data = await getGitHubRepositoryDetails({
+      owner,
+      name: repositoryName,
+    });
 
     const body: IServerApiSuccess<IGitHubRepositoryResponse> = {
       data,
@@ -43,7 +51,7 @@ export async function GET(_request: Request, { params }: Props) {
 
     return NextResponse.json(body);
   } catch (error) {
-    console.error('[API | GitHub | RepositoryName]', {
+    console.error('[API | GitHub | Repository]', {
       originalMessage: getGitHubOriginalMessage(error),
     });
 

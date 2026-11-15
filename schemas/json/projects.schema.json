@@ -19,14 +19,22 @@
         "type": "object",
         "properties": {
           "id": { "type": "string", "minLength": 1 },
-          "projectName": { "type": "string", "minLength": 1 },
-          "name": {
+          "projectName": {
             "type": "object",
             "properties": {
               "pt": { "type": "string" },
               "en": { "type": "string" }
             },
             "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "repository": {
+            "type": "object",
+            "properties": {
+              "owner": { "type": "string", "minLength": 1 },
+              "name": { "type": "string", "minLength": 1 }
+            },
+            "required": ["owner", "name"],
             "additionalProperties": false
           },
           "logo": {
@@ -46,6 +54,8 @@
                   "vercel",
                   "earthwise",
                   "korosenku",
+                  "lojaVinho",
+                  "startdoor",
                   "wemage",
                   "angular",
                   "css",
@@ -59,6 +69,7 @@
                   "intellijIdea",
                   "java",
                   "javascript",
+                  "mobx",
                   "mysql",
                   "nextJS",
                   "nodeJS",
@@ -71,10 +82,12 @@
                   "react",
                   "springBoot",
                   "styledComponents",
+                  "swagger",
                   "tailwindCSS",
                   "typescript",
-                  "visualStudioCode",
                   "vite",
+                  "visualStudioCode",
+                  "zod",
                   "arrowRight",
                   "arrowUpRight",
                   "brush",
@@ -163,6 +176,8 @@
                     "vercel",
                     "earthwise",
                     "korosenku",
+                    "lojaVinho",
+                    "startdoor",
                     "wemage",
                     "angular",
                     "css",
@@ -176,6 +191,7 @@
                     "intellijIdea",
                     "java",
                     "javascript",
+                    "mobx",
                     "mysql",
                     "nextJS",
                     "nodeJS",
@@ -188,10 +204,12 @@
                     "react",
                     "springBoot",
                     "styledComponents",
+                    "swagger",
                     "tailwindCSS",
                     "typescript",
-                    "visualStudioCode",
                     "vite",
+                    "visualStudioCode",
+                    "zod",
                     "arrowRight",
                     "arrowUpRight",
                     "brush",
@@ -343,7 +361,7 @@
         "required": [
           "id",
           "projectName",
-          "name",
+          "repository",
           "logo",
           "summary",
           "description",

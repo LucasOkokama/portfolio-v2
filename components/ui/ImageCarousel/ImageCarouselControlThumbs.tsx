@@ -1,11 +1,12 @@
 'use client';
 
+import { uiIcons } from '@/icon/ui';
 import { cn } from '@/lib/utils/cn';
 import type { IProjectScreenshot } from '@/schemas/zod/projects.schema';
 import type { EmblaCarouselType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import { useCallback, useEffect, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
 
 type Props = {
   emblaApi: EmblaCarouselType | undefined;
@@ -41,6 +42,8 @@ export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
     dragFree: true,
   });
 
+  const [imageErrors, setImageErrors] = useState<number[]>([]);
+
   const selectedIndex = useSelectedSnap(emblaApi);
 
   const onThumbClick = useCallback(
@@ -63,6 +66,7 @@ export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
           const isSelected = selectedIndex === index;
           const isFirst = index === 0;
           const isLast = index === slides.length - 1;
+          const hasError = imageErrors.includes(index);
 
           return (
             <button
@@ -80,17 +84,34 @@ export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
                 isLast && 'mr-2',
               )}
             >
-              <Image
-                src={item.path}
-                alt=""
-                width={288}
-                height={192}
-                className={cn(
-                  'h-16 w-24',
-                  'object-cover object-top',
-                  'select-none',
-                )}
-              />
+              {hasError ? (
+                <div
+                  className={cn(
+                    'h-16 w-24',
+                    'flex items-center justify-center',
+                    'bg-neutral-200 dark:bg-neutral-800',
+                  )}
+                >
+                  <uiIcons.imageNotFound
+                    width={24}
+                    height={24}
+                    className={cn('text-neutral-400 dark:text-neutral-600')}
+                  />
+                </div>
+              ) : (
+                <Image
+                  src={item.path}
+                  alt=""
+                  width={288}
+                  height={192}
+                  onError={() => setImageErrors(prev => [...prev, index])}
+                  className={cn(
+                    'h-16 w-24',
+                    'object-cover object-top',
+                    'select-none',
+                  )}
+                />
+              )}
             </button>
           );
         })}

@@ -13,6 +13,7 @@ export type IApiErrorCode =
   | 'CONFLICT' // Request conflicts with the current resource state (409).
   | 'FORBIDDEN' // Authenticated user lacks permission to perform the action (403).
   | 'GITHUB_FORBIDDEN' // GitHub rejected the request due to insufficient permissions or access restrictions.
+  | 'GITHUB_INVALID_OWNER' // GitHub username or organization name is invalid.
   | 'GITHUB_INVALID_REPOSITORY_NAME' // Repository name violates GitHub naming rules.
   | 'GITHUB_RATE_LIMIT' // GitHub API rate limit has been exceeded.
   | 'GITHUB_REQUEST_FAILED' // GitHub API request failed for an unexpected or unclassified reason.

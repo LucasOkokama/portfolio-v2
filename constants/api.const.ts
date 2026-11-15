@@ -12,6 +12,7 @@ export const API_ERROR_CODES = defineApiErrorCodes([
   'CONFLICT',
   'FORBIDDEN',
   'GITHUB_FORBIDDEN',
+  'GITHUB_INVALID_OWNER',
   'GITHUB_INVALID_REPOSITORY_NAME',
   'GITHUB_RATE_LIMIT',
   'GITHUB_REQUEST_FAILED',
@@ -92,6 +93,11 @@ export const API_ERROR_MESSAGES = {
   GITHUB_FORBIDDEN: {
     pt: 'Acesso ao repositório negado.',
     en: 'Repository access denied.',
+  },
+
+  GITHUB_INVALID_OWNER: {
+    en: 'Invalid GitHub username or organization name.',
+    pt: 'Nome de usuário ou organização do GitHub inválido.',
   },
 
   GITHUB_INVALID_REPOSITORY_NAME: {

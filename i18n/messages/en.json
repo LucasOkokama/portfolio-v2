@@ -34,6 +34,7 @@
       "stars": "Stars",
       "forks": "Forks",
       "latestCommit": "Latest commit",
+      "commits": "Commits",
       "license": "License"
     },
     "reload": "Reload",

@@ -6,12 +6,17 @@ import { githubRepositoryDetailsQueryOptions } from '@/queries/github/github-rep
 import { useQuery } from '@tanstack/react-query';
 
 export function useGitHubRepository(
+  owner: string,
   repositoryName: string,
   locale: ILocale,
   enabled = true,
 ) {
   return useQuery({
-    ...githubRepositoryDetailsQueryOptions(repositoryName, locale),
-    enabled: API_ENABLED && enabled && Boolean(repositoryName.trim()),
+    ...githubRepositoryDetailsQueryOptions(owner, repositoryName, locale),
+    enabled:
+      API_ENABLED &&
+      enabled &&
+      Boolean(owner.trim()) &&
+      Boolean(repositoryName.trim()),
   });
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { AsyncRenderImage } from '@/components/layouts/AsyncRenderImage/AsyncRenderImage';
 import { Container } from '@/components/layouts/Container/Container';
 import { BadgeTag } from '@/components/ui/BadgeTag/BadgeTag';
 import { Button } from '@/components/ui/Button/Button';
@@ -16,7 +17,6 @@ import type { IProject } from '@/schemas/zod/projects.schema';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import styles from './ProjectCard.module.css';
-import { AsyncRenderImage } from '@/components/layouts/AsyncRenderImage/AsyncRenderImage';
 
 type Props = {
   locale: ILocale;
@@ -115,7 +115,7 @@ export function ProjectCard({
 
       <div className={cn('flex flex-col gap-2', 'p-6 pb-4')}>
         <Title
-          text={localize(project.name, locale)}
+          text={localize(project.projectName, locale)}
           className={cn('text-xl font-semibold')}
         />
 

@@ -16,6 +16,7 @@ interface Props {
   icon?: IIconName;
   variant?: BadgeTagVariant;
   backgroundOpacity?: number;
+  externalLink?: string;
   className?: string;
   classNameIcon?: string;
   classNameLabel?: string;
@@ -94,6 +95,7 @@ export function BadgeTag({
   icon,
   variant = 'neutral',
   backgroundOpacity,
+  externalLink,
   className,
   classNameIcon,
   classNameLabel,
@@ -102,25 +104,53 @@ export function BadgeTag({
 
   const bgOpacity = backgroundOpacity ?? variantBackgroundOpacity[variant];
 
-  return (
-    <div
-      style={
-        {
-          '--badge-bg-opacity': `${bgOpacity}%`,
-        } as React.CSSProperties
-      }
-      className={cn(
-        'flex items-center justify-center gap-2',
-        'rounded-sm border',
-        'transition-colors duration-200',
-        'px-2.5 py-1.25',
-        variantStyles[variant],
-        className,
-      )}
-    >
-      {Icon && <Icon className={cn('h-3 w-auto', classNameIcon)} />}
+  const content = (
+    <>
+      {Icon && <Icon className={cn('h-4 w-auto', classNameIcon)} />}
 
-      <span className={cn('text-xs', classNameLabel)}>{label}</span>
+      <span
+        className={cn(
+          'flex items-center justify-center gap-1',
+          'text-xs',
+          classNameLabel,
+        )}
+      >
+        {label}
+      </span>
+    </>
+  );
+
+  const style = {
+    '--badge-bg-opacity': `${bgOpacity}%`,
+  } as React.CSSProperties;
+
+  const sharedClassName = cn(
+    'flex items-center justify-center gap-2',
+    'rounded-sm border',
+    'transition-colors duration-200',
+    'px-2.5 py-1.25',
+    variantStyles[variant],
+    externalLink && 'cursor-pointer',
+    className,
+  );
+
+  if (externalLink) {
+    return (
+      <a
+        href={externalLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={style}
+        className={sharedClassName}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div style={style} className={sharedClassName}>
+      {content}
     </div>
   );
 }

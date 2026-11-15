@@ -62,7 +62,12 @@ export function ProjectDetails({
     isFetching: githubFetching,
     error: githubError,
     refetch: refetchGitHub,
-  } = useGitHubRepository(project?.projectName ?? '', locale, open);
+  } = useGitHubRepository(
+    project?.repository?.owner ?? '',
+    project?.repository?.name ?? '',
+    locale,
+    open && !!project?.repository,
+  );
 
   const message = isClientApiError(githubError)
     ? githubError.originalMessage || githubError.message
@@ -190,8 +195,12 @@ export function ProjectDetails({
                 <Dialog.Close asChild>
                   <div
                     className={cn(
+                      'p-2.5',
+                      'rounded-lg',
                       'transition-colors duration-200',
+                      'cursor-pointer',
                       'hover:text-red-500 hover:dark:text-red-400',
+                      'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
                     )}
                   >
                     <uiIcons.close width={14} height={14} />
@@ -236,7 +245,7 @@ export function ProjectDetails({
                         value: githubData?.createdAt
                           ? formatDateLong(githubData.createdAt, locale)
                           : undefined,
-                        skeleton: <SkeletonGeneric className="h-3 w-16" />,
+                        skeleton: <SkeletonGeneric className="h-4 w-16" />,
                       })}
                       icon="calendar"
                       className="py-1.75"
@@ -252,7 +261,7 @@ export function ProjectDetails({
                         value: githubData?.pushedAt
                           ? formatDateLong(githubData.pushedAt, locale)
                           : undefined,
-                        skeleton: <SkeletonGeneric className="h-3 w-16" />,
+                        skeleton: <SkeletonGeneric className="h-4 w-16" />,
                       })}
                       icon="pencil"
                       className="py-1.75"
@@ -270,6 +279,49 @@ export function ProjectDetails({
                         value: githubData?.latestRelease?.tagName,
                       })}
                       icon="label"
+                      {...(githubData?.latestRelease?.url && {
+                        externalLink: githubData.latestRelease.url,
+                      })}
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={AsyncRenderLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        value: githubData?.latestCommit?.sha.slice(0, 7),
+                        prefix: `${tProjectDetails(
+                          'githubRepository.latestCommit',
+                        )}:`,
+                        skeleton: <SkeletonGeneric className="h-4 w-12" />,
+                      })}
+                      icon="hash"
+                      {...(githubData?.latestCommit?.url && {
+                        externalLink: githubData.latestCommit.url,
+                      })}
+                      className="py-1.75"
+                      classNameIcon="text-amber-500 dark:text-amber-400"
+                      classNameLabel="text-[11px]"
+                    />
+
+                    <BadgeTag
+                      label={AsyncRenderLabel({
+                        loading: githubFetching,
+                        error: githubError,
+                        value:
+                          githubData?.commits !== undefined
+                            ? formatNumberCompact(githubData.commits, locale)
+                            : undefined,
+                        suffix: tProjectDetails('githubRepository.commits'),
+                        skeleton: <SkeletonGeneric className="h-4 w-6" />,
+                      })}
+                      icon="gitBranch"
+                      {...(githubData?.htmlUrl &&
+                        githubData.defaultBranch && {
+                          externalLink: `${githubData.htmlUrl}/commits/${githubData.defaultBranch}`,
+                        })}
                       className="py-1.75"
                       classNameIcon="text-amber-500 dark:text-amber-400"
                       classNameLabel="text-[11px]"
@@ -284,9 +336,12 @@ export function ProjectDetails({
                             ? formatNumberCompact(githubData.stars, locale)
                             : undefined,
                         suffix: tProjectDetails('githubRepository.stars'),
-                        skeleton: <SkeletonGeneric className="h-3 w-6" />,
+                        skeleton: <SkeletonGeneric className="h-4 w-6" />,
                       })}
                       icon="star"
+                      {...(githubData?.htmlUrl && {
+                        externalLink: `${githubData.htmlUrl}/stargazers`,
+                      })}
                       className="py-1.75"
                       classNameIcon="text-amber-500 dark:text-amber-400"
                       classNameLabel="text-[11px]"
@@ -301,25 +356,12 @@ export function ProjectDetails({
                             ? formatNumberCompact(githubData.forks, locale)
                             : undefined,
                         suffix: tProjectDetails('githubRepository.forks'),
-                        skeleton: <SkeletonGeneric className="h-3 w-6" />,
+                        skeleton: <SkeletonGeneric className="h-4 w-6" />,
                       })}
                       icon="gitBranch"
-                      className="py-1.75"
-                      classNameIcon="text-amber-500 dark:text-amber-400"
-                      classNameLabel="text-[11px]"
-                    />
-
-                    <BadgeTag
-                      label={AsyncRenderLabel({
-                        loading: githubFetching,
-                        error: githubError,
-                        value: githubData?.latestCommit?.sha.slice(0, 7),
-                        prefix: `${tProjectDetails(
-                          'githubRepository.latestCommit',
-                        )}:`,
-                        skeleton: <SkeletonGeneric className="h-3 w-12" />,
+                      {...(githubData?.htmlUrl && {
+                        externalLink: `${githubData.htmlUrl}/forks`,
                       })}
-                      icon="hash"
                       className="py-1.75"
                       classNameIcon="text-amber-500 dark:text-amber-400"
                       classNameLabel="text-[11px]"
@@ -332,10 +374,13 @@ export function ProjectDetails({
                         prefix: `${tProjectDetails(
                           'githubRepository.license',
                         )}:`,
-                        value: githubData?.license,
-                        skeleton: <SkeletonGeneric className="h-3 w-6" />,
+                        value: githubData?.license?.spdx_id,
+                        skeleton: <SkeletonGeneric className="h-4 w-6" />,
                       })}
                       icon="copyright"
+                      {...(githubData?.license?.url && {
+                        externalLink: githubData.license.url,
+                      })}
                       className="py-1.75"
                       classNameIcon="text-amber-500 dark:text-amber-400"
                       classNameLabel="text-[11px]"
@@ -363,7 +408,10 @@ export function ProjectDetails({
                         <ProjectLogo className={cn('h-8 w-auto')} />
                       )}
 
-                      <Title text={localize(project.name, locale)} level={2} />
+                      <Title
+                        text={localize(project.projectName, locale)}
+                        level={2}
+                      />
 
                       <BadgeStatus
                         label={localize(

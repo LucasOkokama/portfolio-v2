@@ -5,11 +5,14 @@ import CSSIcon from './css.svg';
 import DockerIcon from './docker.svg';
 import EclipseIcon from './eclipse.svg';
 import ExpressIcon from './express.svg';
+import FlaskIcon from './flask.svg';
+import FuseJSIcon from './fuse-js.svg';
 import GitIcon from './git.svg';
 import Html5Icon from './html5.svg';
 import IntelliJIdeaIcon from './intellij-idea.svg';
 import JavaIcon from './java.svg';
 import JavascriptIcon from './javascript.svg';
+import MobxIcon from './mobx.svg';
 import MysqlIcon from './mysql.svg';
 import NextJSIcon from './next-js.svg';
 import NodeJSIcon from './node-js.svg';
@@ -22,12 +25,12 @@ import PythonIcon from './python.svg';
 import ReactIcon from './react.svg';
 import SpringBootIcon from './spring-boot.svg';
 import StyledComponentsIcon from './styled-components.svg';
+import SwaggerIcon from './swagger.svg';
 import TailwindCSSIcon from './tailwind-css.svg';
 import TypescriptIcon from './typescript.svg';
 import VisualStudioCodeIcon from './visual-studio-code.svg';
 import ViteIcon from './vite.svg';
-import FlaskIcon from './flask.svg';
-import FuseJSIcon from './fuse-js.svg';
+import ZodIcon from './zod.svg';
 
 export const techsIcons = {
   [iconNames.techs.angular]: AngularIcon,
@@ -42,6 +45,7 @@ export const techsIcons = {
   [iconNames.techs.intellijIdea]: IntelliJIdeaIcon,
   [iconNames.techs.java]: JavaIcon,
   [iconNames.techs.javascript]: JavascriptIcon,
+  [iconNames.techs.mobx]: MobxIcon,
   [iconNames.techs.mysql]: MysqlIcon,
   [iconNames.techs.nextJS]: NextJSIcon,
   [iconNames.techs.nodeJS]: NodeJSIcon,
@@ -54,8 +58,10 @@ export const techsIcons = {
   [iconNames.techs.react]: ReactIcon,
   [iconNames.techs.springBoot]: SpringBootIcon,
   [iconNames.techs.styledComponents]: StyledComponentsIcon,
+  [iconNames.techs.swagger]: SwaggerIcon,
   [iconNames.techs.tailwindCSS]: TailwindCSSIcon,
   [iconNames.techs.typescript]: TypescriptIcon,
-  [iconNames.techs.visualStudioCode]: VisualStudioCodeIcon,
   [iconNames.techs.vite]: ViteIcon,
+  [iconNames.techs.visualStudioCode]: VisualStudioCodeIcon,
+  [iconNames.techs.zod]: ZodIcon,
 } satisfies Record<string, SvgIconComponent>;

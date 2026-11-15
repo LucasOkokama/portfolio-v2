@@ -6,13 +6,22 @@ import { fetchGitHubRepositoryDetails } from '@/services/github/github.api';
 import { queryOptions } from '@tanstack/react-query';
 
 export function githubRepositoryDetailsQueryOptions(
+  owner: string,
   repositoryName: string,
   locale: ILocale,
 ) {
   return queryOptions({
-    queryKey: queryKeys.github.repository(repositoryName, locale),
+    queryKey: queryKeys.github.repository(owner, repositoryName, locale),
 
     queryFn: ({ signal }) => {
+      if (!owner.trim()) {
+        throw new ClientApiError(
+          API_ERROR_MESSAGES['GITHUB_INVALID_OWNER'][locale],
+          400,
+          'GITHUB_INVALID_OWNER',
+        );
+      }
+
       if (!repositoryName.trim()) {
         throw new ClientApiError(
           API_ERROR_MESSAGES['GITHUB_INVALID_REPOSITORY_NAME'][locale],
@@ -21,7 +30,12 @@ export function githubRepositoryDetailsQueryOptions(
         );
       }
 
-      return fetchGitHubRepositoryDetails(repositoryName, locale, signal);
+      return fetchGitHubRepositoryDetails(
+        owner,
+        repositoryName,
+        locale,
+        signal,
+      );
     },
   });
 }

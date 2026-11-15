@@ -17,7 +17,10 @@ export function ButtonRetry({
 }: Props) {
   return (
     <div
-      className={cn('font-inter group flex items-center gap-2.5', className)}
+      className={cn(
+        'font-inter group flex w-full min-w-0 items-center gap-2.5',
+        className,
+      )}
     >
       <button
         type="button"
@@ -44,6 +47,7 @@ export function ButtonRetry({
         <Text
           text={message}
           className={cn(
+            'truncate',
             'text-xs',
             'transition-opacity duration-200',
             'opacity-60 group-hover:opacity-100',
