@@ -41,5 +41,12 @@
     "close": "Close",
     "gallery": "Gallery",
     "project": "Project"
+  },
+  "experienceColumn": {
+    "experienceAcademic": "Academic Experience",
+    "experienceProfessional": "Professional Experience"
+  },
+  "experienceCard": {
+    "present": "Present"
   }
 }

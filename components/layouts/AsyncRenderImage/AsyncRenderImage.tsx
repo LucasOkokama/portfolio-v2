@@ -9,14 +9,28 @@ import styles from './AsyncRenderImage.module.css';
 
 type Props = Omit<ImageProps, 'onError' | 'onLoad'> & {
   locale: ILocale;
+  compactFallback?: boolean;
 };
 
-export function AsyncRenderImage({ locale, alt, className, ...props }: Props) {
+export function AsyncRenderImage({
+  locale,
+  alt,
+  compactFallback = false,
+  className,
+  ...props
+}: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
   if (hasError) {
-    return <ImageFallback locale={locale} type="notFound" />;
+    return (
+      <ImageFallback
+        locale={locale}
+        type="notFound"
+        variant={compactFallback ? 'compact' : 'default'}
+        className={className}
+      />
+    );
   }
 
   return (
@@ -26,6 +40,7 @@ export function AsyncRenderImage({ locale, alt, className, ...props }: Props) {
           aria-hidden="true"
           className={cn(
             'absolute inset-0',
+            'rounded-xl',
             'overflow-hidden',
             'after:absolute after:inset-y-0 after:w-1/2',
             'bg-neutral-50 dark:bg-neutral-900',
@@ -38,9 +53,12 @@ export function AsyncRenderImage({ locale, alt, className, ...props }: Props) {
         {...props}
         alt={alt}
         className={cn(
-          className,
+          'h-full w-full',
+          'object-cover object-top',
+          'select-none',
           'transition-opacity duration-500 ease-out',
           isLoading ? 'opacity-0' : 'opacity-100',
+          className,
         )}
         onLoad={() => setIsLoading(false)}
         onError={() => setHasError(true)}

@@ -1,8 +1,11 @@
 {
   "$schema": "../schemas/json/technologies.schema.json",
-  "sectionName": {
-    "pt": "Tecnologias",
-    "en": "Technologies"
+  "section": {
+    "title": {
+      "pt": "Tecnologias",
+      "en": "Technologies"
+    },
+    "command": "$ stack inspect --runtime"
   },
   "technologyGroups": [
     {
@@ -18,8 +21,8 @@
       "techs": [
         { "label": "HTML5", "icon": "html5" },
         { "label": "CSS3", "icon": "css" },
-        { "label": "JavaScript", "icon": "javascript" },
-        { "label": "TypeScript", "icon": "typescript" },
+        { "label": "JavaScript", "icon": "javaScript" },
+        { "label": "TypeScript", "icon": "typeScript" },
         { "label": "React.js", "icon": "react" },
         { "label": "Next.js", "icon": "nextJS" },
         { "label": "Tailwind CSS", "icon": "tailwindCSS" }
@@ -54,8 +57,8 @@
         "en": "Technologies for data storage, querying, management, and data visualization."
       },
       "techs": [
-        { "label": "MySQL", "icon": "mysql" },
-        { "label": "PostgreSQL", "icon": "postgresql" },
+        { "label": "MySQL", "icon": "mySQL" },
+        { "label": "PostgreSQL", "icon": "postgreSQL" },
         { "label": "Pandas", "icon": "pandas" },
         { "label": "Plotly", "icon": "plotly" }
       ]

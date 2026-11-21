@@ -1,5 +1,6 @@
 import { Section } from '@/components/layouts/Section/Section';
 import { SectionAboutMe } from '@/components/sections/SectionAboutMe/SectionAboutMe';
+import { SectionJourney } from '@/components/sections/SectionJourney/SectionJourney';
 import { SectionProjects } from '@/components/sections/SectionProjects/SectionProjects';
 import { SectionTechnology } from '@/components/sections/SectionTechnology/SectionTechnology';
 import { routing } from '@/i18n/routing';
@@ -25,9 +26,7 @@ export default async function HomePage({ params }: Props) {
 
       <SectionProjects locale={locale} />
 
-      <Section title="Journey" command="$ git log --reverse --oneline">
-        <div>123</div>
-      </Section>
+      <SectionJourney locale={locale} />
 
       <Section title="Certificates" command=">_ openssl x509 -noout -dates">
         <div>123</div>

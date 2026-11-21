@@ -6,13 +6,24 @@
       "type": "string",
       "description": "Reference to the JSON Schema used to validate this file."
     },
-    "sectionName": {
+    "section": {
       "type": "object",
-      "properties": { "pt": { "type": "string" }, "en": { "type": "string" } },
-      "required": ["pt", "en"],
+      "properties": {
+        "title": {
+          "type": "object",
+          "properties": {
+            "pt": { "type": "string" },
+            "en": { "type": "string" }
+          },
+          "required": ["pt", "en"],
+          "additionalProperties": false
+        },
+        "command": { "type": "string", "minLength": 1 }
+      },
+      "required": ["title", "command"],
       "additionalProperties": false
     },
-    "items": {
+    "projects": {
       "minItems": 1,
       "type": "array",
       "items": {
@@ -44,6 +55,7 @@
                 "enum": [
                   "fourPointedStar",
                   "logo",
+                  "claudeCode",
                   "figma",
                   "gemini",
                   "github",
@@ -58,6 +70,9 @@
                   "startdoor",
                   "wemage",
                   "angular",
+                  "bootstrap",
+                  "c",
+                  "chartJS",
                   "css",
                   "docker",
                   "eclipse",
@@ -68,15 +83,18 @@
                   "html5",
                   "intellijIdea",
                   "java",
-                  "javascript",
-                  "mobx",
-                  "mysql",
+                  "javaScript",
+                  "jUnit",
+                  "matplotlib",
+                  "mobX",
+                  "mySQL",
                   "nextJS",
                   "nodeJS",
                   "pandas",
                   "php",
+                  "playwright",
                   "plotly",
-                  "postgresql",
+                  "postgreSQL",
                   "postman",
                   "python",
                   "react",
@@ -84,12 +102,15 @@
                   "styledComponents",
                   "swagger",
                   "tailwindCSS",
-                  "typescript",
+                  "typeScript",
                   "vite",
                   "visualStudioCode",
                   "zod",
+                  "award",
                   "arrowRight",
                   "arrowUpRight",
+                  "book",
+                  "brain",
                   "brush",
                   "calendar",
                   "caretLeft",
@@ -104,6 +125,7 @@
                   "fullscreen",
                   "gear",
                   "gitBranch",
+                  "graduationCap",
                   "hash",
                   "imageNotFound",
                   "infoSquareFilled",
@@ -113,17 +135,19 @@
                   "pencil",
                   "pin",
                   "reload",
+                  "scroll",
                   "server",
                   "shift",
                   "spanner",
                   "star",
+                  "suitcase",
                   "sun"
                 ]
               },
               { "type": "null" }
             ]
           },
-          "summary": {
+          "overview": {
             "type": "object",
             "properties": {
               "pt": { "type": "string" },
@@ -156,6 +180,7 @@
             }
           },
           "technologies": {
+            "minItems": 1,
             "type": "array",
             "items": {
               "type": "object",
@@ -166,6 +191,7 @@
                   "enum": [
                     "fourPointedStar",
                     "logo",
+                    "claudeCode",
                     "figma",
                     "gemini",
                     "github",
@@ -180,6 +206,9 @@
                     "startdoor",
                     "wemage",
                     "angular",
+                    "bootstrap",
+                    "c",
+                    "chartJS",
                     "css",
                     "docker",
                     "eclipse",
@@ -190,15 +219,18 @@
                     "html5",
                     "intellijIdea",
                     "java",
-                    "javascript",
-                    "mobx",
-                    "mysql",
+                    "javaScript",
+                    "jUnit",
+                    "matplotlib",
+                    "mobX",
+                    "mySQL",
                     "nextJS",
                     "nodeJS",
                     "pandas",
                     "php",
+                    "playwright",
                     "plotly",
-                    "postgresql",
+                    "postgreSQL",
                     "postman",
                     "python",
                     "react",
@@ -206,12 +238,15 @@
                     "styledComponents",
                     "swagger",
                     "tailwindCSS",
-                    "typescript",
+                    "typeScript",
                     "vite",
                     "visualStudioCode",
                     "zod",
+                    "award",
                     "arrowRight",
                     "arrowUpRight",
+                    "book",
+                    "brain",
                     "brush",
                     "calendar",
                     "caretLeft",
@@ -226,6 +261,7 @@
                     "fullscreen",
                     "gear",
                     "gitBranch",
+                    "graduationCap",
                     "hash",
                     "imageNotFound",
                     "infoSquareFilled",
@@ -235,10 +271,12 @@
                     "pencil",
                     "pin",
                     "reload",
+                    "scroll",
                     "server",
                     "shift",
                     "spanner",
                     "star",
+                    "suitcase",
                     "sun"
                   ]
                 }
@@ -363,7 +401,7 @@
           "projectName",
           "repository",
           "logo",
-          "summary",
+          "overview",
           "description",
           "keyFeatures",
           "technologies",
@@ -376,6 +414,6 @@
       }
     }
   },
-  "required": ["sectionName", "items"],
+  "required": ["section", "projects"],
   "additionalProperties": false
 }

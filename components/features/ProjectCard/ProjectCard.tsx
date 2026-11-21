@@ -5,6 +5,7 @@ import { Container } from '@/components/layouts/Container/Container';
 import { BadgeTag } from '@/components/ui/BadgeTag/BadgeTag';
 import { Button } from '@/components/ui/Button/Button';
 import { ButtonLink } from '@/components/ui/ButtonLink/ButtonLink';
+import { Divider } from '@/components/ui/Divider/Divider';
 import { ImageFallback } from '@/components/ui/ImageFallback/ImageFallback';
 import { Text } from '@/components/ui/Text/Text';
 import { Title } from '@/components/ui/Title/Title';
@@ -50,129 +51,137 @@ export function ProjectCard({
         'hover:border-orange-500/75 dark:hover:border-amber-400/75',
       )}
     >
-      <div className={cn('group', 'relative', 'h-62')}>
-        <div
-          className={cn(
-            'absolute',
-            'top-4 left-4',
-            'z-10',
-            'transition-opacity duration-1000 ease-in-out',
-            'group-hover:opacity-0',
-            'pointer-events-none',
-          )}
-        >
-          <BadgeTag
-            label={localize(
-              projectScopeLabels[project.metadata.scope],
-              locale,
-            ).toUpperCase()}
-            className="font-semibold tracking-wider"
-            variant="featured"
-          />
-        </div>
-
-        <div
-          className={cn(
-            'h-full',
-            'border-b',
-            'overflow-hidden',
-            'border-neutral-200 dark:border-neutral-800',
-            styles.bannerContainer,
-            scrollable && styles.scrollable,
-          )}
-        >
-          {project.banner.available ? (
-            <a
-              href={bannerSrc!}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'focus-visible-inset',
-                'block',
-                'h-full',
-                'rounded-t-2xl',
-                'overflow-hidden',
-                'cursor-pointer',
-              )}
-            >
-              <AsyncRenderImage
-                src={bannerSrc!}
-                alt=""
-                width={1366}
-                height={2455}
-                className={cn(
-                  styles.banner,
-                  !scrollable && styles.bannerStatic,
-                )}
-                locale={locale}
-              />
-            </a>
-          ) : (
-            <ImageFallback locale={locale} type="notAvailable" />
-          )}
-        </div>
-      </div>
-
-      <div className={cn('flex flex-col gap-2', 'p-6 pb-4')}>
-        <Title
-          text={localize(project.projectName, locale)}
-          className={cn('text-xl font-semibold')}
-        />
-
-        <Text text={localize(project.summary, locale)} className="mb-2" />
-
-        <div className={cn('flex flex-wrap gap-2', 'mb-1.5')}>
-          {project.technologies.slice(0, 6).map(item => (
-            <BadgeTag key={item.label} label={item.label} icon={item.icon} />
-          ))}
-
-          {project.technologies.length > 6 && (
-            <BadgeTag label={`+${project.technologies.length - 6}`} />
-          )}
-        </div>
-
-        <div
-          className={cn(
-            'w-full',
-            'mb-1.5',
-            'border-t',
-            'border-neutral-200 dark:border-neutral-800',
-          )}
-        />
-
-        <div className={cn('flex justify-between')}>
-          <div className={cn('flex gap-2')}>
-            {project.links.repository && (
-              <ButtonLink
-                icon="github"
-                text={tProjectCard('repo')}
-                variant="neutral"
-                iconClassName="size-4.5"
-                href={project.links.repository}
-              />
+      <div className={cn('h-full', 'flex flex-col')}>
+        <div className={cn('group', 'relative', 'h-62')}>
+          <div
+            className={cn(
+              'absolute',
+              'top-4 left-4',
+              'z-10',
+              'transition-opacity duration-1000 ease-in-out',
+              'group-hover:opacity-0',
+              'pointer-events-none',
             )}
+          >
+            <BadgeTag
+              label={localize(
+                projectScopeLabels[project.metadata.scope],
+                locale,
+              ).toUpperCase()}
+              className="font-semibold tracking-wider"
+              variant="featured"
+            />
+          </div>
 
-            {project.links.live && (
-              <ButtonLink
-                icon="externalLink"
-                text={tProjectCard('live')}
-                variant="primary"
-                href={project.links.live}
-              />
+          <div
+            className={cn(
+              'h-full',
+              'border-b',
+              'overflow-hidden',
+              'border-neutral-200 dark:border-neutral-800',
+              styles.bannerContainer,
+              scrollable && styles.scrollable,
+            )}
+          >
+            {project.banner.available ? (
+              <a
+                href={bannerSrc!}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  'focus-visible-inset',
+                  'block',
+                  'h-full',
+                  'rounded-t-2xl',
+                  'overflow-hidden',
+                  'cursor-pointer',
+                )}
+              >
+                <AsyncRenderImage
+                  src={bannerSrc!}
+                  alt=""
+                  width={1366}
+                  height={2455}
+                  className={cn(
+                    styles.banner,
+                    !scrollable && styles.bannerStatic,
+                  )}
+                  locale={locale}
+                />
+              </a>
+            ) : (
+              <ImageFallback locale={locale} type="notAvailable" />
             )}
           </div>
-          <Button
-            icon="arrowRight"
-            text={tProjectCard('details')}
-            variant="secondary"
-            iconPosition="right"
-            iconClassName={cn(
-              'size-3',
-              'transition-transform duration-200',
-              'group-hover:translate-x-[3px]',
-            )}
-            onClick={onDetails}
-          />
+        </div>
+
+        <div
+          className={cn(
+            'flex flex-1 flex-col justify-between gap-2',
+            'px-6 py-4',
+          )}
+        >
+          <div className={cn('flex flex-col gap-2')}>
+            <Title
+              text={localize(project.projectName, locale)}
+              className={cn('text-xl font-semibold')}
+            />
+
+            <Text text={localize(project.overview, locale)} className="mb-2" />
+
+            <div className={cn('flex flex-wrap gap-2', 'mb-1.5')}>
+              {project.technologies.slice(0, 6).map(item => (
+                <BadgeTag
+                  key={item.label}
+                  label={item.label}
+                  icon={item.icon}
+                />
+              ))}
+
+              {project.technologies.length > 6 && (
+                <BadgeTag label={`+${project.technologies.length - 6}`} />
+              )}
+            </div>
+          </div>
+
+          <div className={cn('flex flex-col gap-4')}>
+            <Divider />
+
+            <div className={cn('flex justify-between')}>
+              <div className={cn('flex gap-2')}>
+                {project.links.repository && (
+                  <ButtonLink
+                    icon="github"
+                    text={tProjectCard('repo')}
+                    variant="neutral"
+                    iconClassName="size-4.5"
+                    href={project.links.repository}
+                  />
+                )}
+
+                {project.links.live && (
+                  <ButtonLink
+                    icon="externalLink"
+                    text={tProjectCard('live')}
+                    variant="primary"
+                    href={project.links.live}
+                  />
+                )}
+              </div>
+              <Button
+                icon="arrowRight"
+                text={tProjectCard('details')}
+                variant="secondary"
+                iconPosition="right"
+                iconClassName={cn(
+                  'size-3',
+                  'transition-transform duration-200',
+                  'group-hover:translate-x-[3px]',
+                )}
+                onClick={onDetails}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Container>

@@ -12,8 +12,8 @@ export function SectionTechnology({ locale }: Props) {
   return (
     <div>
       <Section
-        title={localize(technologies.sectionName, locale)}
-        command="$ stack inspect --runtime"
+        title={localize(technologies.section.title, locale)}
+        command={technologies.section.command}
       >
         <TechnologiesGrid
           technologies={technologies.technologyGroups}

@@ -1,16 +1,17 @@
 'use client';
 
-import { uiIcons } from '@/icon/ui';
+import { AsyncRenderImage } from '@/components/layouts/AsyncRenderImage/AsyncRenderImage';
+import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import type { IProjectScreenshot } from '@/schemas/zod/projects.schema';
 import type { EmblaCarouselType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
-import Image from 'next/image';
-import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useSyncExternalStore } from 'react';
 
 type Props = {
   emblaApi: EmblaCarouselType | undefined;
   slides: IProjectScreenshot[];
+  locale: ILocale;
 };
 
 function useSelectedSnap(emblaApi: EmblaCarouselType | undefined) {
@@ -36,13 +37,15 @@ function useSelectedSnap(emblaApi: EmblaCarouselType | undefined) {
   );
 }
 
-export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
+export function ImageCarouselControlThumbs({
+  emblaApi,
+  slides,
+  locale,
+}: Props) {
   const [thumbsRef, thumbsApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     dragFree: true,
   });
-
-  const [imageErrors, setImageErrors] = useState<number[]>([]);
 
   const selectedIndex = useSelectedSnap(emblaApi);
 
@@ -66,7 +69,6 @@ export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
           const isSelected = selectedIndex === index;
           const isFirst = index === 0;
           const isLast = index === slides.length - 1;
-          const hasError = imageErrors.includes(index);
 
           return (
             <button
@@ -74,6 +76,7 @@ export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
               type="button"
               onClick={() => onThumbClick(index)}
               className={cn(
+                'h-16 w-24',
                 'shrink-0 overflow-hidden rounded-md border-2',
                 'transition-all duration-200',
                 'border-neutral-300 dark:border-neutral-700',
@@ -84,34 +87,14 @@ export function ImageCarouselControlThumbs({ emblaApi, slides }: Props) {
                 isLast && 'mr-2',
               )}
             >
-              {hasError ? (
-                <div
-                  className={cn(
-                    'h-16 w-24',
-                    'flex items-center justify-center',
-                    'bg-neutral-200 dark:bg-neutral-800',
-                  )}
-                >
-                  <uiIcons.imageNotFound
-                    width={24}
-                    height={24}
-                    className={cn('text-neutral-400 dark:text-neutral-600')}
-                  />
-                </div>
-              ) : (
-                <Image
-                  src={item.path}
-                  alt=""
-                  width={288}
-                  height={192}
-                  onError={() => setImageErrors(prev => [...prev, index])}
-                  className={cn(
-                    'h-16 w-24',
-                    'object-cover object-top',
-                    'select-none',
-                  )}
-                />
-              )}
+              <AsyncRenderImage
+                src={item.path}
+                alt=""
+                width={288}
+                height={192}
+                locale={locale}
+                compactFallback
+              />
             </button>
           );
         })}

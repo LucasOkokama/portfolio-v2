@@ -18,15 +18,15 @@ export function SectionProjects({ locale }: Props) {
   const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
 
   const selectedIndex = selectedProject
-    ? projects.items.findIndex(item => item.id === selectedProject.id)
+    ? projects.projects.findIndex(item => item.id === selectedProject.id)
     : -1;
 
   const handlePrevious = useCallback(() => {
-    if (selectedIndex === -1 || projects.items.length === 0) return;
+    if (selectedIndex === -1 || projects.projects.length === 0) return;
 
     const previousIndex =
-      (selectedIndex - 1 + projects.items.length) % projects.items.length;
-    const previousProject = projects.items[previousIndex];
+      (selectedIndex - 1 + projects.projects.length) % projects.projects.length;
+    const previousProject = projects.projects[previousIndex];
 
     if (!previousProject) return;
 
@@ -34,10 +34,10 @@ export function SectionProjects({ locale }: Props) {
   }, [selectedIndex]);
 
   const handleNext = useCallback(() => {
-    if (selectedIndex === -1 || projects.items.length === 0) return;
+    if (selectedIndex === -1 || projects.projects.length === 0) return;
 
-    const nextIndex = (selectedIndex + 1) % projects.items.length;
-    const nextProject = projects.items[nextIndex];
+    const nextIndex = (selectedIndex + 1) % projects.projects.length;
+    const nextProject = projects.projects[nextIndex];
 
     if (!nextProject) return;
 
@@ -80,11 +80,11 @@ export function SectionProjects({ locale }: Props) {
   return (
     <div>
       <Section
-        title={localize(projects.sectionName, locale)}
-        command=">_ find ~/projects -maxdepth 1"
+        title={localize(projects.section.title, locale)}
+        command={projects.section.command}
       >
-        <div className={cn('grid grid-cols-2 gap-5')}>
-          {projects.items.map(item => (
+        <div className={cn('grid grid-cols-2 gap-6')}>
+          {projects.projects.map(item => (
             <ProjectCard
               key={item.id}
               locale={locale}
@@ -101,7 +101,7 @@ export function SectionProjects({ locale }: Props) {
         projectIndex={selectedIndex}
         project={selectedProject}
         open={selectedProject !== null}
-        isNavigationDisabled={projects.items.length <= 1}
+        isNavigationDisabled={projects.projects.length <= 1}
         onOpenChange={open => {
           if (!open) {
             setSelectedProject(null);

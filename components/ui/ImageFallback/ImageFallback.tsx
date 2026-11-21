@@ -7,10 +7,12 @@ import { localize } from '@/lib/utils/localize';
 import type { ILocalizedText } from '@/schemas/zod/common.schema';
 
 type IImageFallbackType = 'notFound' | 'notAvailable';
+type IImageFallbackVariant = 'default' | 'compact';
 
 type Props = {
   locale: ILocale;
   type: IImageFallbackType;
+  variant?: IImageFallbackVariant;
   className?: string;
 };
 
@@ -43,7 +45,12 @@ const fallbackContent = {
   }
 >;
 
-export function ImageFallback({ locale, type, className }: Props) {
+export function ImageFallback({
+  locale,
+  type,
+  variant = 'default',
+  className,
+}: Props) {
   const content = fallbackContent[type];
 
   const titleText = localize(content.title, locale);
@@ -58,26 +65,39 @@ export function ImageFallback({ locale, type, className }: Props) {
         className,
       )}
     >
-      <uiIcons.imageNotFound
-        width={42}
-        height={42}
-        className={cn('text-neutral-400 dark:text-neutral-600')}
-      />
-
-      <Title
-        text={titleText}
-        className={cn('text-lg', 'text-neutral-500 dark:text-neutral-500')}
-      />
-
-      {descriptionText && (
-        <Text
-          text={descriptionText}
-          className={cn(
-            'w-sm',
-            'text-xs leading-5',
-            'text-neutral-400 dark:text-neutral-600',
-          )}
+      {variant === 'default' && (
+        <uiIcons.imageNotFound
+          width={42}
+          height={42}
+          className={cn('text-neutral-400 dark:text-neutral-600')}
         />
+      )}
+      {variant === 'compact' && (
+        <uiIcons.imageNotFound
+          width={24}
+          height={24}
+          className={cn('text-neutral-400 dark:text-neutral-600')}
+        />
+      )}
+
+      {variant === 'default' && (
+        <>
+          <Title
+            text={titleText}
+            className={cn('text-lg', 'text-neutral-500 dark:text-neutral-500')}
+          />
+
+          {descriptionText && (
+            <Text
+              text={descriptionText}
+              className={cn(
+                'w-sm',
+                'text-xs leading-5',
+                'text-neutral-400 dark:text-neutral-600',
+              )}
+            />
+          )}
+        </>
       )}
     </div>
   );

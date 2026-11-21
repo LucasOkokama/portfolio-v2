@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink } from '@/components/ui/ExternalLink/ExternalLink';
+import { ContactLink } from '@/components/ui/ContactLink/ContactLink';
 import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { localize } from '@/lib/utils/localize';
@@ -12,7 +12,7 @@ interface Props {
   locale: ILocale;
 }
 
-export function ExternalLinksGroup({ items, locale }: Props) {
+export function ContactLinks({ items, locale }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const rows = Array.from({ length: Math.ceil(items.length / 2) }, (_, i) =>
@@ -30,7 +30,7 @@ export function ExternalLinksGroup({ items, locale }: Props) {
             const index = rowIndex * 2 + columnIndex;
 
             return (
-              <ExternalLink
+              <ContactLink
                 key={index}
                 href={item.href}
                 icon={item.icon}

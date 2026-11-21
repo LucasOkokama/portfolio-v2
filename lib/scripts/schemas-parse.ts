@@ -16,15 +16,18 @@ function printError(name: string, error: ZodError) {
 }
 
 for (const { zodSchema, jsonContent } of schemas) {
-  try {
-    zodSchema.parse(jsonContent.data);
-  } catch (error) {
-    if (error instanceof ZodError) {
-      hasErrors = true;
-      printError(jsonContent.filename, error);
-      continue;
+  for (const { filename, data } of jsonContent) {
+    try {
+      zodSchema.parse(data);
+    } catch (error) {
+      if (error instanceof ZodError) {
+        hasErrors = true;
+        printError(filename, error);
+        continue;
+      }
+
+      throw error;
     }
-    throw error;
   }
 }
 

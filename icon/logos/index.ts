@@ -8,8 +8,10 @@ import LinkedInIcon from './linkedin.svg';
 import PexelsIcon from './pexels.svg';
 import VercelIcon from './vercel.svg';
 import GeminiIcon from './gemini.svg';
+import ClaudeCodeIcon from './claudecode.svg';
 
 export const logosIcons = {
+  [iconNames.logos.claudeCode]: ClaudeCodeIcon,
   [iconNames.logos.figma]: FigmaIcon,
   [iconNames.logos.gemini]: GeminiIcon,
   [iconNames.logos.github]: GitHubIcon,

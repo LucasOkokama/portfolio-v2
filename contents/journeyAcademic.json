@@ -1,0 +1,142 @@
+{
+  "$schema": "../schemas/json/journey.schema.json",
+  "experienceType": "academic",
+  "experiences": [
+    {
+      "organization": "Fatec Ipiranga - Pastor Enéas Tognini",
+      "logo": null,
+      "overview": {
+        "pt": "Graduação híbrida de 3 anos focada em desenvolvimento de software, bancos de dados, análise de sistemas e infraestrutura de TI, integrando tecnologia e negócios.",
+        "en": "A hybrid 3-year degree focused on software development, database management, systems analysis, and IT infrastructure, combining technical and business knowledge."
+      },
+      "description": {
+        "en": "The Systems Analysis and Development program at Fatec Ipiranga is a hybrid degree with 80% in-person and 20% synchronous online classes. The curriculum covers programming, software development, databases, software engineering, IT infrastructure, project management, entrepreneurship, mathematics, and business fundamentals. It prepares professionals to develop information systems, manage IT resources, provide technology consulting, and work in technology companies, consulting firms, public institutions, and other economic sectors, including entrepreneurship.",
+        "pt": "O curso de Análise e Desenvolvimento de Sistemas da Fatec Ipiranga oferece formação híbrida, com 80% das aulas presenciais e 20% on-line síncronas. A formação abrange programação, desenvolvimento de software, bancos de dados, engenharia de software, infraestrutura de TI, gestão de projetos, empreendedorismo, matemática e fundamentos de negócios. Prepara profissionais para desenvolver sistemas de informação, gerenciar recursos de TI, prestar consultoria tecnológica e atuar em empresas de tecnologia, consultorias, instituições públicas e diversos setores da economia, incluindo o empreendedorismo."
+      },
+      "technologies": [
+        { "label": "Angular", "icon": "angular" },
+        { "label": "React", "icon": "react" },
+        { "label": "Spring Boot", "icon": "springBoot" },
+        { "label": "Swagger", "icon": "swagger" },
+        { "label": "MySQL", "icon": "mySQL" },
+        { "label": "PostgreSQL", "icon": "postgreSQL" },
+        { "label": "Pandas", "icon": "pandas" },
+        { "label": "Matplotlib", "icon": "matplotlib" },
+        { "label": "JUnit", "icon": "jUnit" },
+        { "label": "Vite", "icon": "vite" },
+        { "label": "Docker", "icon": "docker" },
+        { "label": "TypeScript", "icon": "typeScript" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" },
+        { "label": "Java", "icon": "java" },
+        { "label": "C", "icon": "c" },
+        { "label": "Python", "icon": "python" }
+      ],
+      "location": "São Paulo, Brazil",
+      "participationMode": "presential",
+      "linkedIn": "https://br.linkedin.com/school/fatec-ipiranga-pastor-eneas-tognini",
+      "website": "https://fatecipiranga.cps.sp.gov.br",
+      "additionalInformations": [
+        {
+          "title": {
+            "en": "GPA",
+            "pt": "Média Geral"
+          },
+          "value": "9.21 / 10.00"
+        }
+      ],
+      "experienceTimeline": [
+        {
+          "title": {
+            "en": "Associate Degree in Systems Analysis and Development",
+            "pt": "Tecnólogo em Análise e Desenvolvimento de Sistemas"
+          },
+          "icon": "graduationCap",
+          "startDate": "2023-02-06",
+          "endDate": "2026-08-14",
+          "keyActivities": [
+            {
+              "en": "Developing applications using different programming languages, frameworks, and technologies.",
+              "pt": "Desenvolvimento de aplicações utilizando diferentes linguagens de programação, frameworks e tecnologias."
+            },
+            {
+              "en": "Modeling, implementing, and managing relational databases and their respective information systems.",
+              "pt": "Modelagem, implementação e gerenciamento de bancos de dados relacionais e seus respectivos sistemas de informação."
+            },
+            {
+              "en": "Applying software engineering, systems architecture, software testing, and quality assurance concepts.",
+              "pt": "Aplicação de conceitos de engenharia de software, arquitetura de sistemas, testes e qualidade de software."
+            },
+            {
+              "en": "Studying IT infrastructure, operating systems, computer networks, and computer architecture.",
+              "pt": "Estudo de infraestrutura de TI, sistemas operacionais, redes de computadores e arquitetura de computadores."
+            },
+            {
+              "en": "Developing skills in project management, work methodologies, entrepreneurship, mathematics, and problem-solving.",
+              "pt": "Desenvolvimento de competências em gestão de projetos, metodologias de trabalho, empreendedorismo, matemática e resolução de problemas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "organization": "Etec Parque Belém",
+      "logo": null,
+      "overview": {
+        "en": "A technical high school program combining general secondary education with professional training in software development, programming, databases, and systems analysis.",
+        "pt": "Ensino médio integrado à formação técnica em desenvolvimento de software, programação, bancos de dados e análise de sistemas."
+      },
+      "description": {
+        "en": "The Integrated Technical High School program in Systems Development at Etec Parque Belém combines general secondary education with professional training. The curriculum covers programming logic, software development, systems analysis and design, database modeling, implementation, documentation, and software testing. It prepares students to develop and maintain information systems, use programming languages and development environments, and work in software development departments, technology companies, and other organizations.",
+        "pt": "O Ensino Médio integrado à formação técnica em Desenvolvimento de Sistemas da Etec Parque Belém combina a educação básica com a capacitação profissional. A formação abrange lógica de programação, desenvolvimento de software, análise e projeto de sistemas, modelagem e implementação de bancos de dados, documentação e testes de software. Prepara os alunos para desenvolver e manter sistemas de informação, utilizar linguagens de programação e ambientes de desenvolvimento e atuar em empresas de tecnologia, departamentos de desenvolvimento e outras organizações."
+      },
+      "technologies": [
+        { "label": "MySQL", "icon": "mySQL" },
+        { "label": "Bootstrap", "icon": "bootstrap" },
+        { "label": "JavaScript", "icon": "javaScript" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" },
+        { "label": "Java", "icon": "java" },
+        { "label": "PHP", "icon": "php" }
+      ],
+      "location": "São Paulo, Brazil",
+      "participationMode": "presential",
+      "linkedIn": "https://br.linkedin.com/school/etec-parque-bel%C3%A9m/",
+      "website": "https://etecparquebelem.cps.sp.gov.br",
+      "additionalInformations": [],
+      "experienceTimeline": [
+        {
+          "title": {
+            "pt": "Técnico em Desenvolvimento de Sistemas (Novotec Integrado)",
+            "en": "Technical Diploma in Systems Development (Integrated Novotec)"
+          },
+          "icon": "book",
+          "startDate": "2020-02-03",
+          "endDate": "2022-12-16",
+          "keyActivities": [
+            {
+              "en": "Developing programming logic and algorithms to solve computational problems.",
+              "pt": "Desenvolvimento de lógica de programação e algoritmos para resolução de problemas computacionais."
+            },
+            {
+              "en": "Analyzing systems, gathering requirements, and modeling information systems.",
+              "pt": "Análise, levantamento de requisitos e modelagem de sistemas de informação."
+            },
+            {
+              "en": "Developing applications using programming languages and development environments.",
+              "pt": "Desenvolvimento de aplicações utilizando linguagens de programação e ambientes de desenvolvimento."
+            },
+            {
+              "en": "Modeling, implementing, and maintaining relational databases.",
+              "pt": "Modelagem, implementação e manutenção de bancos de dados relacionais."
+            },
+            {
+              "en": "Documenting, testing, and maintaining software while applying software quality concepts.",
+              "pt": "Documentação, testes, manutenção e aplicação de conceitos de qualidade de software."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

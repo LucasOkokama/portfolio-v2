@@ -107,7 +107,7 @@ export function Clock({ city, timezone, showSeconds = false }: Props) {
           className={cn(
             'font-semibold',
             'transition-colors duration-200',
-            'hover:text-orange-500 dark:hover:text-amber-400',
+            'hover:text-amber-600 dark:hover:text-amber-400',
           )}
         >
           {time}

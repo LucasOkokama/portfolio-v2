@@ -159,7 +159,7 @@ export function ProjectDetails({
                     disabled={isNavigationDisabled}
                     className={cn(
                       'p-2.5',
-                      'rounded-lg border border-transparent',
+                      'rounded-lg',
                       'transition-colors duration-200',
                       isNavigationDisabled
                         ? 'cursor-not-allowed opacity-50'
@@ -178,7 +178,7 @@ export function ProjectDetails({
                     disabled={isNavigationDisabled}
                     className={cn(
                       'p-2.5',
-                      'rounded-lg border border-transparent',
+                      'rounded-lg',
                       'transition-colors duration-200',
                       isNavigationDisabled
                         ? 'cursor-not-allowed opacity-50'

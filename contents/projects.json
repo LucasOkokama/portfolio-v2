@@ -1,10 +1,13 @@
 {
   "$schema": "../schemas/json/projects.schema.json",
-  "sectionName": {
-    "en": "Projects",
-    "pt": "Projetos"
+  "section": {
+    "title": {
+      "en": "Projects",
+      "pt": "Projetos"
+    },
+    "command": ">_ find ~/projects -maxdepth 1"
   },
-  "items": [
+  "projects": [
     {
       "id": "startdoor",
       "projectName": {
@@ -16,7 +19,7 @@
         "name": "Startdoor"
       },
       "logo": "startdoor",
-      "summary": {
+      "overview": {
         "en": "A collaborative web platform for sharing and evaluating internship experiences, helping students discover and compare companies based on real feedback from other interns.",
         "pt": "Uma plataforma web colaborativa para compartilhar e avaliar experiências de estágio, ajudando estudantes a descobrir e comparar empresas com base em relatos reais de outros estagiários."
       },
@@ -57,27 +60,27 @@
         },
         {
           "label": "MySQL",
-          "icon": "mysql"
-        },
-        {
-          "label": "MobX",
-          "icon": "mobx"
-        },
-        {
-          "label": "Zod",
-          "icon": "zod"
+          "icon": "mySQL"
         },
         {
           "label": "TailwindCSS",
           "icon": "tailwindCSS"
         },
         {
-          "label": "Gemini AI",
-          "icon": "gemini"
+          "label": "MobX",
+          "icon": "mobX"
+        },
+        {
+          "label": "Zod",
+          "icon": "zod"
         },
         {
           "label": "Swagger",
           "icon": "swagger"
+        },
+        {
+          "label": "Gemini AI",
+          "icon": "gemini"
         },
         {
           "label": "Docker",
@@ -89,7 +92,7 @@
         },
         {
           "label": "TypeScript",
-          "icon": "typescript"
+          "icon": "typeScript"
         },
         {
           "label": "Java",
@@ -104,7 +107,7 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/project/startdoor/BANNER_DARK.png",
+        "default": "/projects/startdoor/BANNER_DARK.png",
         "light": null,
         "dark": null
       },
@@ -114,112 +117,112 @@
             "pt": "Login de Usuário",
             "en": "User Login"
           },
-          "path": "/project/startdoor/LOGIN.png"
+          "path": "/projects/startdoor/LOGIN.png"
         },
         {
           "name": {
             "pt": "Cadastro de Usuário",
             "en": "User Registration"
           },
-          "path": "/project/startdoor/REGISTER.png"
+          "path": "/projects/startdoor/REGISTER.png"
         },
         {
           "name": {
             "pt": "Tela Inicial",
             "en": "Home Screen"
           },
-          "path": "/project/startdoor/HOMEPAGE.png"
+          "path": "/projects/startdoor/HOMEPAGE.png"
         },
         {
           "name": {
             "pt": "Pesquisa de Empresa",
             "en": "Company Search"
           },
-          "path": "/project/startdoor/SEARCH.png"
+          "path": "/projects/startdoor/SEARCH.png"
         },
         {
           "name": {
             "pt": "Recomendações de Empresa",
             "en": "Company Recommendations"
           },
-          "path": "/project/startdoor/RECOMMENDATIONS.png"
+          "path": "/projects/startdoor/RECOMMENDATIONS.png"
         },
         {
           "name": {
             "pt": "Análise de Empresa #1",
             "en": "Company Analysis #1"
           },
-          "path": "/project/startdoor/ANALYSIS_1.png"
+          "path": "/projects/startdoor/ANALYSIS_1.png"
         },
         {
           "name": {
             "pt": "Análise de Empresa #2",
             "en": "Company Analysis #2"
           },
-          "path": "/project/startdoor/ANALYSIS_2.png"
+          "path": "/projects/startdoor/ANALYSIS_2.png"
         },
         {
           "name": {
             "pt": "Perfil | Informações Gerais",
             "en": "Profile | General Information"
           },
-          "path": "/project/startdoor/PROFILE_GENERAL_INFO.png"
+          "path": "/projects/startdoor/PROFILE_GENERAL_INFO.png"
         },
         {
           "name": {
             "pt": "Perfil | Experiência Acadêmica",
             "en": "Profile | Academic Experience"
           },
-          "path": "/project/startdoor/PROFILE_EXPERIENCE_ACADEMIC.png"
+          "path": "/projects/startdoor/PROFILE_EXPERIENCE_ACADEMIC.png"
         },
         {
           "name": {
             "pt": "Perfil | Experiência Profissional",
             "en": "Profile | Professional Experience"
           },
-          "path": "/project/startdoor/PROFILE_EXPERIENCE_PROFESSIONAL.png"
+          "path": "/projects/startdoor/PROFILE_EXPERIENCE_PROFESSIONAL.png"
         },
         {
           "name": {
             "pt": "Perfil | Edição",
             "en": "Profile | Edit"
           },
-          "path": "/project/startdoor/PROFILE_EDIT.png"
+          "path": "/projects/startdoor/PROFILE_EDIT.png"
         },
         {
           "name": {
             "pt": "Empresa | Informações Gerais",
             "en": "Company | General Information"
           },
-          "path": "/project/startdoor/COMPANY_GENERAL_INFO.png"
+          "path": "/projects/startdoor/COMPANY_GENERAL_INFO.png"
         },
         {
           "name": {
             "pt": "Empresa | Avaliações de Emprego",
             "en": "Company | Job Reviews"
           },
-          "path": "/project/startdoor/COMPANY_REVIEWS.png"
+          "path": "/projects/startdoor/COMPANY_REVIEWS.png"
         },
         {
           "name": {
             "pt": "Avaliação de Emprego | Visualizar",
             "en": "Job Review | View"
           },
-          "path": "/project/startdoor/REVIEW_VIEW.png"
+          "path": "/projects/startdoor/REVIEW_VIEW.png"
         },
         {
           "name": {
             "pt": "Avaliação de Emprego | Editar",
             "en": "Job Review | Edit"
           },
-          "path": "/project/startdoor/REVIEW_EDIT.png"
+          "path": "/projects/startdoor/REVIEW_EDIT.png"
         },
         {
           "name": {
             "pt": "Empresas Favoritas",
             "en": "Favorite Companies"
           },
-          "path": "/project/startdoor/FAVORITES.png"
+          "path": "/projects/startdoor/FAVORITES.png"
         }
       ],
       "metadata": {
@@ -239,7 +242,7 @@
         "name": "loja-vinho"
       },
       "logo": "lojaVinho",
-      "summary": {
+      "overview": {
         "en": "A full-stack e-commerce platform for wine shopping, featuring user authentication, product browsing, detailed product pages, and a shopping cart.",
         "pt": "Uma plataforma full-stack de e-commerce para venda de vinhos, com autenticação de usuários, navegação por produtos, páginas de detalhes e carrinho de compras."
       },
@@ -268,11 +271,11 @@
       "technologies": [
         { "label": "Angular", "icon": "angular" },
         { "label": "Spring Boot", "icon": "springBoot" },
-        { "label": "MySQL", "icon": "mysql" },
-        { "label": "TypeScript", "icon": "typescript" },
-        { "label": "Java", "icon": "java" },
+        { "label": "MySQL", "icon": "mySQL" },
+        { "label": "TypeScript", "icon": "typeScript" },
         { "label": "HTML5", "icon": "html5" },
-        { "label": "CSS3", "icon": "css" }
+        { "label": "CSS3", "icon": "css" },
+        { "label": "Java", "icon": "java" }
       ],
       "links": {
         "repository": "https://github.com/LucasKazuhiro/loja-vinho",
@@ -282,7 +285,7 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/project/loja-vinho/BANNER_LIGHT.png",
+        "default": "/projects/loja-vinho/BANNER_LIGHT.png",
         "light": null,
         "dark": null
       },
@@ -292,35 +295,35 @@
             "pt": "Cadastro de Usuário",
             "en": "User Registration"
           },
-          "path": "/project/loja-vinho/REGISTER.png"
+          "path": "/projects/loja-vinho/REGISTER.png"
         },
         {
           "name": {
             "pt": "Tela Inicial",
             "en": "Home Screen"
           },
-          "path": "/project/loja-vinho/HOME.png"
+          "path": "/projects/loja-vinho/HOME.png"
         },
         {
           "name": {
             "pt": "Pesquisa de Vinhos",
             "en": "Wine Search"
           },
-          "path": "/project/loja-vinho/SEARCH.png"
+          "path": "/projects/loja-vinho/SEARCH.png"
         },
         {
           "name": {
             "pt": "Detalhe do Vinho",
             "en": "Wine Details"
           },
-          "path": "/project/loja-vinho/DETAIL.png"
+          "path": "/projects/loja-vinho/DETAIL.png"
         },
         {
           "name": {
             "pt": "Carrinho de Compras",
             "en": "Shopping Cart"
           },
-          "path": "/project/loja-vinho/CART.png"
+          "path": "/projects/loja-vinho/CART.png"
         }
       ],
       "metadata": {
@@ -340,7 +343,7 @@
         "name": "anime-blog-review"
       },
       "logo": "korosenku",
-      "summary": {
+      "overview": {
         "en": "An anime review blog where users can explore personal reviews, favorite anime, characters, voice actors, animation studios, and music.",
         "pt": "Um blog de reviews de animes onde é possível explorar avaliações pessoais, animes favoritos, personagens, dubladores, estúdios de animação e músicas."
       },
@@ -373,13 +376,13 @@
       "technologies": [
         { "label": "Angular", "icon": "angular" },
         { "label": "Flask", "icon": "flask" },
-        { "label": "Pandas", "icon": "pandas" },
         { "label": "TailwindCSS", "icon": "tailwindCSS" },
         { "label": "Fuse.js", "icon": "fuseJS" },
-        { "label": "TypeScript", "icon": "typescript" },
-        { "label": "Python", "icon": "python" },
+        { "label": "Pandas", "icon": "pandas" },
+        { "label": "TypeScript", "icon": "typeScript" },
         { "label": "HTML5", "icon": "html5" },
-        { "label": "CSS3", "icon": "css" }
+        { "label": "CSS3", "icon": "css" },
+        { "label": "Python", "icon": "python" }
       ],
       "links": {
         "repository": "https://github.com/LucasOkokama/anime-blog-review",
@@ -389,9 +392,9 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/project/korosenku/BANNER_DARK.png",
-        "light": "/project/korosenku/BANNER_LIGHT.png",
-        "dark": "/project/korosenku/BANNER_DARK.png"
+        "default": "/projects/korosenku/BANNER_DARK.png",
+        "light": "/projects/korosenku/BANNER_LIGHT.png",
+        "dark": "/projects/korosenku/BANNER_DARK.png"
       },
       "screenshots": [
         {
@@ -399,28 +402,28 @@
             "pt": "Tela Inicial",
             "en": "Home Screen"
           },
-          "path": "/project/korosenku/HOMEPAGE.png"
+          "path": "/projects/korosenku/HOMEPaAGE.png"
         },
         {
           "name": {
             "pt": "Favoritos",
             "en": "Favorites"
           },
-          "path": "/project/korosenku/FAVORITES.png"
+          "path": "/projects/korosenku/FAVORITES.png"
         },
         {
           "name": {
             "pt": "Músicas",
             "en": "Musics"
           },
-          "path": "/project/korosenku/MUSICS.png"
+          "path": "/projects/korosenku/MUSICS.png"
         },
         {
           "name": {
             "pt": "Avaliação de Anime",
             "en": "Anime Review"
           },
-          "path": "/project/korosenku/REVIEW.png"
+          "path": "/projects/korosenku/REVIEW.png"
         }
       ],
       "metadata": {
@@ -440,7 +443,7 @@
         "name": "pexels-image-search"
       },
       "logo": "wemage",
-      "summary": {
+      "overview": {
         "en": "A responsive image search platform that uses the Pexels API to help users discover, view, and download high-quality photos.",
         "pt": "Uma plataforma responsiva de busca de imagens que utiliza a API do Pexels para ajudar usuários a encontrar, visualizar e baixar fotos em alta qualidade."
       },
@@ -465,10 +468,10 @@
       "technologies": [
         { "label": "React", "icon": "react" },
         { "label": "TailwindCSS", "icon": "tailwindCSS" },
-        { "label": "Pexels API", "icon": "pexels" },
         { "label": "Styled Components", "icon": "styledComponents" },
+        { "label": "Pexels API", "icon": "pexels" },
         { "label": "Vite", "icon": "vite" },
-        { "label": "TypeScript", "icon": "typescript" },
+        { "label": "TypeScript", "icon": "typeScript" },
         { "label": "HTML5", "icon": "html5" },
         { "label": "CSS3", "icon": "css" }
       ],
@@ -480,9 +483,9 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/project/wemage/BANNER_DARK.png",
-        "light": "/project/wemage/BANNER_LIGHT.png",
-        "dark": "/project/wemage/BANNER_DARK.png"
+        "default": "/projects/wemage/BANNER_DARK.png",
+        "light": "/projects/wemage/BANNER_LIGHT.png",
+        "dark": "/projects/wemage/BANNER_DARK.png"
       },
       "screenshots": [
         {
@@ -490,7 +493,7 @@
             "pt": "Tela Inicial",
             "en": "Home Screen"
           },
-          "path": "/project/wemage/HOME.png"
+          "path": "/projects/wemage/HOME.png"
         }
       ],
       "metadata": {
@@ -510,7 +513,7 @@
         "name": "EarthWise-website"
       },
       "logo": "earthwise",
-      "summary": {
+      "overview": {
         "en": "An environmental awareness website focused on promoting environmental preservation, featuring informative news articles, dark mode, and interactive visual elements.",
         "pt": "Um website de conscientização ambiental focado na preservação do meio ambiente, com notícias informativas, modo escuro e elementos visuais interativos."
       },
@@ -541,11 +544,11 @@
         }
       ],
       "technologies": [
-        { "label": "MySQL", "icon": "mysql" },
+        { "label": "MySQL", "icon": "mySQL" },
+        { "label": "Docker", "icon": "docker" },
         { "label": "HTML5", "icon": "html5" },
         { "label": "CSS3", "icon": "css" },
-        { "label": "PHP", "icon": "php" },
-        { "label": "Docker", "icon": "docker" }
+        { "label": "PHP", "icon": "php" }
       ],
       "links": {
         "repository": "https://github.com/LucasOkokama/EarthWise-website",
@@ -555,7 +558,7 @@
       "banner": {
         "available": true,
         "scrollable": true,
-        "default": "/project/earthwise/BANNER_LIGHT.png",
+        "default": "/projects/earthwise/BANNER_LIGHT.png",
         "light": null,
         "dark": null
       },
@@ -565,42 +568,42 @@
             "pt": "Cadastro de Usuário",
             "en": "User Register"
           },
-          "path": "/project/earthwise/REGISTER.png"
+          "path": "/projects/earthwise/REGISTER.png"
         },
         {
           "name": {
             "pt": "Cadastro de Usuário",
             "en": "User Register"
           },
-          "path": "/project/earthwise/REGISTER.png"
+          "path": "/projects/earthwise/REGISTER.png"
         },
         {
           "name": {
             "pt": "Artigo sobre Logística Reversa",
             "en": "Reverse Logistics Article"
           },
-          "path": "/project/earthwise/ARTICLE_1.png"
+          "path": "/projects/earthwise/ARTICLE_1.png"
         },
         {
           "name": {
             "pt": "Autor e Artigos Relacionados",
             "en": "Author and Related Articles"
           },
-          "path": "/project/earthwise/ARTICLE_2.png"
+          "path": "/projects/earthwise/ARTICLE_2.png"
         },
         {
           "name": {
             "pt": "Sobre nós",
             "en": "About User"
           },
-          "path": "/project/earthwise/ABOUT_US.png"
+          "path": "/projects/earthwise/ABOUT_US.png"
         },
         {
           "name": {
             "pt": "Nossa Equipe",
             "en": "Our Team"
           },
-          "path": "/project/earthwise/TEAM.png"
+          "path": "/projects/earthwise/TEAM.png"
         }
       ],
       "metadata": {
@@ -620,7 +623,7 @@
         "name": "simulando-fatec-extrator"
       },
       "logo": null,
-      "summary": {
+      "overview": {
         "en": "A Python-based tool that automates the extraction and formatting of FATEC entrance exam questions from PDF files into structured JSON using the Gemini AI API.",
         "pt": "Uma ferramenta desenvolvida em Python que automatiza a extração e formatação de questões do vestibular da FATEC a partir de arquivos PDF para JSON estruturado, utilizando a API Gemini AI."
       },

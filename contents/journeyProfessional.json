@@ -1,0 +1,91 @@
+{
+  "$schema": "../schemas/json/journey.schema.json",
+  "experienceType": "professional",
+  "experiences": [
+    {
+      "organization": "Aubank Serviços",
+      "logo": "/organizations/autbank.png",
+      "overview": {
+        "en": "Professional frontend development experience building and maintaining internal systems using React, TypeScript, and JavaScript, with experience in REST API integration, visual modernization of legacy systems, and AI-assisted development.",
+        "pt": "Experiência profissional em desenvolvimento frontend, criando e mantendo sistemas internos com React, TypeScript e JavaScript, incluindo integração com APIs REST, modernização visual de sistemas legados e desenvolvimento apoiado por IA."
+      },
+      "description": {
+        "en": "Professional background at Aubank Serviços, contributing to the development and maintenance of internal systems. Activities include building responsive interfaces, dashboards, dynamic forms, workflow management features, and reusable components using React, TypeScript, and JavaScript; integrating REST APIs; and implementing frontend features focused on usability and user experience. Also involved in the visual modernization of legacy JSP/JSF applications through CSS and JavaScript improvements, interface standardization, and bug fixes while preserving existing functionality. Contributed to solutions for business and project management, performance evaluation systems, and internal process automation, applying AI-assisted development workflows.",
+        "pt": "Atuação profissional na Aubank Serviços, contribuindo para o desenvolvimento e a manutenção de sistemas internos. As atividades incluem a construção de interfaces responsivas, dashboards, formulários dinâmicos, funcionalidades de gestão de processos e componentes reutilizáveis utilizando React, TypeScript e JavaScript; integração com APIs REST; e implementação de funcionalidades frontend com foco em usabilidade e experiência do usuário. Também envolve a modernização visual de aplicações legadas JSP/JSF, por meio de melhorias em CSS e JavaScript, padronização de interfaces e correções de bugs, preservando as funcionalidades existentes. Participação no desenvolvimento de soluções para gestão de negócios e projetos, sistemas de avaliação de desempenho e automação de processos internos, utilizando workflows de desenvolvimento apoiados por IA."
+      },
+      "technologies": [
+        { "label": "React", "icon": "react" },
+        { "label": "Swagger", "icon": "swagger" },
+        { "label": "MySQL", "icon": "mySQL" },
+        { "label": "Zod", "icon": "zod" },
+        { "label": "MobX", "icon": "mobX" },
+        { "label": "Chart.js", "icon": "chartJS" },
+        { "label": "Playwright", "icon": "playwright" },
+        { "label": "Vite", "icon": "vite" },
+        { "label": "Docker", "icon": "docker" },
+        { "label": "Claude Code", "icon": "claudeCode" },
+        { "label": "TypeScript", "icon": "typeScript" },
+        { "label": "HTML5", "icon": "html5" },
+        { "label": "CSS3", "icon": "css" },
+        { "label": "Java", "icon": "java" }
+      ],
+      "location": "São Paulo, Brazil",
+      "participationMode": "hybrid",
+      "linkedIn": "https://br.linkedin.com/company/autbank---projetos-e-consultoria-ltda",
+      "website": "https://autbank.gupy.io",
+      "additionalInformations": [],
+      "experienceTimeline": [
+        {
+          "title": {
+            "en": "Junior Systems Developer",
+            "pt": "Desenvolvedor de Sistemas Júnior"
+          },
+          "icon": "layout",
+          "startDate": "2026-11-18",
+          "endDate": null,
+          "keyActivities": [
+            {
+              "en": "Experimentally developing a Claude Code skill focused on the visual modernization of legacy banking systems (JSF/JSP), adapting their interfaces to the corporate Design System without changing existing functionality. Implementing improvements using CSS and JavaScript to standardize layouts, alongside Node.js automations for screen conversion and pixel-by-pixel visual regression testing, ensuring backward compatibility.",
+              "pt": "Desenvolvimento experimental de uma skill para Claude Code voltada à modernização visual de sistemas bancários legados (JSF/JSP), adequando suas interfaces ao Design System corporativo sem alterar funcionalidades existentes. Implementação de melhorias com CSS e JavaScript para padronização de layouts e automações com Node.js para conversão de telas e testes de regressão visual pixel a pixel, garantindo retrocompatibilidade."
+            },
+            {
+              "en": "Building a web-based system for registering, analyzing, and approving business requests, including process history and tracking. Responsible for frontend development using React and TypeScript, creating responsive interfaces and management and monitoring features. Development supported by AI through a workflow based on technical specifications (specs), TDD, and GitLab integration, with additional contributions to the implementation and validation of the Claude Code workflow plugin. Backend developed with Python (FastAPI) and PostgreSQL.",
+              "pt": "Construção de um sistema web para registro, análise e aprovação de demandas de negócio, com histórico e acompanhamento de processos. Atuação no frontend com React e TypeScript, desenvolvendo interfaces responsivas e funcionalidades de gestão e monitoramento. Desenvolvimento realizado com apoio de IA por meio de um workflow baseado em especificações técnicas (specs), TDD e integração com GitLab, além de participação na implementação e validação do plugin de workflow para Claude Code. Backend em Python (FastAPI) e PostgreSQL."
+            },
+            {
+              "en": "Contributing to the implementation of a corporate performance evaluation web system, replacing manual spreadsheet-based processes and centralizing self-assessments, manager reviews, and HR cycle tracking. Responsible for frontend development using React and TypeScript, creating role-based interfaces, validated forms, dashboards, charts, and reports. Integrating with a REST API developed in Python (FastAPI), including generative AI features.",
+              "pt": "Atuação na implementação de um sistema web de avaliação de desempenho corporativa, substituindo processos manuais em planilhas e centralizando autoavaliações, pareceres de gestores e acompanhamento de ciclos pelo RH. Responsável pelo desenvolvimento do frontend, utilizando React e TypeScript, com criação de interfaces por perfil de acesso, formulários com validação, dashboards, gráficos e relatórios. Integração com API REST desenvolvida em Python (FastAPI), incluindo funcionalidades de IA generativa."
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Trainee Systems Developer",
+            "pt": "Desenvolvedor de Sistemas Trainee"
+          },
+          "icon": "layout",
+          "startDate": "2026-11-18",
+          "endDate": null,
+          "keyActivities": [
+            {
+              "en": "Implementing a chatbot integrated with legacy banking systems (JSF/JSP), providing contextual support and guided navigation through system screens. Developing the frontend using vanilla JavaScript, HTML, and CSS, including a chat interface, autocomplete, conversation history, and interactive links for automated navigation across menus, tabs, and features. Integrating with a Python (FastAPI) API responsible for natural language processing and semantic search across system documentation.",
+              "pt": "Implementação de um chatbot integrado a sistemas bancários legados (JSF/JSP), oferecendo suporte contextual e navegação guiada pelas telas do sistema. Implementação do frontend com JavaScript puro, HTML e CSS, incluindo interface de chat, autocomplete, histórico de conversas e links interativos para navegação automática entre menus, abas e funcionalidades. Integração com API em Python (FastAPI), responsável pelo processamento de linguagem natural e busca semântica na documentação dos sistemas."
+            },
+            {
+              "en": "Developing a web platform prototype to centralize internal tools, featuring ticket management, performance indicators, and communication between teams and clients. Implementing the frontend using React and TypeScript, including reusable components, real-time chat via WebSocket, and REST API integration, following the corporate Design System.",
+              "pt": "Desenvolvimento de um protótipo de plataforma web para centralização de ferramentas internas, com gestão de tickets, indicadores e comunicação entre equipes e clientes. Implementação do frontend com React e TypeScript, incluindo componentes reutilizáveis, chat em tempo real via WebSocket e integração com APIs REST, utilizando o Design System corporativo."
+            },
+            {
+              "en": "Building a web platform for managing requests, projects, and quality checklists, used by company teams to organize activities, responsibilities, deadlines, and deliverables. Primarily responsible for frontend development using React and TypeScript, creating interactive interfaces, a drag-and-drop Kanban board, dynamic forms, file uploads, and tracking charts. Integrating with the corporate component library and JWT-authenticated REST APIs. Backend developed with Java 21, Micronaut, and SQL Server.",
+              "pt": "Construção de uma plataforma web para gestão de solicitações, projetos e checklists de qualidade, utilizada pelas equipes da empresa para organizar atividades, responsáveis, prazos e entregas. Atuação principalmente no frontend, utilizando React e TypeScript, com desenvolvimento de interfaces interativas, quadro Kanban com drag and drop, formulários dinâmicos, upload de arquivos e gráficos de acompanhamento. Integração com a biblioteca de componentes corporativo e API REST autenticada por JWT. Backend desenvolvido em Java 21 com Micronaut e banco de dados SQL Server."
+            },
+            {
+              "en": "Maintaining and enhancing web interfaces of legacy systems (JSP/JSF), fixing visual issues and implementing improvements using JavaScript and CSS. Supporting the team with frontend, design, and UX tasks, while also contributing to React and TypeScript projects, focusing on development best practices, componentization, responsiveness, and usability.",
+              "pt": "Atuação na manutenção e evolução de interfaces web de sistemas legados (JSP/JSF), realizando correções de problemas visuais e implementação de melhorias com JavaScript e CSS. Apoio ao time em demandas de frontend, design e UX, contribuindo também em projetos com React e TypeScript, com foco em boas práticas de desenvolvimento, componentização, responsividade e usabilidade."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

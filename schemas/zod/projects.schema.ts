@@ -1,5 +1,4 @@
 import { z } from 'zod';
-
 import { iconNameSchema, localizedTextSchema } from './common.schema';
 
 export const projectStatusSchema = z.enum([
@@ -74,10 +73,10 @@ export const projectSchema = z.object({
   projectName: localizedTextSchema,
   repository: projectRepositorySchema,
   logo: iconNameSchema.nullable(),
-  summary: localizedTextSchema,
+  overview: localizedTextSchema,
   description: localizedTextSchema,
   keyFeatures: z.array(localizedTextSchema).min(1).max(5),
-  technologies: z.array(projectTechnologySchema),
+  technologies: z.array(projectTechnologySchema).min(1),
   links: projectLinksSchema,
   banner: projectBannerSchema,
   screenshots: z.array(projectScreenshotSchema),
@@ -85,8 +84,11 @@ export const projectSchema = z.object({
 });
 
 export const sectionProjectsSchema = z.object({
-  sectionName: localizedTextSchema,
-  items: z.array(projectSchema).min(1),
+  section: z.object({
+    title: localizedTextSchema,
+    command: z.string().min(1),
+  }),
+  projects: z.array(projectSchema).min(1),
 });
 
 export type IProjectStatus = z.infer<typeof projectStatusSchema>;

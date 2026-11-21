@@ -12,7 +12,7 @@ export function Text({ text, muted = false, className }: Props) {
       className={cn(
         'text-sm leading-6',
         muted
-          ? 'text-neutral-400 dark:text-neutral-500'
+          ? 'text-neutral-500 dark:text-neutral-500'
           : 'text-neutral-600 dark:text-neutral-400',
         className,
       )}

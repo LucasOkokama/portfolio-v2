@@ -1,7 +1,7 @@
 import { Container } from '@/components/layouts/Container/Container';
 import { BadgeStatus } from '@/components/ui/BadgeStatus/BadgeStatus';
 import { Clock } from '@/components/ui/Clock/Clock';
-import { ExternalLinksGroup } from '@/components/ui/ExternalLinkGroup/ExternalLinkGroup';
+import { ContactLinks } from '@/components/ui/ContactLinks/ContactLinks';
 import { Text } from '@/components/ui/Text/Text';
 import { Title } from '@/components/ui/Title/Title';
 import { type ILocale } from '@/i18n/routing';
@@ -53,10 +53,7 @@ export function SectionAboutMe({ locale }: Props) {
               showSeconds
             />
 
-            <ExternalLinksGroup
-              items={aboutMe.contacts.links}
-              locale={locale}
-            />
+            <ContactLinks items={aboutMe.contacts.links} locale={locale} />
           </div>
         </Container>
       </div>

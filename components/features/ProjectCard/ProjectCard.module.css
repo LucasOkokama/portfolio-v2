@@ -1,7 +1,8 @@
 .banner {
-  transition-property: transform;
-  transition-duration: 6000ms;
-  transition-timing-function: ease-in-out;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 6s ease-in-out;
 }
 
 .scrollable:hover .banner {
@@ -10,8 +11,7 @@
 }
 
 .scrollable:not(:hover) .banner {
-  transition-duration: 2000ms;
-  transition-timing-function: ease-in-out;
+  transition-duration: 2s;
 }
 
 .bannerStatic {

@@ -1,0 +1,337 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the JSON Schema used to validate this file."
+    },
+    "experienceType": {
+      "type": "string",
+      "enum": ["academic", "professional"]
+    },
+    "experiences": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "organization": { "type": "string", "minLength": 1 },
+          "logo": { "type": ["string", "null"] },
+          "overview": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "pt": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["pt", "en"],
+            "additionalProperties": false
+          },
+          "technologies": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": { "type": "string", "minLength": 1 },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "fourPointedStar",
+                    "logo",
+                    "claudeCode",
+                    "figma",
+                    "gemini",
+                    "github",
+                    "gmail",
+                    "grain",
+                    "linkedin",
+                    "pexels",
+                    "vercel",
+                    "earthwise",
+                    "korosenku",
+                    "lojaVinho",
+                    "startdoor",
+                    "wemage",
+                    "angular",
+                    "bootstrap",
+                    "c",
+                    "chartJS",
+                    "css",
+                    "docker",
+                    "eclipse",
+                    "express",
+                    "flask",
+                    "fuseJS",
+                    "git",
+                    "html5",
+                    "intellijIdea",
+                    "java",
+                    "javaScript",
+                    "jUnit",
+                    "matplotlib",
+                    "mobX",
+                    "mySQL",
+                    "nextJS",
+                    "nodeJS",
+                    "pandas",
+                    "php",
+                    "playwright",
+                    "plotly",
+                    "postgreSQL",
+                    "postman",
+                    "python",
+                    "react",
+                    "springBoot",
+                    "styledComponents",
+                    "swagger",
+                    "tailwindCSS",
+                    "typeScript",
+                    "vite",
+                    "visualStudioCode",
+                    "zod",
+                    "award",
+                    "arrowRight",
+                    "arrowUpRight",
+                    "book",
+                    "brain",
+                    "brush",
+                    "calendar",
+                    "caretLeft",
+                    "caretRight",
+                    "check",
+                    "chevronLeft",
+                    "chevronRight",
+                    "close",
+                    "copyright",
+                    "desktopComputer",
+                    "externalLink",
+                    "fullscreen",
+                    "gear",
+                    "gitBranch",
+                    "graduationCap",
+                    "hash",
+                    "imageNotFound",
+                    "infoSquareFilled",
+                    "label",
+                    "layout",
+                    "moon",
+                    "pencil",
+                    "pin",
+                    "reload",
+                    "scroll",
+                    "server",
+                    "shift",
+                    "spanner",
+                    "star",
+                    "suitcase",
+                    "sun"
+                  ]
+                }
+              },
+              "required": ["label", "icon"],
+              "additionalProperties": false
+            }
+          },
+          "location": { "type": "string", "minLength": 1 },
+          "participationMode": {
+            "type": "string",
+            "enum": ["presential", "hybrid", "homeoffice"]
+          },
+          "linkedIn": {
+            "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }]
+          },
+          "website": {
+            "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }]
+          },
+          "additionalInformations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "object",
+                  "properties": {
+                    "pt": { "type": "string" },
+                    "en": { "type": "string" }
+                  },
+                  "required": ["pt", "en"],
+                  "additionalProperties": false
+                },
+                "value": { "type": "string" }
+              },
+              "required": ["title", "value"],
+              "additionalProperties": false
+            }
+          },
+          "experienceTimeline": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "object",
+                  "properties": {
+                    "pt": { "type": "string" },
+                    "en": { "type": "string" }
+                  },
+                  "required": ["pt", "en"],
+                  "additionalProperties": false
+                },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "fourPointedStar",
+                    "logo",
+                    "claudeCode",
+                    "figma",
+                    "gemini",
+                    "github",
+                    "gmail",
+                    "grain",
+                    "linkedin",
+                    "pexels",
+                    "vercel",
+                    "earthwise",
+                    "korosenku",
+                    "lojaVinho",
+                    "startdoor",
+                    "wemage",
+                    "angular",
+                    "bootstrap",
+                    "c",
+                    "chartJS",
+                    "css",
+                    "docker",
+                    "eclipse",
+                    "express",
+                    "flask",
+                    "fuseJS",
+                    "git",
+                    "html5",
+                    "intellijIdea",
+                    "java",
+                    "javaScript",
+                    "jUnit",
+                    "matplotlib",
+                    "mobX",
+                    "mySQL",
+                    "nextJS",
+                    "nodeJS",
+                    "pandas",
+                    "php",
+                    "playwright",
+                    "plotly",
+                    "postgreSQL",
+                    "postman",
+                    "python",
+                    "react",
+                    "springBoot",
+                    "styledComponents",
+                    "swagger",
+                    "tailwindCSS",
+                    "typeScript",
+                    "vite",
+                    "visualStudioCode",
+                    "zod",
+                    "award",
+                    "arrowRight",
+                    "arrowUpRight",
+                    "book",
+                    "brain",
+                    "brush",
+                    "calendar",
+                    "caretLeft",
+                    "caretRight",
+                    "check",
+                    "chevronLeft",
+                    "chevronRight",
+                    "close",
+                    "copyright",
+                    "desktopComputer",
+                    "externalLink",
+                    "fullscreen",
+                    "gear",
+                    "gitBranch",
+                    "graduationCap",
+                    "hash",
+                    "imageNotFound",
+                    "infoSquareFilled",
+                    "label",
+                    "layout",
+                    "moon",
+                    "pencil",
+                    "pin",
+                    "reload",
+                    "scroll",
+                    "server",
+                    "shift",
+                    "spanner",
+                    "star",
+                    "suitcase",
+                    "sun"
+                  ]
+                },
+                "startDate": { "type": "string", "minLength": 1 },
+                "endDate": {
+                  "anyOf": [
+                    { "type": "string", "minLength": 1 },
+                    { "type": "null" }
+                  ]
+                },
+                "keyActivities": {
+                  "minItems": 1,
+                  "maxItems": 5,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "pt": { "type": "string" },
+                      "en": { "type": "string" }
+                    },
+                    "required": ["pt", "en"],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "icon",
+                "startDate",
+                "endDate",
+                "keyActivities"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "organization",
+          "logo",
+          "overview",
+          "description",
+          "technologies",
+          "location",
+          "participationMode",
+          "linkedIn",
+          "website",
+          "additionalInformations",
+          "experienceTimeline"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["experienceType", "experiences"],
+  "additionalProperties": false
+}

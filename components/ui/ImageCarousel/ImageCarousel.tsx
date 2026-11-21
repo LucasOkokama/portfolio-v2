@@ -1,5 +1,6 @@
 'use client';
 
+import { AsyncRenderImage } from '@/components/layouts/AsyncRenderImage/AsyncRenderImage';
 import { uiIcons } from '@/icon/ui';
 import { cn } from '@/lib/utils/cn';
 import { localize, validateLocale } from '@/lib/utils/localize';
@@ -18,7 +19,6 @@ import {
   ImageCarouselSnapCounter,
   useSelectedSnapDisplay,
 } from './ImageCarouselSnapCounter';
-import { AsyncRenderImage } from '@/components/layouts/AsyncRenderImage/AsyncRenderImage';
 
 interface Props {
   slides: IProjectScreenshot[];
@@ -128,11 +128,6 @@ export function ImageCarousel({ slides }: Props) {
                       alt={''}
                       width={1920}
                       height={1080}
-                      className={cn(
-                        'h-full w-full',
-                        'object-cover object-top',
-                        'select-none',
-                      )}
                       locale={locale}
                     />
                   </div>
@@ -178,7 +173,11 @@ export function ImageCarousel({ slides }: Props) {
 
       <div>
         {slides.length > 0 ? (
-          <ImageCarouselControlThumbs emblaApi={emblaApi} slides={slides} />
+          <ImageCarouselControlThumbs
+            emblaApi={emblaApi}
+            slides={slides}
+            locale={locale}
+          />
         ) : (
           <div className={cn('h-16')}>
             <PlaceholderDisabled />

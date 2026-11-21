@@ -1,5 +1,4 @@
 import { z } from 'zod';
-
 import { iconNameSchema, localizedTextSchema } from './common.schema';
 
 const technologyItemSchema = z.object({
@@ -15,8 +14,11 @@ export const technologyGroupSchema = z.object({
 });
 
 export const sectionTechnologySchema = z.object({
-  sectionName: localizedTextSchema,
-  technologyGroups: z.array(technologyGroupSchema),
+  section: z.object({
+    title: localizedTextSchema,
+    command: z.string().min(1),
+  }),
+  technologyGroups: z.array(technologyGroupSchema).min(1),
 });
 
 export type ITechnology = z.infer<typeof technologyItemSchema>;
