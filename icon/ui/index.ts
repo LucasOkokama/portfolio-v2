@@ -4,9 +4,11 @@ import ArrowRightIcon from './akar-icons--arrow-right.svg';
 import ArrowUpRightIcon from './akar-icons--arrow-up-right.svg';
 import ChevronLeftIcon from './akar-icons--chevron-left.svg';
 import ChevronRightIcon from './akar-icons--chevron-right.svg';
+import AlignLeftIcon from './akar-icons--text-align-left.svg';
 import BookIcon from './at-icons--book.svg';
 import PencilIcon from './at-icons--pencil.svg';
 import PinIcon from './at-icons--pin.svg';
+import StackIcon from './basil--stack-solid.svg';
 import CaretLeftIcon from './bi--caret-left-fill.svg';
 import CaretRightIcon from './bi--caret-right-fill.svg';
 import CheckIcon from './bi--check.svg';
@@ -19,9 +21,12 @@ import ImageNotFoundIcon from './carbon--no-image.svg';
 import CloseIcon from './ci--close-md.svg';
 import ExternalLinkIcon from './ci--external-link.svg';
 import BrainIcon from './coolicons--brain-fill-round.svg';
+import ClockIcon from './coolicons--clock-4-fill.svg';
+import GlobeIcon from './coolicons--globe-fill.svg';
 import GraduationCapIcon from './coolicons--graduation-cap-fill.svg';
 import HashIcon from './coolicons--hash-bulk-round.svg';
 import ScrollIcon from './coolicons--scroll-text-fill.svg';
+import UserIcon from './coolicons--user-alt-fill.svg';
 import MoonIcon from './eva--moon-fill.svg';
 import SunIcon from './eva--sun-fill.svg';
 import GearIcon from './fa6-solid--gear.svg';
@@ -38,6 +43,7 @@ import StarIcon from './octicon--star-fill-16.svg';
 import AwardIcon from './tabler--award-filled.svg';
 
 export const uiIcons = {
+  [iconNames.ui.alignLeft]: AlignLeftIcon,
   [iconNames.ui.award]: AwardIcon,
   [iconNames.ui.arrowRight]: ArrowRightIcon,
   [iconNames.ui.arrowUpRight]: ArrowUpRightIcon,
@@ -50,6 +56,7 @@ export const uiIcons = {
   [iconNames.ui.check]: CheckIcon,
   [iconNames.ui.chevronLeft]: ChevronLeftIcon,
   [iconNames.ui.chevronRight]: ChevronRightIcon,
+  [iconNames.ui.clock]: ClockIcon,
   [iconNames.ui.close]: CloseIcon,
   [iconNames.ui.copyright]: CopyrightIcon,
   [iconNames.ui.desktopComputer]: DesktopComputerIcon,
@@ -57,6 +64,7 @@ export const uiIcons = {
   [iconNames.ui.fullscreen]: FullscreenIcon,
   [iconNames.ui.gear]: GearIcon,
   [iconNames.ui.gitBranch]: GitBranchIcon,
+  [iconNames.ui.globe]: GlobeIcon,
   [iconNames.ui.graduationCap]: GraduationCapIcon,
   [iconNames.ui.hash]: HashIcon,
   [iconNames.ui.imageNotFound]: ImageNotFoundIcon,
@@ -71,7 +79,9 @@ export const uiIcons = {
   [iconNames.ui.server]: ServerIcon,
   [iconNames.ui.shift]: ShiftIcon,
   [iconNames.ui.spanner]: SpannerIcon,
+  [iconNames.ui.stack]: StackIcon,
   [iconNames.ui.star]: StarIcon,
   [iconNames.ui.suitcase]: SuitcaseIcon,
   [iconNames.ui.sun]: SunIcon,
+  [iconNames.ui.user]: UserIcon,
 } satisfies Record<string, SvgIconComponent>;

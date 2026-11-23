@@ -99,6 +99,7 @@
                     "vite",
                     "visualStudioCode",
                     "zod",
+                    "alignLeft",
                     "award",
                     "arrowRight",
                     "arrowUpRight",
@@ -111,6 +112,7 @@
                     "check",
                     "chevronLeft",
                     "chevronRight",
+                    "clock",
                     "close",
                     "copyright",
                     "desktopComputer",
@@ -118,6 +120,7 @@
                     "fullscreen",
                     "gear",
                     "gitBranch",
+                    "globe",
                     "graduationCap",
                     "hash",
                     "imageNotFound",
@@ -132,9 +135,11 @@
                     "server",
                     "shift",
                     "spanner",
+                    "stack",
                     "star",
                     "suitcase",
-                    "sun"
+                    "sun",
+                    "user"
                   ]
                 }
               },
@@ -244,6 +249,7 @@
                     "vite",
                     "visualStudioCode",
                     "zod",
+                    "alignLeft",
                     "award",
                     "arrowRight",
                     "arrowUpRight",
@@ -256,6 +262,7 @@
                     "check",
                     "chevronLeft",
                     "chevronRight",
+                    "clock",
                     "close",
                     "copyright",
                     "desktopComputer",
@@ -263,6 +270,7 @@
                     "fullscreen",
                     "gear",
                     "gitBranch",
+                    "globe",
                     "graduationCap",
                     "hash",
                     "imageNotFound",
@@ -277,9 +285,11 @@
                     "server",
                     "shift",
                     "spanner",
+                    "stack",
                     "star",
                     "suitcase",
-                    "sun"
+                    "sun",
+                    "user"
                   ]
                 },
                 "startDate": { "type": "string", "minLength": 1 },

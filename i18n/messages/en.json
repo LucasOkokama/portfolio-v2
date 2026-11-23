@@ -48,5 +48,17 @@
   },
   "experienceCard": {
     "present": "Present"
+  },
+  "experienceDetails": {
+    "title": "Experience Details",
+    "location": "Location",
+    "period": "Period",
+    "duration": "Duration",
+    "linkedin": "LinkedIn",
+    "website": "Website",
+    "description": "Description",
+    "technologies": "Technologies",
+    "close": "Close",
+    "experience": "Experience"
   }
 }

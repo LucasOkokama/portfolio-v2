@@ -12,6 +12,7 @@ interface Props {
   variant?: TitleVariant;
   hover?: boolean;
   level?: TitleLevel;
+  leftElement?: ReactNode;
   rightElement?: ReactNode;
 }
 
@@ -39,6 +40,7 @@ export function Title({
   variant = 'neutral',
   hover = false,
   level = 1,
+  leftElement,
   rightElement,
 }: Props) {
   const Heading = `h${level}` as const;
@@ -50,10 +52,13 @@ export function Title({
         typeStyles[type],
         variantStyles[variant],
         hover && hoverStyles[variant],
+        leftElement && 'flex items-center gap-2',
         rightElement && 'flex items-center justify-between gap-4',
         className,
       )}
     >
+      {leftElement}
+
       <span>{text}</span>
 
       {rightElement}

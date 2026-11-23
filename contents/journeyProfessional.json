@@ -41,7 +41,7 @@
             "pt": "Desenvolvedor de Sistemas Júnior"
           },
           "icon": "layout",
-          "startDate": "2026-11-18",
+          "startDate": "2026-05-29",
           "endDate": null,
           "keyActivities": [
             {
@@ -64,8 +64,8 @@
             "pt": "Desenvolvedor de Sistemas Trainee"
           },
           "icon": "layout",
-          "startDate": "2026-11-18",
-          "endDate": null,
+          "startDate": "2025-06-16",
+          "endDate": "2026-05-28",
           "keyActivities": [
             {
               "en": "Implementing a chatbot integrated with legacy banking systems (JSF/JSP), providing contextual support and guided navigation through system screens. Developing the frontend using vanilla JavaScript, HTML, and CSS, including a chat interface, autocomplete, conversation history, and interactive links for automated navigation across menus, tabs, and features. Integrating with a Python (FastAPI) API responsible for natural language processing and semantic search across system documentation.",

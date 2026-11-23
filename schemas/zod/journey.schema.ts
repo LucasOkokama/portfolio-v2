@@ -19,6 +19,17 @@ const experienceAdditionalInformationsItemSchema = z.object({
   value: z.string(),
 });
 
+/*
+  ACADEMIC
+  ~ Postgraduate degree => award
+  ~ Technical degree => book
+  ~ Bachelor's degree / Technologist degree => graduationCap
+  ~ Master's degree => scroll
+  ~ Doctorate / PhD => brain
+
+  PROFESSIONAL
+  ~ Frontend => layout
+*/
 const experienceTimelineItemSchema = z.object({
   title: localizedTextSchema,
   icon: iconNameSchema,

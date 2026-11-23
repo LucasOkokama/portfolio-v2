@@ -15,15 +15,20 @@ export function ExternalLink({ href, children, className, ...props }: Props) {
         'text-sm',
         'cursor-pointer',
         'text-amber-600/85 dark:text-amber-400/85',
-        'bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-no-repeat',
-        'transition-[color,background-size] duration-200',
-        'bg-size-[0%_1px] hover:bg-size-[100%_1px]',
-        'hover:text-amber-600 hover:dark:text-amber-400',
         className,
       )}
       {...props}
     >
-      {children}
+      <span
+        className={cn(
+          'bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-no-repeat',
+          'transition-[background-size,color] duration-200',
+          'bg-size-[0%_1px] hover:bg-size-[100%_1px]',
+          'hover:text-amber-600 hover:dark:text-amber-400',
+        )}
+      >
+        {children}
+      </span>
     </a>
   );
 }

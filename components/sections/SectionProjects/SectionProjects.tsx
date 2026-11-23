@@ -7,7 +7,6 @@ import type { ILocale } from '@/i18n/routing';
 import { cn } from '@/lib/utils/cn';
 import { projects } from '@/lib/utils/loaders';
 import { localize } from '@/lib/utils/localize';
-import type { IProject } from '@/schemas/zod/projects.schema';
 import { useCallback, useEffect, useState } from 'react';
 
 type Props = {
@@ -15,34 +14,36 @@ type Props = {
 };
 
 export function SectionProjects({ locale }: Props) {
-  const [selectedProject, setSelectedProject] = useState<IProject | null>(null);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<
+    number | null
+  >(null);
 
-  const selectedIndex = selectedProject
-    ? projects.projects.findIndex(item => item.id === selectedProject.id)
-    : -1;
+  const projectsList = projects.projects;
+
+  const selectedProject =
+    selectedProjectIndex !== null
+      ? (projectsList[selectedProjectIndex] ?? null)
+      : null;
 
   const handlePrevious = useCallback(() => {
-    if (selectedIndex === -1 || projects.projects.length === 0) return;
+    if (selectedProjectIndex === null || projectsList.length === 0) return;
 
-    const previousIndex =
-      (selectedIndex - 1 + projects.projects.length) % projects.projects.length;
-    const previousProject = projects.projects[previousIndex];
+    setSelectedProjectIndex(prev => {
+      if (prev === null) return null;
 
-    if (!previousProject) return;
-
-    setSelectedProject(previousProject);
-  }, [selectedIndex]);
+      return (prev - 1 + projectsList.length) % projectsList.length;
+    });
+  }, [selectedProjectIndex, projectsList.length]);
 
   const handleNext = useCallback(() => {
-    if (selectedIndex === -1 || projects.projects.length === 0) return;
+    if (selectedProjectIndex === null || projectsList.length === 0) return;
 
-    const nextIndex = (selectedIndex + 1) % projects.projects.length;
-    const nextProject = projects.projects[nextIndex];
+    setSelectedProjectIndex(prev => {
+      if (prev === null) return null;
 
-    if (!nextProject) return;
-
-    setSelectedProject(nextProject);
-  }, [selectedIndex]);
+      return (prev + 1) % projectsList.length;
+    });
+  }, [selectedProjectIndex, projectsList.length]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -84,13 +85,13 @@ export function SectionProjects({ locale }: Props) {
         command={projects.section.command}
       >
         <div className={cn('grid grid-cols-2 gap-6')}>
-          {projects.projects.map(item => (
+          {projectsList.map((item, index) => (
             <ProjectCard
               key={item.id}
               locale={locale}
               project={item}
               scrollable={item.banner.scrollable}
-              onDetails={() => setSelectedProject(item)}
+              onDetails={() => setSelectedProjectIndex(index)}
             />
           ))}
         </div>
@@ -98,13 +99,13 @@ export function SectionProjects({ locale }: Props) {
 
       <ProjectDetails
         locale={locale}
-        projectIndex={selectedIndex}
+        projectIndex={selectedProjectIndex ?? -1}
         project={selectedProject}
-        open={selectedProject !== null}
-        isNavigationDisabled={projects.projects.length <= 1}
+        open={selectedProjectIndex !== null}
+        isNavigationDisabled={projectsList.length <= 1}
         onOpenChange={open => {
           if (!open) {
-            setSelectedProject(null);
+            setSelectedProjectIndex(null);
           }
         }}
         onPrevious={handlePrevious}

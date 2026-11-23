@@ -109,6 +109,7 @@ export const iconNames = defineIconGroups({
     'zod',
   ],
   ui: [
+    'alignLeft',
     'award',
     'arrowRight',
     'arrowUpRight',
@@ -121,6 +122,7 @@ export const iconNames = defineIconGroups({
     'check',
     'chevronLeft',
     'chevronRight',
+    'clock',
     'close',
     'copyright',
     'desktopComputer',
@@ -128,6 +130,7 @@ export const iconNames = defineIconGroups({
     'fullscreen',
     'gear',
     'gitBranch',
+    'globe',
     'graduationCap',
     'hash',
     'imageNotFound',
@@ -142,9 +145,11 @@ export const iconNames = defineIconGroups({
     'server',
     'shift',
     'spanner',
+    'stack',
     'star',
     'suitcase',
     'sun',
+    'user',
   ],
 } as const);
 

@@ -11,15 +11,64 @@ import { localize } from '@/lib/utils/localize';
 import type { IExperience } from '@/schemas/zod/journey.schema';
 import { useTranslations } from 'next-intl';
 
+type ExperienceDateRangeProps = {
+  startDate: Date | string;
+  endDate: Date | string | null;
+  locale: ILocale;
+  isUppercase?: boolean;
+  isMuted?: boolean;
+  isSmall?: boolean;
+};
+
+export function ExperienceDateRange({
+  startDate,
+  endDate,
+  locale,
+  isUppercase = false,
+  isMuted = false,
+  isSmall = false,
+}: ExperienceDateRangeProps) {
+  const tExperienceCard = useTranslations('experienceCard');
+
+  const startLabel = formatMonthShortYear(startDate, locale);
+  const endLabel = endDate
+    ? formatMonthShortYear(endDate, locale)
+    : tExperienceCard('present');
+
+  const textColor = isMuted ? '' : 'text-neutral-800 dark:text-neutral-200';
+  const textSize = isSmall ? 'text-xs' : 'text-sm';
+
+  return (
+    <div className={cn('flex items-center gap-1.5')}>
+      <Text
+        text={isUppercase ? startLabel.toUpperCase() : startLabel}
+        className={cn(textColor, textSize)}
+      />
+
+      <Text text="-" className={cn(textColor, textSize)} />
+
+      <Text
+        text={isUppercase ? endLabel.toUpperCase() : endLabel}
+        className={cn(
+          textColor,
+          textSize,
+          !endDate && 'font-medium',
+          !endDate && 'text-emerald-600 dark:text-emerald-400',
+        )}
+      />
+    </div>
+  );
+}
+
 type Props = {
   locale: ILocale;
   experience: IExperience;
+  onDetails: () => void;
 };
 
-export function ExperienceCard({ locale, experience }: Props) {
+export function ExperienceCard({ locale, experience, onDetails }: Props) {
   const firstTimelineItem = experience.experienceTimeline[0];
-
-  const tExperienceCard = useTranslations('experienceCard');
+  const lastTimelineItem = experience.experienceTimeline.at(-1);
 
   if (!firstTimelineItem) return null;
 
@@ -110,6 +159,7 @@ export function ExperienceCard({ locale, experience }: Props) {
                 'hover:text-neutral-950 dark:hover:text-neutral-50',
                 'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
               )}
+              onClick={onDetails}
             >
               <uiIcons.arrowRight
                 width={12}
@@ -140,28 +190,16 @@ export function ExperienceCard({ locale, experience }: Props) {
             <Text text={experience.location} className={cn('text-xs')} />
           </div>
 
-          <div className={cn('flex gap-1.5')}>
-            <Text
-              text={formatMonthShortYear(firstTimelineItem.startDate, locale)}
-              className={cn('text-xs')}
+          {lastTimelineItem && (
+            <ExperienceDateRange
+              startDate={lastTimelineItem.startDate}
+              endDate={firstTimelineItem.endDate}
+              locale={locale}
+              isUppercase
+              isMuted
+              isSmall
             />
-
-            {'-'}
-
-            <Text
-              text={
-                firstTimelineItem.endDate
-                  ? formatMonthShortYear(firstTimelineItem.endDate, locale)
-                  : tExperienceCard('present').toUpperCase()
-              }
-              className={cn(
-                'text-xs',
-                !firstTimelineItem.endDate && 'font-medium',
-                !firstTimelineItem.endDate &&
-                  'text-emerald-600 dark:text-emerald-400',
-              )}
-            />
-          </div>
+          )}
         </div>
       </div>
     </Container>
