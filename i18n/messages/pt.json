@@ -1,4 +1,7 @@
 {
+  "modal": {
+    "close": "Fechar"
+  },
   "mainmenu": {
     "projects": "Projetos",
     "journey": "Experiências",
@@ -38,7 +41,6 @@
       "license": "Licença"
     },
     "reload": "Recarregar",
-    "close": "Fechar",
     "gallery": "Galeria",
     "project": "Projeto"
   },
@@ -58,7 +60,6 @@
     "website": "Website",
     "description": "Descrição",
     "technologies": "Tecnologias",
-    "close": "Fechar",
     "experience": "Experiência"
   }
 }

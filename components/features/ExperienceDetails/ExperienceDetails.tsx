@@ -2,6 +2,8 @@ import { Container } from '@/components/layouts/Container/Container';
 import { BadgeTag } from '@/components/ui/BadgeTag/BadgeTag';
 import { ExternalLink } from '@/components/ui/ExternalLink/ExternalLink';
 import { IconBulletList } from '@/components/ui/IconBulletList/IconBulletList';
+import { ModalFooter } from '@/components/ui/ModalFooter/ModalFooter';
+import { ModalHeader } from '@/components/ui/ModalHeader/ModalHeader';
 import { Text } from '@/components/ui/Text/Text';
 import { Title } from '@/components/ui/Title/Title';
 import { EMPTY_VALUE } from '@/constants/api.const';
@@ -173,6 +175,10 @@ export function ExperienceDetails({
   const firstTimelineItem = experience?.experienceTimeline[0];
   const lastTimelineItem = experience?.experienceTimeline.at(-1);
 
+  if (!experience || !experienceType) {
+    return null;
+  }
+
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -198,24 +204,15 @@ export function ExperienceDetails({
         >
           <Container className={cn('h-full', 'p-0')}>
             <div className={cn('h-full w-full', 'flex flex-col')}>
-              <div
-                className={cn(
-                  'flex items-center justify-between',
-                  'px-4 py-2',
-                  'border-b',
-                  'bg-neutral-200/70 dark:bg-neutral-950/40',
-                  'border-b-neutral-300/70 dark:border-b-neutral-800',
-                  'text-sm',
-                )}
-              >
-                <div className={cn('flex gap-3')}>
-                  <BadgeTag
-                    label={`${experienceIndex + 1}`}
-                    variant="new"
-                    className={cn('font-roboto-mono font-bold')}
-                  />
+              <ModalHeader
+                leftElement={
+                  <>
+                    <BadgeTag
+                      label={`${experienceIndex + 1}`}
+                      variant="new"
+                      className="font-roboto-mono font-bold"
+                    />
 
-                  {experienceType && (
                     <BadgeTag
                       label={localize(
                         experienceTypeTitle[experienceType],
@@ -224,75 +221,15 @@ export function ExperienceDetails({
                       variant="information"
                       className="font-semibold tracking-wider"
                     />
-                  )}
-                </div>
+                  </>
+                }
+                title={tExperienceDetails('title')}
+                onPrevious={onPrevious}
+                onNext={onNext}
+                onClose={() => onOpenChange(false)}
+                isNavigationDisabled={isNavigationDisabled}
+              />
 
-                <span
-                  className={cn(
-                    'font-semibold',
-                    'tracking-wider',
-                    'text-purple-500 dark:text-purple-400',
-                  )}
-                >
-                  {tExperienceDetails('title').toUpperCase()}
-                </span>
-
-                <div className={cn('flex items-center gap-6')}>
-                  <div className={cn('flex gap-1')}>
-                    <button
-                      onClick={onPrevious}
-                      disabled={isNavigationDisabled}
-                      className={cn(
-                        'p-2.5',
-                        'rounded-lg',
-                        'transition-colors duration-200',
-                        isNavigationDisabled
-                          ? 'cursor-not-allowed opacity-50'
-                          : cn(
-                              'cursor-pointer',
-                              'hover:text-neutral-950 dark:hover:text-neutral-50',
-                              'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
-                            ),
-                      )}
-                    >
-                      <uiIcons.chevronLeft width={12} height={12} />
-                    </button>
-
-                    <button
-                      onClick={onNext}
-                      disabled={isNavigationDisabled}
-                      className={cn(
-                        'p-2.5',
-                        'rounded-lg',
-                        'transition-colors duration-200',
-                        isNavigationDisabled
-                          ? 'cursor-not-allowed opacity-50'
-                          : cn(
-                              'cursor-pointer',
-                              'hover:text-neutral-950 dark:hover:text-neutral-50',
-                              'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
-                            ),
-                      )}
-                    >
-                      <uiIcons.chevronRight width={12} height={12} />
-                    </button>
-                  </div>
-                  <Dialog.Close asChild>
-                    <div
-                      className={cn(
-                        'p-2.5',
-                        'rounded-lg',
-                        'transition-colors duration-200',
-                        'cursor-pointer',
-                        'hover:text-red-500 hover:dark:text-red-400',
-                        'hover:bg-neutral-300/70 dark:hover:bg-neutral-700/70',
-                      )}
-                    >
-                      <uiIcons.close width={14} height={14} />
-                    </div>
-                  </Dialog.Close>
-                </div>
-              </div>
               <div
                 className={cn('flex flex-col gap-3', 'p-4', 'overflow-y-auto')}
               >
@@ -433,7 +370,7 @@ export function ExperienceDetails({
                   icon={<uiIcons.stack width={SIZE} height={SIZE} />}
                   value={
                     experience?.technologies?.length ? (
-                      <div className="flex flex-wrap gap-2">
+                      <div className={cn('flex flex-wrap gap-2', 'mt-2')}>
                         {experience.technologies.map(item => (
                           <BadgeTag
                             key={item.label}
@@ -463,65 +400,10 @@ export function ExperienceDetails({
                   />
                 )}
               </div>
-              <div
-                className={cn(
-                  'flex items-center justify-between',
-                  'px-4 py-2',
-                  'border-t',
-                  'text-xs',
-                  'bg-neutral-200/70 dark:bg-neutral-950/40',
-                  'border-t-neutral-300/70 dark:border-t-neutral-800',
-                  'text-neutral-400 dark:text-neutral-600',
-                )}
-              >
-                <div className={cn('flex items-center justify-center gap-2')}>
-                  <div
-                    className={cn(
-                      'flex items-center justify-center gap-2',
-                      'h-6',
-                      'rounded-lg',
-                      'px-2.5',
-                      'bg-neutral-300/70 dark:bg-neutral-800/70',
-                    )}
-                  >
-                    <span className={cn('font-bold')}>ESC</span>
-                  </div>
-                  <span className={cn('font-semibold tracking-wider')}>
-                    {tExperienceDetails('close').toUpperCase()}
-                  </span>
-                </div>
 
-                <div className={cn('flex items-center justify-center gap-2')}>
-                  <div
-                    className={cn(
-                      'flex items-center justify-center gap-2',
-                      'h-6',
-                      'rounded-lg',
-                      'px-2.5',
-                      'bg-neutral-300/70 dark:bg-neutral-800/70',
-                    )}
-                  >
-                    <span className={cn('font-semibold')}>SHIFT</span>
-                    <uiIcons.shift width={SIZE} height={SIZE} />
-                  </div>
-                  <div
-                    className={cn(
-                      'flex items-center justify-center gap-2',
-                      'h-6',
-                      'rounded-lg',
-                      'px-2.5',
-                      'bg-neutral-300/70 dark:bg-neutral-800/70',
-                    )}
-                  >
-                    <uiIcons.caretLeft width={SIZE} height={SIZE} />
-                    <span>/</span>
-                    <uiIcons.caretRight width={SIZE} height={SIZE} />
-                  </div>
-                  <span className={cn('font-semibold tracking-wider')}>
-                    {tExperienceDetails('experience').toUpperCase()}
-                  </span>
-                </div>
-              </div>
+              <ModalFooter
+                shiftArrowShortcutLabel={tExperienceDetails('experience')}
+              />
             </div>
           </Container>
         </Dialog.Content>
